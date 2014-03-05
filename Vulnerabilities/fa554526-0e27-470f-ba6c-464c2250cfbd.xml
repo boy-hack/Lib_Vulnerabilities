@@ -39,6 +39,24 @@ XML data is validated using XML schema:
 
 * [[00000000-0000-0000-0000-0000000b3752|XML Data Is Validated]]
 
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
+
+==Creating Secure Code – JRE Foundations==
+
+In this course, you will learn to recognize and remediate common Java Web software security vulnerabilities.  This course has three modules, which introduce you to these vulnerabilities and help you to identify and remediate them.
+
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127615|COD 211 Creating Secure Code – JRE Foundations]]
+
+==Creating Secure J2EE Code==
+
+This course introduces and explains the precautionary measures you can use to avoid Web software security vulnerabilities, such as data leakage attacks, client/server protocol manipulation, injection attacks, and exploiting authentication.  At the end of this course, you will have learned about time-tested defensive coding principles and how to use them to increase the security of your application, and prevent common security vulnerabilities.
+
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127619|COD 313 Creating Secure J2EE Code]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
 =Additional Resources
 
 * For more information about this vulnerability type, see http://minsky.gsi.dit.upm.es/semanticwiki/index.php/Missing_XML_Validation

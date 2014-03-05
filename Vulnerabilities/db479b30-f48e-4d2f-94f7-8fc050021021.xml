@@ -51,31 +51,19 @@ Use the following Computer Based Training course(s) for more background informat
 
 This course is ideal for anyone that is involved in the Software Development process or information security personnel that need to better understand software security. Upon course completion, you will be familiar with the key attributes of a secure software development lifecycle and specific activities that need to be performed to develop secure software.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123437|AWA 102 Software Security Awareness]] 
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127651|AWA 102 Software Security Awareness]] 
 
 ==Creating Secure Code – JRE Foundations==
 
 In this course, you will learn to recognize and remediate common Java Web software security vulnerabilities.  This course has three modules, which introduce you to these vulnerabilities and help you to identify and remediate them.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123399|COD 211 Creating Secure Code – JRE Foundations]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127615|COD 211 Creating Secure Code – JRE Foundations]]
 
 ==Fundamentals of Web 2.0 Security==
 
 This course introduces you to the fundamentals of secure Web 2.0 development. The course begins with a discussion about Web 2.0, its evolution, and the technologies behind it. The course describes common Web 2.0 attacks that can cause significant loss to organizations. It reviews the best practices that you should incorporate to mitigate the risks from Web 2.0 attacks, as well as practices to avoid. The course concludes with a walk-through of a software system scenario that can help you better understand Web 2.0 attacks and apply the best practices discussed in the course.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123422|COD 151 Fundamentals of Web 2.0 Security]]
-
-==Creating Secure Code – Oracle Foundations==
-
-This course consists of three modules. The first module introduces you to database security and the challenges faced in developing secure database-driven applications. The second module covers important application development security basics as well as best practices. The third module covers common security attacks that impact Oracle database developers and the recommended countermeasures to mitigate risks from those attacks.
-
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/124001|COD 241 Creating Secure Code – Oracle Foundations]]
-
-==Creating Secure Code – SQL Server==
-
-In this course, you will learn about securely developing applications using Microsoft SQL Server database versions 2008 and 2012. This course consists of three modules. The first module introduces you to database security and the challenges faced in developing secure database-driven applications. The second module covers important application development security basics as well as best practices. The third module covers common security attacks that impact SQL server database developers and the recommended mitigation to reduce risks from those attacks.
-
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/124031|COD 242 Creating Secure Code – SQL Server]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127634|COD 151 Fundamentals of Web 2.0 Security]]
 
 //Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
 

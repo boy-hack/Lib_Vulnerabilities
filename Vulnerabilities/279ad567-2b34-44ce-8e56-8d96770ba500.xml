@@ -61,19 +61,19 @@ Use the following Computer Based Training course(s) for more background informat
 
 This two-part course is ideal for security and development practitioners that want to understand software security risk and seek specific implementation guidance on how to build and deploy more secure software applications.  It starts off describing why software security is critical and the risk that software vulnerabilities represent, and proceeds to lay the foundation for secure software development by presenting specific security controls and principles that development teams can implement immediately to reduce software risk. 
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123404|AWA 101 Fundamentals of Application Security]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127105|AWA 101 Fundamentals of Application Security]]
 
 ==OWASP Top Threats & Mitigations==
 
 This course examines in depth the vulnerabilities, threats, and mitigations described in the OWASP Top 10 2013. Upon completion of this class, participants will be able to identify and mitigate the greatest threats that web application developers face, including: Injection, Broken Authentication and Session Management, Cross-Site Scripting (XSS), Insecure Direct Object References, Security Misconfiguration, Sensitive Data Exposure, Missing Function Level Access Control, Cross-Site Request Forgery (CSRF), Using Components with Known Vulnerabilities, and Unvalidated Redirects and Forwards.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123237|DES 221 OWASP Top Threats & Mitigations]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/139631|DES 221 OWASP Top Threats & Mitigations]]
 
 ==Creating Secure PHP Code==
 
 This course introduces best practices for developing secure PHP code. The course also identifies common PHP vulnerabilities that attackers can exploit to gain access to critical information. In addition, the course explains mitigation techniques that you can use to avoid common PHP vulnerabilities and write secure code. After completing this course, you will be able to describe the best practices for developing secure PHP code, explain common PHP vulnerabilities and learn mitigation techniques to avoid common PHP vulnerabilities and write secure code.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123402|COD 315P Creating Secure PHP Code]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127620|COD 315P Creating Secure PHP Code]]
 
 //Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
 

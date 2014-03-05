@@ -56,25 +56,25 @@ Use the following Computer Based Training course(s) for more background informat
 
 This two-part course is ideal for security and development practitioners that want to understand software security risk and seek specific implementation guidance on how to build and deploy more secure software applications.  It starts off describing why software security is critical and the risk that software vulnerabilities represent, and proceeds to lay the foundation for secure software development by presenting specific security controls and principles that development teams can implement immediately to reduce software risk. 
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123404|AWA 101 Fundamentals of Application Security]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127105|AWA 101 Fundamentals of Application Security]]
 
 ==PCI Best Practices for Developers==
 
 Payment Card Industry Data Security Standards (PCI-DSS) provide minimum requirements for addressing the security of software systems handling credit card information. Addressing the requirements during the design and build stages of the development life cycle improves application security and simplifies compliance. This course will provide software developers with an in-depth understanding of application security issues within the PCI-DSS and best practices for addressing each requirement.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123434|COD 222 PCI Best Practices for Developers]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127647|COD 222 PCI Best Practices for Developers]]
 
 ==Creating Secure Application Architecture==
 
 Software development is about creating functionality, features, and performance that meet user requirements. Secure system development requires you to think about what users want to do, what users should not be able to do, and then creating a solution. Users should not be able to access or tamper with resources that are not allocated to them.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123386|DES 311 Creating Secure Application Architecture]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127606|DES 311 Creating Secure Application Architecture]]
 
 ==Creating Secure J2EE Code==
 
 This course introduces and explains the precautionary measures you can use to avoid Web software security vulnerabilities, such as data leakage attacks, client/server protocol manipulation, injection attacks, and exploiting authentication.  At the end of this course, you will have learned about time-tested defensive coding principles and how to use them to increase the security of your application, and prevent common security vulnerabilities.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123401|COD 313 Creating Secure J2EE Code]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127619|COD 313 Creating Secure J2EE Code]]
 
 //Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
 

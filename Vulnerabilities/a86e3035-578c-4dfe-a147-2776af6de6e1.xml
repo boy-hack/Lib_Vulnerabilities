@@ -60,25 +60,25 @@ Use the following Computer Based Training course(s) for more background informat
 
 This course describes .NET security features, including concepts such as Code Access Security (CAS) and .NET cryptographic technologies. It also provides secure coding best practices that will enable you to build more secure applications in .NET. 
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123395|COD 215 Creating Secure Code – .NET 4.0 Foundations]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127611|COD 215 Creating Secure Code – .NET 4.0 Foundations]]
 
 ==Fundamentals of Secure Database Development==
 
 This course introduces developers to the fundamentals of secure database development. The course begins with a discussion on the role of databases and how they are used in today's software systems. It also discusses the common database attacks that could be used to cause significant loss to organizations. Next, it reviews the best practices that developers should incorporate to mitigate the risks from database attacks, including practices that developers should avoid. Finally, the course concludes with a walk-through of a software system scenario that allows you to apply the database attacks and developer best practices discussed throughout the course.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123414|COD 141 Fundamentals of Secure Database Development]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127628|COD 141 Fundamentals of Secure Database Development]]
 
 ==Creating Secure Code – Oracle Foundations==
 
 This course consists of three modules. The first module introduces you to database security and the challenges faced in developing secure database-driven applications. The second module covers important application development security basics as well as best practices. The third module covers common security attacks that impact Oracle database developers and the recommended countermeasures to mitigate risks from those attacks.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/124001|COD 241 Creating Secure Code – Oracle Foundations]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127616|COD 241 Creating Secure Code – Oracle Foundations]]
 
 ==Creating Secure Code – SQL Server==
 
 In this course, you will learn about securely developing applications using Microsoft SQL Server database versions 2008 and 2012. This course consists of three modules. The first module introduces you to database security and the challenges faced in developing secure database-driven applications. The second module covers important application development security basics as well as best practices. The third module covers common security attacks that impact SQL server database developers and the recommended mitigation to reduce risks from those attacks.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/124031|COD 242 Creating Secure Code – SQL Server]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127617|COD 242 Creating Secure Code – SQL Server]]
 
 //Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
 ]]></Data>

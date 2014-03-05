@@ -47,6 +47,12 @@ Parameterized APIs are used for database access:
 
 Use the following Computer Based Training course(s) to learn more about SQL injection including techniques for remediation and prevention.
 
+==OWASP Top Threats & Mitigations==
+
+This course examines in depth the vulnerabilities, threats, and mitigations described in the OWASP Top 10 2013. Upon completion of this class, participants will be able to identify and mitigate the greatest threats that web application developers face, including: Injection, Broken Authentication and Session Management, Cross-Site Scripting (XSS), Insecure Direct Object References, Security Misconfiguration, Sensitive Data Exposure, Missing Function Level Access Control, Cross-Site Request Forgery (CSRF), Using Components with Known Vulnerabilities, and Unvalidated Redirects and Forwards.
+
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/139631|DES 221 OWASP Top Threats & Mitigations]]
+
 ==Creating Secure PHP Code==
 
 This course introduces best practices for developing secure PHP code. The course also identifies common PHP vulnerabilities that attackers can exploit to gain access to critical information. In addition, the course explains mitigation techniques that you can use to avoid common PHP vulnerabilities and write secure code. After completing this course, you will be able to describe the best practices for developing secure PHP code, explain common PHP vulnerabilities and learn mitigation techniques to avoid common PHP vulnerabilities and write secure code. 

@@ -47,17 +47,11 @@ Encryption keys are stored using protected storage APIs:
 
 Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
 
-==Introduction to Cryptography==
-
-This course provides you with the knowledge to understand cryptography and an opportunity to investigate the threats that affect two communicating parties. It also helps you understand how these threats can be mitigated using a proper cryptographic solution.
-
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123430|DES 301 Introduction to Cryptography]]
-
 ==Security Tools and Technologies==
 
 This course is designed to educate architects and developers on the technologies available to create more secure systems. Topics include common network security technologies, cryptography, antivirus technologies, access control technologies, tokens and smart cards, biometrics, and various authentication methods.
 
-[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/123431|DES 213 Security Tools and Technologies]]
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127644|DES 213 Security Tools and Technologies]]
 
 //Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
 

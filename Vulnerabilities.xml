@@ -2,6 +2,64 @@
 <guidanceExplorer>
   <library name="be5273b1-d682-4361-99d9-6204f2d47eb7" caption="Vulnerabilities">
     <items />
-    <libraryStructure />
+    <libraryStructure>
+      <folder folderId="c53ab3f8-ec69-4856-8a20-3aa3c68ce053" caption="OWASP Top 10 2013">
+        <view id="90bbf77c-c2fb-402e-9511-b35903b04030" caption="A1-Injection" creationDate="2014-04-02T11:53:13.2088+00:00">
+          <items>
+            <item>5869ac6a-0a19-4541-ac8f-0d74e09f3156</item>
+            <item>8eba1b70-1b1a-4810-a819-1c212cf33099</item>
+            <item>94e52aca-06b6-4747-9bc9-f0149208f18c</item>
+            <item>c4914e51-2609-4edc-8133-31491f1b03c0</item>
+            <item>5ef5eea8-07c2-41de-80f9-7f62aaf0e3c8</item>
+          </items>
+        </view>
+        <view id="c045c767-1360-4455-baa1-93a08cd01566" caption="A2-Broken Authentication and Session Management" creationDate="2014-04-02T11:53:39.0268+00:00">
+          <items>
+            <item>57829386-5df5-4f7f-993a-3552ab3a292c</item>
+            <item>6d9c6ae8-f88a-408c-80d2-1c8a801cbc6b</item>
+            <item>7f9f3bce-a716-42fc-9f5b-2e452346743f</item>
+            <item>ad57c433-709e-4958-985c-4fd6e69e81b8</item>
+            <item>fbd326f5-b3fc-4d40-b562-19ec7299f892</item>
+            <item>fd3db9ad-33b8-41af-aba9-fc5fb12bb562</item>
+          </items>
+        </view>
+        <view id="15907acb-b64e-43cf-b90e-1341e3f0a038" caption="A3-Cross-Site Scripting (XSS)" creationDate="2014-04-02T11:54:04.018+00:00">
+          <items>
+            <item>683d33a8-7979-4307-8cf0-3a82457f9f47</item>
+          </items>
+        </view>
+        <view id="ddc3b05d-290c-4f6d-9586-ffee479bcd91" caption="A4-Insecure Direct Object References" creationDate="2014-04-02T11:54:39.3988+00:00">
+          <items />
+        </view>
+        <view id="e5dd0783-29cf-464b-b5bb-684b9d1f75f1" caption="A5-Security Misconfiguration" creationDate="2014-04-02T11:55:03.1732+00:00">
+          <items />
+        </view>
+        <view id="4eb415d6-1e3b-4bdc-a062-d0c07bb7a970" caption="A6-Sensitive Data Exposure" creationDate="2014-04-02T11:55:16.7296+00:00">
+          <items>
+            <item>17ecc589-9be2-4429-8dc4-9f61556f63b1</item>
+            <item>57829386-5df5-4f7f-993a-3552ab3a292c</item>
+            <item>6b5c9bf9-5d45-4192-a2da-3194ddf3416b</item>
+            <item>b2211d6a-c90a-4a42-8586-b364c3630d2c</item>
+            <item>b2e4cadd-9cac-42c5-9740-eba332d64ee5</item>
+          </items>
+        </view>
+        <view id="03a92311-a4da-42bf-88e8-0309f1f7a094" caption="A7-Missing Function Level Access Control" creationDate="2014-04-02T11:55:30.364+00:00">
+          <items />
+        </view>
+        <view id="8eeb651d-2c75-4a10-a811-e0bb8501d0f9" caption="A8-Cross-Site Request Forgery (CSRF)" creationDate="2014-04-02T11:55:52.672+00:00">
+          <items>
+            <item>62f78eb2-9eba-484c-ade3-7b54c2df9e5a</item>
+          </items>
+        </view>
+        <view id="2578658c-a73d-4194-b7ff-bf734577a735" caption="A9-Using Components with Known Vulnerabilities" creationDate="2014-04-02T11:56:05.1832+00:00">
+          <items />
+        </view>
+        <view id="9d84eb41-831d-4502-962e-117a4461daa0" caption="A10-Unvalidated Redirects and Forwards" creationDate="2014-04-02T11:56:16.5868+00:00">
+          <items>
+            <item>90608236-847e-47ff-bb8f-b551297a25af</item>
+          </items>
+        </view>
+      </folder>
+    </libraryStructure>
   </library>
 </guidanceExplorer>

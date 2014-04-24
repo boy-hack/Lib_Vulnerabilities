@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>f93eca13-f40e-4975-8c2c-d84829947672</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>XPath Injection</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>XPath Injection</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+XPath injection is a type of vulnerability that allows attackers to execute arbitrary queries on XML databases. XPath injection vulnerabilities are similar to SQL injection vulnerabilities, but they affect XML databases instead of SQL databases. XPath injection is often more dangerous than SQL injection, because permissions are not enforced and the malicious queries can access every part of the XML documents. 
+
+XPath injection applies to any application that uses XPath to query XML documents. 
+
+=Impact=
+XPath injection attacks may allow an attacker to retrieve, manipulate, or destroy data stored in XML documents. The exact impact depends on the type of XML data that is exposed via XPath injection. If authentication data is exposed, the attacker is able to take over any user account. By taking over the administrator's account, the attacker is able to take full control of the application. 
+
+=Countermeasures=
+To prevent this vulnerability, validate all input and use parameterized APIs if possible. 
+
+* [[b531d29c-86f7-4812-90ce-5f3f0f780aba|Validate Input from All Sources]]
+
+=Application Check=
+To check for adequate protection against this vulnerability, find all code that uses XPath queries and make sure it does not include unvalidated user input.
+
+* [[7f8deb21-cd52-41be-80b4-8897612021dc|Input from All Sources Is Validated]]]]></Data>
+  </Content>
+</TeamMentor_Article>

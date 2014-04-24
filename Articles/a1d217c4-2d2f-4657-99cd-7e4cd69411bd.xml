@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>a1d217c4-2d2f-4657-99cd-7e4cd69411bd</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Path Traversal</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology>C++</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Path Traversal</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+Some applications allow the user to choose which files to access. Some of these applications don't sufficiently validate the selected file path. This path traversal vulnerability allows an attacker to access files outside of the locations authorized by the application. 
+
+Path traversal vulnerabilities typically affect web applications. 
+
+=Impact=
+Using path traversal, an attacker is able to access files outside of the scope intended by the application. The attacker may then access sensitive operating system files and application configuration files that include connection strings, application source code, and other sensitive data. The attacker will usually attempt to leverage the information gathered to take full control of the application or the application server.
+
+=Countermeasures=
+To prevent this problem, canonicalize all file paths and name input, validate all input, and perform access control checks for all filesystem access.
+
+* [[004526a6-5b2f-4094-94fa-a80d818c0a41|Canonicalize All Input Used to Identify Resources]]
+
+* [[a8eb9762-08f6-4e61-afa7-23386cbca281|Validate All Input]]
+
+* [[983726cb-b3a5-4e23-af5f-04d64e95a59f|Perform Access Control Checks for Any Filesystem Access]]
+
+* [[da2ef63c-2068-41a2-a096-564da21ead6a|Use Reference Maps to Access Objects]]
+
+==Application Check=
+To check for adequate protection against this vulnerability, ensure that all file path and name input is canonicalized, all input is validated, and access control checks are performed for all filesystem access.
+
+* [[fa1c9336-4e98-4970-8c77-535a20a2f2a9|All Input Used to Identify Resources Is Canonicalized]]
+
+* [[8d8c24b0-096b-43f4-9391-9b293313a0e8|All Input Is Validated]]
+
+* [[70a45962-ca20-4795-bd0c-032178332ece|Access Control Checks Are Performed for All Filesystem Access]]
+
+* [[b86589e0-1cba-4b09-8746-84d6db219e24|Reference Maps Are Used to Access Objects]]]]></Data>
+  </Content>
+</TeamMentor_Article>

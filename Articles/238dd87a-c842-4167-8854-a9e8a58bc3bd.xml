@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>238dd87a-c842-4167-8854-a9e8a58bc3bd</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Path Manipulation</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Path Manipulation</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+
+Some applications allow the user to choose what files to access. Some of these applications don't sufficiently validate the selected file path. This path traversal vulnerability allows an attacker to access files outside of the locations authorized by the application. Path traversal vulnerabilities typically affect web applications. 
+
+=Impact=
+
+Using path traversal, an attacker is able to access files outside of the scope intended by the application. The attacker may then access sensitive operating system files, and application configuration files that include connection strings, application source code, and other sensitive data. The attacker will usually attempt to leverage the information gathered to take full control of the application or the application server. 
+
+=Countermeasures=
+
+To prevent this problem, canonicalize all file path and name input, validate all input, perform access control checks for any filesystem access, use reference maps to access objects, and disable directory browsing. 
+
+* [[d7baa268-7684-4f8f-a4e7-96d9a158e47c|Canonicalize All File Path and Name Input]]
+
+* [[b531d29c-86f7-4812-90ce-5f3f0f780aba|Validate Input from All Sources]]
+
+* [[92839e91-8f79-45fb-9b8d-76fc9c814fea|Check Access Control Permissions When Referencing Objects]]
+
+* [[b4a87891-a19a-41be-a1a3-f8a13c7f4881|Use Indirect Object References]]
+
+* [[fd675679-e8ad-40fc-bac4-d56fc440bc00|Disable Directory Browsing]]
+
+=Application Check=
+
+To check for adequate protection against this vulnerability, ensure that all file path and name input is canonicalized, all input is validated, access control checks are performed for all filesystem access, and directory browsing is disabled. 
+
+* [[4e9ccc32-97e6-441e-8d0c-9e969c8634ab|All File Name and Path Input Is Canonicalized]]
+
+* [[7f8deb21-cd52-41be-80b4-8897612021dc|Input from All Sources Is Validated]]
+
+* [[f3747faf-6e0b-43af-ae92-ed3736be390a|Access Control Permissions Are Checked When Referencing Objects]]
+
+* [[54ea1759-e5e8-4eee-84cc-67607fef0c30|Indirect Object References Are Used]]
+
+* [[65e70f79-645d-415c-9e71-9cff045cc1c4|Directory Browsing Is Disabled]]]]></Data>
+  </Content>
+</TeamMentor_Article>

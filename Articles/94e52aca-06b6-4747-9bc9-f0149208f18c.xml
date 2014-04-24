@@ -33,6 +33,8 @@ To check for adequate protection against this vulnerability, find all code that 
 =Specific Technologies
 
 * [[ea00a8ee-1248-42b5-9954-439a93fb14d8|ASP.NET Command Injection]]
-* [[2e03d087-3614-4927-8d20-d9efc3f7bbc4|Java Command Injection]]]]></Data>
+* [[2e03d087-3614-4927-8d20-d9efc3f7bbc4|Java Command Injection]]
+* [[db5bc41d-c414-497b-a7cf-2d63e7720fc6|C++ Command Injection]]
+* [[9178de03-1ccd-4987-b4e1-6db7a164fc4c|PHP Command Injection]]]]></Data>
   </Content>
 </TeamMentor_Article>

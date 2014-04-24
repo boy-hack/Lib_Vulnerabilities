@@ -36,6 +36,7 @@ To check for adequate protection against this vulnerability, make sure that poin
 
 =Specific Technologies=
 
+* [[0222317d-61d3-4b11-955e-247bb66eb50a|Java Null Dereference]]
 * [[ca78ad0b-1460-4884-a8f5-b31c864d7976|C++ Null Dereference]]]]></Data>
   </Content>
 </TeamMentor_Article>

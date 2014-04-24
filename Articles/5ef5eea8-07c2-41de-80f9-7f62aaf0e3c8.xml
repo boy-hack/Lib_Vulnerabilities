@@ -32,6 +32,8 @@ To check for adequate protection against this vulnerability, find all code that 
 
 =Specific Technologies
 
-* [[c2ab8f50-3b6b-47a8-b530-c9a705bdf6c8|ASP.NET XPath Injection]]]]></Data>
+* [[c2ab8f50-3b6b-47a8-b530-c9a705bdf6c8|ASP.NET XPath Injection]]
+* [[f93eca13-f40e-4975-8c2c-d84829947672|Java XPath Injection]]
+* [[1a89b5be-d8eb-4948-9e87-079fa6bf8320|PHP XPath Injection]]]]></Data>
   </Content>
 </TeamMentor_Article>

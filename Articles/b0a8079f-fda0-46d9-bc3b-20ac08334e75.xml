@@ -28,6 +28,7 @@ To prevent this problem, canonicalize all file paths and name input, validate al
 =Specific Technologies
 
 * [[ee22e5e0-0953-4276-b0e6-955becda5ee8|ASP.NET Path Traversal]]
+* [[a1d217c4-2d2f-4657-99cd-7e4cd69411bd|C++ Path Traversal]]
 * [[b88255fa-86f1-4d3b-9f7f-66bc144e985c|PHP Path Traversal]]]]></Data>
   </Content>
 </TeamMentor_Article>

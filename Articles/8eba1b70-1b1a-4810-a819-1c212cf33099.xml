@@ -33,6 +33,7 @@ To check for adequate protection against this vulnerability, find all code that 
 =Specific Technologies
 
 * [[26cf3a5c-3bbd-4239-b74f-f776df950ac8|ASP.NET LDAP Injection]]
-* [[418cfb77-5d0a-4fd9-9825-1732cf40070d|Java LDAP Injection]]]]></Data>
+* [[418cfb77-5d0a-4fd9-9825-1732cf40070d|Java LDAP Injection]]
+* [[7fc7f4f3-2b0b-4d48-a18a-1f189361b651|C++ LDAP Injection]]]]></Data>
   </Content>
 </TeamMentor_Article>

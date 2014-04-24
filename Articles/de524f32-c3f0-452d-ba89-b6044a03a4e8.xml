@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>de524f32-c3f0-452d-ba89-b6044a03a4e8</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>File Upload</Title>
+    <Category>Authorization</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>File Upload</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+File upload vulnerabilities allow attackers to upload malicious code. (Technically, allowing users to upload anything that the application's design doesn't account for can be considered a file upload vulnerability. In practice, real file upload vulnerabilities are those that allow attackers to upload and execute malicious code.) 
+
+The principle of Web Applications is that application files are executed as code when they are accessed via the Web server. If an attacker can upload his own application files and execute them by accessing them via the Web server, he can compromise the application. File upload vulnerabilities occur when the application allows users to upload files to Web accessible locations without placing sufficient restrictions on the kinds of files that can be uploaded. 
+
+File upload issues affect all Web Applications that allow users to upload files.
+
+=Impact=
+File upload vulnerabilites allow attackers to execute arbitrary code with the privileges of the application server. Using this vulnerability, the attacker will usually upload a small backdoor that will give him easy access to the application server's functions, such as performing file and database operations, executing operating system commands, executing arbitrary code that is sent in HTTP requests, and executing additional exploits. 
+
+After installing the initial backdoor, the attacker is likely to use that backdoor to upload additional hacking tools to the server, depending on what the attacker wants to do. At that point, the application and all application data are compromised. If the server is not properly updated and hardened, the server itself is likely to be compromised as well. 
+
+After gaining as much access as possible, the attacker will typically evaluate the value of the compromised application and server and decide how to abuse it for maximum profit, which usually translates into maximum damage for the owner of the application and the server. Some examples of abuse are: redirecting the application's users to exploit packs, using the server to send spam, defacing the application, leaking application data, selling application data on the black market, modifying application code to spy on users, using the server as a proxy for other attacks, using the server as a part of a DDoS botnet to attack other Internet hosts, etc.
+
+=Countermeasures=
+File upload vulnerabilities can be prevented by storing uploaded files outside of web root and scrambling names of uploaded files.
+
+* [[34fdc769-2284-4ceb-83c8-69b276c3ae16|Store Uploaded Files Outside of Web Root]]
+
+* [[ef3540f4-3ab7-4e17-a9bd-c30bac1f7c72|Scramble Names of Uploaded Files]]
+
+=Application Check=
+To check for adequate protection against file upload vulnerabilities, check if uploaded files are stored outside of web root and if names of uploaded files are scrambled.
+
+* [[bb3388d3-b96e-4937-a527-c23f8b96f926|Uploaded Files Are Stored Outside of Root]]
+
+* [[9bdec757-76ad-4924-a18b-91ab7ec1e526|Names of Uploaded Files Are Scrambled]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

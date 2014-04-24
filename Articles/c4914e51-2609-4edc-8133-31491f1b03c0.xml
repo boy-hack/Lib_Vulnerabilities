@@ -34,6 +34,7 @@ To check for adequate protection against this vulnerability, find all queries ge
 
 * [[5fdf23f4-8ff9-4043-a3bb-2d7d10704b0e|ASP.NET SQL Injection]]
 * [[c92edd0d-f59a-4dd5-bed3-48a2190c895f|Java SQL Injection]]
+* [[a72f6958-7f22-4de1-8504-8106a9c302a4|C++ SQL Injection]]
 * [[2abc6c1b-dd8b-41d3-ad24-c717807e43e9|PHP SQL Injection]]
 
 ]]></Data>

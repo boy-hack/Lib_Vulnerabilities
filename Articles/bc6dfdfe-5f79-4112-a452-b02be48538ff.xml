@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>bc6dfdfe-5f79-4112-a452-b02be48538ff</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Server Misconfiguration</Title>
+    <Category>Deployment Considerations</Category>
+    <Phase>Deployment</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Server Misconfiguration</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Server misconfiguration vulnerabilities occur when the server that hosts the web application is not configured properly. 
+
+Some types of server misconfiguration might not provide any dangerous capabilities to attackers by themselves, but might enable other attacks to work if additional vulnerabilities are present. (Since server misconfiguration vulnerabilities are not exploitable on their own, some people may overlook them on the assumption that they are therefore not dangerous.)
+
+Some types of server misconfiguration might allow attackers to take over the server. Once an attacker takes over the server, they gain access to all application data, can attack application users, and use the server as a part of a botnet. 
+
+Different server platforms have different security settings and therefore different potential for server misconfiguration, but generally server misconfiguration results from turning off security features or assigning weak values to security settings.
+
+All applications are potentially affected by server misconfiguration vulnerabilities.
+
+==Impact==
+
+The impact of a server misconfiguration vulnerability can range from hypothetical to extremely dangerous.  It depends on the nature of the misconfigured settings and the additional vulnerabilities that are present.
+
+For example, a server on an internal network might have open file shares that give access to all authenticated users on the local network and contain sensitive data. An administrator might feel that this is safe to do because unauthenticated users on the local network can't gain access to the files and users from the Internet can't access the internal network. 
+
+However, if an attacker compromises an Internet-exposed server that happens to be on the local network and is able to execute commands on that server with the privileges of an authenticated user, the attacker will be able to access the sensitive files on the network file server. If the attacker couldn't compromise the Internet-exposed server, they wouldn't be able to gain access to the local network file server. In this case, allowing authenticated users on the local network to access a file share is a server misconfiguration vulnerability which ultimately allows the attacker to gain access to the sensitive files. 
+
+
+==Countermeasures==
+
+To prevent server misconfiguration vulnerabilities, harden the server and install all the latest patches.
+
+* [[e7843706-203c-4e35-b89c-f318fa5ab6e6|Harden the Server]]
+* [[4541c205-9ae2-4ceb-9796-572a4171ae45|Install Patches]]
+
+==Application Check==
+
+To verify that server misconfiguration vulnerabilities are prevented, make sure that the server is hardened and all the latest patches are installed.
+
+* [[fee448aa-edac-408d-9d9c-dab4fcacd29f|The Server Is Hardened]]
+* [[f034a078-e585-496f-b29b-147796159266|Patches Are Installed]]
+
+==Additional Resources==
+
+* For more information about server misconfiguration, see http://projects.webappsec.org/w/page/13246959/Server%20Misconfiguration
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

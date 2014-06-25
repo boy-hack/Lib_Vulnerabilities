@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>e340b504-1fb3-4325-9f16-b2f6024f6bdb</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Using Components with Known Vulnerabilities</Title>
+    <Category>Other</Category>
+    <Phase>Implementation</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Using Components with Known Vulnerabilities</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+“Using components with known vulnerabilities” refers to an application that uses third-party code that contains known vulnerabilities. The result is that the vulnerabilities in the third-party code become vulnerabilities in the application. 
+
+This type of vulnerability affects all applications.
+
+==Impact==
+
+The impact of using components with known vulnerabilities depends on the nature of the vulnerabilities. Usually, this refers to code that is vulnerable to code injection, command injection or SQL injection. The impact in such scenarios is usually full system compromise. On top of that danger, attackers often scan for these types of vulnerabilities with automated tools, resulting in many non-targeted compromises. In other words, your application might get attacked simply because an attacker found a vulnerable component when scanning a large range of potential targets.
+
+==Countermeasures==
+
+To prevent using components with known vulnerabilities, install patches.
+
+* [[4541c205-9ae2-4ceb-9796-572a4171ae45|Install Patches]]
+
+==Application Check==
+
+To make sure that using components with known vulnerabilities is prevented, verify that patches are installed.
+
+* [[f034a078-e585-496f-b29b-147796159266|Patches Are Installed]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

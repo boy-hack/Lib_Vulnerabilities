@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>c1116151-72d2-4210-a57b-574c26c5a9be</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Application Misconfiguration</Title>
+    <Category>Deployment Considerations</Category>
+    <Phase>Deployment</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Application Misconfiguration</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Application misconfiguration vulnerabilities occur when an application is not configured properly by the user. Examples include weak passwords, weak access control permissions, exposed configuration settings, exposed authentication stores, unnecessarily enabled functions and services, and exposed administration interfaces. Attackers usually abuse application misconfiguration vulnerabilities to gain administrative access to the application, and then leverage this access to execute arbitrary code with the privileges of the web application on the server.
+
+All applications are affected by application misconfiguration vulnerabilities. Note that it is usually users/administrators/customers that cause this vulnerability type and are responsible for preventing it, rather than the developers. The responsibility of the developers is to document the security implications of all settings that affect the application’s information assurance posture (even if this documentation may go unread or unheeded). 
+
+==Impact==
+
+The impact of an application misconfiguration vulnerability depends on its specific circumstances. Often, an attacker will attempt to gain administrative access to the application. For example, an attacker might attempt to recover exposed authentication credentials and then use them to gain unauthorized access to the application. The attacker could then attempt to leverage the elevated access privileges to inject malicious code into the application code or data, in order to gain full control over the application and execute arbitrary commands on the server with the privileges of the compromised application.
+
+==Countermeasures==
+
+To prevent application misconfiguration vulnerabilities, document the security implications of all configurable settings that affect the information assurance posture of the application.
+
+==Application Check==
+
+To verify that application misconfiguration vulnerabilities are prevented, verify that the security implications of all configurable settings that affect the information assurance posture of the application are documented.
+
+==Specific Technologies==
+
+* [[dcedcd75-908a-466b-8777-1e38f2799599|ASP.NET Application Misconfiguration]]
+* [[ff3e01bc-5152-46b9-aa8b-a0883ef3526d|Java Application Misconfiguration]]
+* [[83309935-667b-465f-b22e-cef738414d04|C++ Application Misconfiguration]]
+* [[618a57de-3962-4025-86a0-a8e60c2fddd8|PHP Application Misconfiguration]]]]></Data>
+  </Content>
+</TeamMentor_Article>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>b6888db3-516e-4f62-994c-240e652ecb31</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Insufficient Authorization</Title>
+    <Category>Authorization</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Insufficient Authorization</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Insufficient authorization vulnerabilities occur when the application allows a user to perform an action without checking if the user has sufficient privileges to carry it out. This allows attackers to carry out actions that the designers of the application did not intend for them to be able to do. For example, if privileges are not checked properly, an attacker with an unprivileged account might be able to upload files to the server, even if the application should not allow that by design.
+
+All applications are affected by insufficient authorization vulnerabilities.
+
+==Impact==
+
+The impact of an insufficient authorization vulnerability depends on the action that the attacker is able to perform. Essentially, the attacker will be able to do whatever the application does not prevent them from doing. The attacker will usually attempt  to take full control of the application by injecting malicious code into the application code or data, or by taking over user accounts.
+
+One of the most common and serious types of insufficient authorization vulnerabilities is when an application allows unauthorized users to upload arbitrary files. In this scenario, an attacker is able to upload malicious code to the server and execute arbitrary code on the server with the privileges of the affected application. This compromises all application data, and results in the ability to abuse the application to attack its users, and use the server as a part of a botnet.
+
+Another common type of insufficient authorization vulnerability is when the application fails to sufficiently protect account management functions. This allows an attacker to change account details, take over accounts, and do anything that the compromised accounts can do.
+
+A less serious example of insufficient authorization is when valuable data can be accessed by underprivileged users. For example, an unauthenticated attacker might be able to download sensitive documents from a corporate server, or a person might be able to download music from a commercial site without paying. 
+
+Other types of insufficient authorization vulnerabilities exist. They tend to be specific to the particular applications and operations that are not sufficiently protected by authorization controls.
+
+==Countermeasures==
+
+To prevent insufficient authorization vulnerabilities, check access control permissions before performing any sensitive operations and use role-based authorization.
+
+==Application Check==
+
+To make sure that insufficient authorization vulnerabilities are prevented, verify that access control permissions are checked for all sensitive operations and that role-based authorization is used.
+
+==Specific Technologies==
+
+* [[d639e1ab-088f-4ddd-bf9a-e931ce781277|ASP.NET Insufficient Authorization]]
+* [[8ff0ee8d-4271-4217-8853-05ae12afcf47|Java Insufficient Authorization]]
+* [[5ea74c71-cd09-4d6a-ac02-fdb5f329f353|PHP Insufficient Authorization]]]]></Data>
+  </Content>
+</TeamMentor_Article>

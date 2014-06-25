@@ -4,12 +4,12 @@
     <Id>8ea9bdd9-de4f-46d7-9fd2-b5be2a50a6eb</Id>
     <Id_History>6ae71499-095c-49bd-bed0-4e08303a4324,</Id_History>
     <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
-    <Title>Cross Site Request Forgery Attack</Title>
+    <Title>Cross-Site Request Forgery Attack</Title>
     <Category>Application State</Category>
     <Phase>Implementation</Phase>
     <Technology> Any</Technology>
     <Type>Attack</Type>
-    <DirectLink>Cross Site Request Forgery Attack</DirectLink>
+    <DirectLink>Cross-Site Request Forgery Attack</DirectLink>
     <Tag />
     <Security_Demand />
     <Author />

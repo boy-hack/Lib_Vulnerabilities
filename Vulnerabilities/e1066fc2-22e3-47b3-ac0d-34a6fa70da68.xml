@@ -52,7 +52,7 @@ Encode input included in output:
 To check for adequate protection against this vulnerability, ensure that all input is validated, and that all input included in output is encoded.
 
 All input is validated:
-* [[b531d29c-86f7-4812-90ce-5f3f0f780aba|Input from All Sources Is Validated]]
+* [[7f8deb21-cd52-41be-80b4-8897612021dc|Input from All Sources Is Validated]]
 * [[61869793-2c10-40c0-b82a-babcc0312697|Input Is Validated for Length, Range, Format And Type]]
 
 Input included in output is encoded:

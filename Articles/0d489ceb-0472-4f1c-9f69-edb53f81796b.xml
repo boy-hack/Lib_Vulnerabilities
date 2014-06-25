@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>0d489ceb-0472-4f1c-9f69-edb53f81796b</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Improper Input Handling</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Improper Input Handling</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Improper input handling vulnerabilities occur when the application does not properly validate or encode user input. (The difference between validation and encoding is that validation will reject input data that does not match the expected format, while encoding will take whatever data passes validation and turn it into a form that cannot be used to exploit additional vulnerabilities.) 
+
+If the application does not validate user input, an attacker can pass malicious data to the application to exploit additional vulnerabilities that might be present in the application. 
+
+If data is not encoded properly when it is being processed, it might include exploit code that targets additional vulnerabilities within the application. 
+
+If data is not encoded properly when it is being displayed, the data might include exploit code that attacks the user of the application. 
+
+In general, improper input handling allows additional vulnerabilities to be exploited, while proper input handling prevents them from being exploited. Proper input handling should always be implemented. It is the first line of defense for application security and is effective against most common vulnerabilities. 
+
+All applications are affected by improper input handling vulnerabilities. Improper input handling vulnerabilities are one of the most common types of vulnerabilities and frequently result in additional vulnerabilities.
+
+==Impact==
+
+The overall impact of improper input handling vulnerabilities depends on the additional vulnerabilities that are present in the application. The immediate impact  is that it allows additional vulnerabilities to be exploited. If there are no additional vulnerabilities, then the application itself will not be affected. 
+
+However, if input data is not encoded properly before being displayed to the users, the data might contain exploit code that attacks the users, usually in the form of a cross-site scripting (XSS) attack. A successful attack on the users typically results in the attacker gaining some degree of access to the application itself. If the attacker gains sufficient access to the application as a result of compromising the systems of the users, the attacker will be able to take over the application. 
+
+If input is not properly validated, then the attacker will be able to send exploit code to the application to trigger additional vulnerabilities. This particularly applies to injection attacks. For example, if an application has a username field and the username input is not validated, the attacker will be able to inject SQL attack strings to the vulnerable code through that field. If the input is properly validated, the attacker will not be able to pass SQL attack strings through the field, because they will not match the valid username format.
+
+If input is not properly encoded when it is being processed, then the attacker might include exploit code to the application to trigger additional vulnerabilities. For example, if an application uses parameterized APIs to encode input data that is used to query an SQL database, even if the attacker is able to smuggle SQL attack strings past validations, they will be encoded into forms that will not be interpreted as queries by the SQL driver, thus preventing SQL injection. Correct use of parameterized APIs that encode data automatically and correctly is the most effective way to prevent injection vulnerabilities, including SQL injection, command injection, code injection and cross-site scripting (XSS).
+
+==Countermeasures==
+
+To prevent improper input handling vulnerabilities, validate all input and encode all untrusted data that is going to be processed or displayed for the correct context.
+
+==Application Check==
+
+To make sure that sufficient defenses are implemented against input handling vulnerabilities, verify that all input is validated and that all untrusted data that is going to be processed or displayed is encoded for the correct context.
+
+==Specific Technologies==
+
+* [[5a5359c5-7f8d-495c-9c12-ff4e8e942213|ASP.NET Improper Input Handling]]
+* [[80537b63-2f48-4e7d-a07c-bb658b912799|Java Improper Input Handling]]
+* [[b9123429-b684-4c93-bbd1-e2f1e2881420|PHP Improper Input Handling]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

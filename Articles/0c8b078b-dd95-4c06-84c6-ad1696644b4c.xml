@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>0c8b078b-dd95-4c06-84c6-ad1696644b4c</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Insufficient Anti-automation</Title>
+    <Category>Other</Category>
+    <Phase>Implementation</Phase>
+    <Technology>C++</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Insufficient Anti-automation</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Insufficient anti-automation vulnerabilities occur when the application does not place limits on how rapidly sensitive operations can be performed. This allows an attacker to write an automatic tool that will continuously trigger sensitive operations. The goal of the attack depends on the circumstances, but is usually one of the following: causing the application to use a lot of resources to induce a denial of service condition, trying different values to guess a secret, or collecting information by accessing a large range of resources.
+
+All applications are potentially affected by insufficient anti-automation vulnerabilities.
+
+==Impact==
+
+The impact of insufficient anti-automation depends on the type of operation that can be repeatedly performed. The typical goal of the attacker is either denial of service, guessing secrets, or collecting information.
+
+Insufficient anti-automation can result in denial of service if the operation that can be automated consumes a lot of system resources. If the attacker continously triggers a computationally expensive operation, the system runs out of resources and becomes unresponsive for the duration of the attack. Text search functionality on databases tends to be commonly affected by this type of attack.
+
+Attackers frequently exploit insufficient anti-automation to guess passwords. If the login page allows rapid authentication attempts, an attacker can keep sending different authentication credentials in hopes of guessing a password and gaining access to the system. This attack vector is often successful because many people use weak passwords. Attackers usually target administrative accounts, so, when they succeed, the result is a complete compromise of the application.
+
+Insufficient anti-automation can be abused to collect information from the application. This occurs when the application displays information about a resource based on a value that is easy to predict, such as a numerical, sequential user identifier. For example, a common scenario is when an application shows information about its users based on an HTTP GET method id parameter. The attacker can write a script that will send HTTP requests with incremental id numbers and collect information about the users.
+
+==Countermeasures==
+
+To prevent insufficient anti-automation vulnerabilities, throttle sensitive and resource intensive operations.
+
+* [[70e1c64b-de31-4a71-b421-02bb9bc3a06b|Throttle Sensitive and Resource Intensive Operations]]
+
+==Application Check==
+
+To verify that insufficient anti-automation vulnerabilities are prevented, make sure that sensitive and resource intensive operations are throttled.
+
+* [[1051e478-c59a-4aca-96af-481355b309be|Sensitive and Resource Intensive Operations Are Throttled]]
+
+==Additional Resources==
+
+* For more information about insufficient anti-automation, see http://projects.webappsec.org/w/page/13246938/Insufficient%20Anti-automation
+]]></Data>
+  </Content>
+</TeamMentor_Article>

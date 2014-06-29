@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>480c9c9c-3e37-42b2-a3e6-55b46f4dc07d</Id>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Mail Command Injection</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology>PHP</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Mail Command Injection</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Mail command injection vulnerabilities occur when an application implements its own email client code and concatenates user data with email commands. There should be no reason to implement email client code in applications that are not email clients. 
+
+Most development platforms provide libraries that provide email functionality, and using these libraries will prevent mail command injection vulnerabilities. If an application implements its own email functionality in a dangerous manner, rather than using trusted third-party APIs, an attacker will be able to manipulate email sent by the application and will be able to send their own email.
+
+All applications that implement their own custom email client code instead of using trusted third-party APIs are affected by mail command injection vulnerabilities.
+
+==Impact==
+
+The impact of mail command injection vulnerabilities is that an attacker will be able to change the email that is being sent by the application to say whatever the attacker wants it to say and/or to send it to additional recipients. The most likely result is that the attacker will be able to use the vulnerable application to send spam. The attacker might also send messages to the application's users that appear to come from the application, and abuse the users' trust to trick them into doing something dangerous, like visiting a malicious site or disclosing their passwords.
+
+==Countermeasures==
+
+To prevent mail command injection vulnerabilities, validate all input and use trusted third-party APIs for email functionality.
+
+* [[c0a4f56c-1e8c-4d3a-97e2-fc9e969d5d52|Use Positive Input Validation]]
+* [[f8c45747-5896-43e2-9595-d50c357b3e42|Use Parameterized Mail APIs]]
+
+==Application Check==
+
+To verify that mail command injection vulnerabilities are prevented, make sure that all input is validated and trusted third-party APIs are used for email functionality.
+
+* [[d4129497-3a66-44d1-881e-e6f004af2e0d|Positive Input Validation Is Used]]
+* [[2a6367d8-81a1-4953-bf17-504643574215|Parameterized Mail APIs Are Used]]
+
+==Additional Resources==
+
+* For more information about mail command injection, see http://projects.webappsec.org/w/page/13246948/Mail%20Command%20Injection
+]]></Data>
+  </Content>
+</TeamMentor_Article>

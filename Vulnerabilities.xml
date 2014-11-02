@@ -4,171 +4,35 @@
     <items />
     <libraryStructure>
       <folder folderId="c53ab3f8-ec69-4856-8a20-3aa3c68ce053" caption="OWASP Top 10 2013">
-        <view id="90bbf77c-c2fb-402e-9511-b35903b04030" caption="A1-Injection" creationDate="2014-04-02T11:53:13.2088+00:00">
-          <items>
-            <item>5869ac6a-0a19-4541-ac8f-0d74e09f3156</item>
-            <item>8eba1b70-1b1a-4810-a819-1c212cf33099</item>
-            <item>94e52aca-06b6-4747-9bc9-f0149208f18c</item>
-            <item>c4914e51-2609-4edc-8133-31491f1b03c0</item>
-            <item>5ef5eea8-07c2-41de-80f9-7f62aaf0e3c8</item>
-            <item>f2568f4c-cc84-4c1d-884f-cd58483b3bbd</item>
-            <item>26cf3a5c-3bbd-4239-b74f-f776df950ac8</item>
-            <item>2e03d087-3614-4927-8d20-d9efc3f7bbc4</item>
-            <item>418cfb77-5d0a-4fd9-9825-1732cf40070d</item>
-            <item>5fdf23f4-8ff9-4043-a3bb-2d7d10704b0e</item>
-            <item>940d6e95-fc25-4e9d-8545-2262ed6e99ba</item>
-            <item>96d8cd55-3e74-4e26-a1b7-62189556df0c</item>
-            <item>a86e3035-578c-4dfe-a147-2776af6de6e1</item>
-            <item>c2ab8f50-3b6b-47a8-b530-c9a705bdf6c8</item>
-            <item>c92edd0d-f59a-4dd5-bed3-48a2190c895f</item>
-            <item>ea00a8ee-1248-42b5-9954-439a93fb14d8</item>
-            <item>1c21c884-0644-4822-868a-20bc957875f7</item>
-            <item>61db0098-48cc-4d33-9441-315b800b0647</item>
-            <item>96d2c85e-5db6-4380-b55c-798aaa3fac0b</item>
-            <item>f93eca13-f40e-4975-8c2c-d84829947672</item>
-            <item>9178de03-1ccd-4987-b4e1-6db7a164fc4c</item>
-            <item>b220c5e1-4303-4fb5-910f-82f4a7cc470a</item>
-            <item>1a89b5be-d8eb-4948-9e87-079fa6bf8320</item>
-            <item>09e95598-89b6-43b9-b910-a2f0100648ce</item>
-            <item>0c03c774-eb34-4c5e-bbbb-c231fff51eb5</item>
-            <item>6f0d3861-d0b8-4cb1-9fc3-92bb23d738e5</item>
-            <item>33f09ecd-0d56-4609-a49b-5337461a13f9</item>
-            <item>b9e5c990-5b4e-46cd-bb63-72d625fb75db</item>
-            <item>c54b70d7-11bc-4102-a4e0-f3e468d00cb0</item>
-            <item>23662293-5ddf-4a22-a5d8-e2d7186148d2</item>
-            <item>ea07a583-92f0-444e-9dd9-0026811631be</item>
-            <item>4fb356d3-4298-4430-9e47-503664f29521</item>
-            <item>393a1d1d-291f-4dc2-82f7-33ff189a830c</item>
-            <item>2abc6c1b-dd8b-41d3-ad24-c717807e43e9</item>
-          </items>
+        <view id="90bbf77c-c2fb-402e-9511-b35903b04030" caption="A1-Injection" creationDate="2014-04-02T07:53:13.2088-04:00">
+          <items />
         </view>
-        <view id="c045c767-1360-4455-baa1-93a08cd01566" caption="A2-Broken Authentication and Session Management" creationDate="2014-04-02T11:53:39.0268+00:00">
-          <items>
-            <item>57829386-5df5-4f7f-993a-3552ab3a292c</item>
-            <item>6d9c6ae8-f88a-408c-80d2-1c8a801cbc6b</item>
-            <item>7f9f3bce-a716-42fc-9f5b-2e452346743f</item>
-            <item>ad57c433-709e-4958-985c-4fd6e69e81b8</item>
-            <item>fbd326f5-b3fc-4d40-b562-19ec7299f892</item>
-            <item>fd3db9ad-33b8-41af-aba9-fc5fb12bb562</item>
-            <item>5b5754fa-53f7-467e-93c5-ff4dc8c2f32b</item>
-            <item>874d5f27-5b42-41e9-accb-141719b1a681</item>
-            <item>92bf559d-061b-4daa-be06-ee2665b1110f</item>
-            <item>acc078c3-b325-4430-a521-c91e47b40305</item>
-            <item>f3aa0389-da45-47cf-8ace-4a71d006958d</item>
-            <item>0cd0323c-88b1-4b26-87b8-f0e6bc30a47e</item>
-            <item>ed436f22-7c9f-4f44-a17c-49cb425c4d65</item>
-            <item>fd5e30e7-1584-4417-8f00-a0f363ecb3c0</item>
-            <item>40380b36-72fd-4a07-8daa-e5ec6ea1467a</item>
-            <item>3bda2bcd-f60a-44fa-80b2-37ca61b87abd</item>
-            <item>b6888db3-516e-4f62-994c-240e652ecb31</item>
-            <item>0c167dc8-c7c6-49df-a146-a46f819338cb</item>
-            <item>83394ce6-2dc3-4133-a899-5c3e2d37dbef</item>
-            <item>d639e1ab-088f-4ddd-bf9a-e931ce781277</item>
-            <item>00869e27-75c2-4ba3-a91b-d15aea30411d</item>
-            <item>8d8845fe-cc58-43a9-bd52-158f4a08ce9a</item>
-            <item>8ff0ee8d-4271-4217-8853-05ae12afcf47</item>
-            <item>c13db965-fb40-4254-a7b6-3d60c579746e</item>
-            <item>0c9061c2-8b14-4c64-8a9a-de50216a8d84</item>
-            <item>5ea74c71-cd09-4d6a-ac02-fdb5f329f353</item>
-          </items>
+        <view id="c045c767-1360-4455-baa1-93a08cd01566" caption="A2-Broken Authentication and Session Management" creationDate="2014-04-02T07:53:39.0268-04:00">
+          <items />
         </view>
-        <view id="15907acb-b64e-43cf-b90e-1341e3f0a038" caption="A3-Cross-Site Scripting (XSS)" creationDate="2014-04-02T11:54:04.018+00:00">
-          <items>
-            <item>683d33a8-7979-4307-8cf0-3a82457f9f47</item>
-            <item>937f2173-5e39-48b6-bb3a-ecfd8f052bb0</item>
-            <item>add8a099-08da-40cc-a202-5e083267cef7</item>
-            <item>e1066fc2-22e3-47b3-ac0d-34a6fa70da68</item>
-          </items>
+        <view id="15907acb-b64e-43cf-b90e-1341e3f0a038" caption="A3-Cross-Site Scripting (XSS)" creationDate="2014-04-02T07:54:04.018-04:00">
+          <items />
         </view>
-        <view id="ddc3b05d-290c-4f6d-9586-ffee479bcd91" caption="A4-Insecure Direct Object References" creationDate="2014-04-02T11:54:39.3988+00:00">
-          <items>
-            <item>01096023-0981-42af-ab9d-0af26a78d63d</item>
-            <item>d71c95d1-b784-4d2b-bf3f-26689e7ce00f</item>
-            <item>739da5e6-0a10-4794-9759-5b6884478871</item>
-            <item>c4b1b091-a5c5-4422-a3fa-af13c5f5e613</item>
-          </items>
+        <view id="ddc3b05d-290c-4f6d-9586-ffee479bcd91" caption="A4-Insecure Direct Object References" creationDate="2014-04-02T07:54:39.3988-04:00">
+          <items />
         </view>
-        <view id="e5dd0783-29cf-464b-b5bb-684b9d1f75f1" caption="A5-Security Misconfiguration" creationDate="2014-04-02T11:55:03.1732+00:00">
-          <items>
-            <item>c1116151-72d2-4210-a57b-574c26c5a9be</item>
-            <item>dcedcd75-908a-466b-8777-1e38f2799599</item>
-            <item>ff3e01bc-5152-46b9-aa8b-a0883ef3526d</item>
-            <item>618a57de-3962-4025-86a0-a8e60c2fddd8</item>
-            <item>d58be955-efea-4dd0-9f7a-d423f9d84c7b</item>
-            <item>943fcf2e-ce5b-490d-98b7-6da15c1efc13</item>
-            <item>0a093ac2-c3ed-4fe3-b4a2-f178c3d0ecb6</item>
-            <item>5041b7f7-5cf9-4653-809c-c2ff558ccb1c</item>
-            <item>7172cbb4-689e-453c-ba3c-984d43adf5af</item>
-            <item>151c5d49-b59a-45cc-9d04-32c505b7c75a</item>
-            <item>bc6dfdfe-5f79-4112-a452-b02be48538ff</item>
-            <item>6a1a01e1-8730-450a-946c-b9fd5483f9aa</item>
-            <item>9ed972ea-62fa-4231-9315-53d9ccc2ab28</item>
-            <item>0f313b4b-0d19-4255-aef2-725e5d4b89b5</item>
-            <item>adb3a363-0742-4172-b87a-984050299980</item>
-            <item>57066928-62c5-41d7-8ca2-6ad0e09435fb</item>
-            <item>aaa07437-2bea-41e2-aeeb-557e460e145e</item>
-            <item>f60eabf7-737b-4883-ac71-333db910b2e1</item>
-            <item>57cf2869-9b92-43f1-8b55-94beaa8bdcba</item>
-            <item>7479dfef-3217-4f35-badb-3827c25b7327</item>
-          </items>
+        <view id="e5dd0783-29cf-464b-b5bb-684b9d1f75f1" caption="A5-Security Misconfiguration" creationDate="2014-04-02T07:55:03.1732-04:00">
+          <items />
         </view>
-        <view id="4eb415d6-1e3b-4bdc-a062-d0c07bb7a970" caption="A6-Sensitive Data Exposure" creationDate="2014-04-02T11:55:16.7296+00:00">
-          <items>
-            <item>17ecc589-9be2-4429-8dc4-9f61556f63b1</item>
-            <item>57829386-5df5-4f7f-993a-3552ab3a292c</item>
-            <item>6b5c9bf9-5d45-4192-a2da-3194ddf3416b</item>
-            <item>b2211d6a-c90a-4a42-8586-b364c3630d2c</item>
-            <item>b2e4cadd-9cac-42c5-9740-eba332d64ee5</item>
-            <item>d2455286-ddf5-474b-b8c9-7cede24ef31a</item>
-            <item>066bf23c-37c9-4bff-9ab9-5fa9bd59449b</item>
-            <item>315ef761-e5ea-4349-bc2e-48af1b4775c6</item>
-            <item>6cbabed6-4bd2-4f16-a955-e585182b06b3</item>
-            <item>baf9e37f-ae0c-4f38-99d4-1942aaefef44</item>
-            <item>e724620c-b128-403f-b1a0-e9261c8375e6</item>
-            <item>fd5e30e7-1584-4417-8f00-a0f363ecb3c0</item>
-            <item>829e3767-afca-4485-9fbb-8c7ab3be3061</item>
-            <item>9ed972ea-62fa-4231-9315-53d9ccc2ab28</item>
-            <item>0f313b4b-0d19-4255-aef2-725e5d4b89b5</item>
-            <item>adb3a363-0742-4172-b87a-984050299980</item>
-            <item>57066928-62c5-41d7-8ca2-6ad0e09435fb</item>
-            <item>aaa07437-2bea-41e2-aeeb-557e460e145e</item>
-            <item>f60eabf7-737b-4883-ac71-333db910b2e1</item>
-            <item>57cf2869-9b92-43f1-8b55-94beaa8bdcba</item>
-            <item>7479dfef-3217-4f35-badb-3827c25b7327</item>
-            <item>7f9f3bce-a716-42fc-9f5b-2e452346743f</item>
-          </items>
+        <view id="4eb415d6-1e3b-4bdc-a062-d0c07bb7a970" caption="A6-Sensitive Data Exposure" creationDate="2014-04-02T07:55:16.7296-04:00">
+          <items />
         </view>
-        <view id="03a92311-a4da-42bf-88e8-0309f1f7a094" caption="A7-Missing Function Level Access Control" creationDate="2014-04-02T11:55:30.364+00:00">
-          <items>
-            <item>667a7b36-4535-427e-8196-4c396802c1d8</item>
-            <item>d1346385-f9af-4192-8fd1-e1f2f8e8c7d3</item>
-            <item>5278856a-e94a-4c76-97bf-c2850ec6acdb</item>
-            <item>8189ae58-d5d2-4a69-b527-3ab6cc5708a7</item>
-          </items>
+        <view id="03a92311-a4da-42bf-88e8-0309f1f7a094" caption="A7-Missing Function Level Access Control" creationDate="2014-04-02T07:55:30.364-04:00">
+          <items />
         </view>
-        <view id="8eeb651d-2c75-4a10-a811-e0bb8501d0f9" caption="A8-Cross-Site Request Forgery (CSRF)" creationDate="2014-04-02T11:55:52.672+00:00">
-          <items>
-            <item>62f78eb2-9eba-484c-ade3-7b54c2df9e5a</item>
-            <item>11baa288-69b3-4bbd-9133-e9675228e75d</item>
-            <item>36d0c6a6-8a5c-4586-b0d5-917a9aff9557</item>
-            <item>f4f6aab8-f22e-4189-98bd-0a879cdedc40</item>
-          </items>
+        <view id="8eeb651d-2c75-4a10-a811-e0bb8501d0f9" caption="A8-Cross-Site Request Forgery (CSRF)" creationDate="2014-04-02T07:55:52.672-04:00">
+          <items />
         </view>
-        <view id="2578658c-a73d-4194-b7ff-bf734577a735" caption="A9-Using Components with Known Vulnerabilities" creationDate="2014-04-02T11:56:05.1832+00:00">
-          <items>
-            <item>876982a3-c3ca-46f4-92c1-2d427c28941f</item>
-            <item>3f11bcea-3331-4a23-9f2b-ce5a0e8c241e</item>
-            <item>e340b504-1fb3-4325-9f16-b2f6024f6bdb</item>
-            <item>e668bb37-d3a2-414e-9ed0-35ef7e8bc30d</item>
-          </items>
+        <view id="2578658c-a73d-4194-b7ff-bf734577a735" caption="A9-Using Components with Known Vulnerabilities" creationDate="2014-04-02T07:56:05.1832-04:00">
+          <items />
         </view>
-        <view id="9d84eb41-831d-4502-962e-117a4461daa0" caption="A10-Unvalidated Redirects and Forwards" creationDate="2014-04-02T11:56:16.5868+00:00">
-          <items>
-            <item>90608236-847e-47ff-bb8f-b551297a25af</item>
-            <item>279ad567-2b34-44ce-8e56-8d96770ba500</item>
-            <item>79aaa6c6-54bd-4a98-9649-77f81312085e</item>
-            <item>fdd2fa70-27b7-4399-ba3c-3b0b1bc7360b</item>
-          </items>
+        <view id="9d84eb41-831d-4502-962e-117a4461daa0" caption="A10-Unvalidated Redirects and Forwards" creationDate="2014-04-02T07:56:16.5868-04:00">
+          <items />
         </view>
       </folder>
     </libraryStructure>

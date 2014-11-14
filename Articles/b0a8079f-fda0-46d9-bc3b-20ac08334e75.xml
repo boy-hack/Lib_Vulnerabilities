@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>b0a8079f-fda0-46d9-bc3b-20ac08334e75</Id>
+    <Id_History>b0a8079f-fda0-46d9-bc3b-20ac08334e75,167ad56c-5ae0-44e3-8bab-b9c02bb105cc,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Path Traversal</Title>
+    <Category>Authorization</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Path Traversal</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Some applications allow the user to choose what files to access. Some of these applications don't validate the selected file path sufficiently. This path traversal vulnerability allows an attacker to access files outside of the locations authorized by the application. Path traversal vulnerabilities typically affect web applications.  
+
+=Impact
+
+Using path traversal, an attacker is able to access files outside of the scope allowed by the application. The attacker may then access sensitive operating system files, and application configuration files that include connection strings, application source code, and other sensitive data. The attacker will usually attempt to leverage information gathered using path traversal to take full control of the application or the application server. 
+
+=Countermeasures
+To prevent this problem, canonicalize all file paths and name input, validate all input, and perform access control checks for any filesystem access.
+
+=Specific Technologies
+
+* [[ee22e5e0-0953-4276-b0e6-955becda5ee8|ASP.NET Path Traversal]]
+* [[a1d217c4-2d2f-4657-99cd-7e4cd69411bd|C++ Path Traversal]]
+* [[b88255fa-86f1-4d3b-9f7f-66bc144e985c|PHP Path Traversal]]]]></Data>
+  </Content>
+</TeamMentor_Article>

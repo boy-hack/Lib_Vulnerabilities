@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="1207662561" Content_Hash="-1660251917">
+  <Metadata>
+    <Id>da5df934-30f1-453b-9d5b-9a9288ef78c1</Id>
+    <Id_History>ff3f8f9f-5689-4827-93b8-e8e053661b58,da5df934-30f1-453b-9d5b-9a9288ef78c1,dd082b4c-10e8-468d-a35a-d6d8fa665f43,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>API Hijacking Attack</Title>
+    <Category>Authentication</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>API Hijacking Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+All applications.
+=Description
+
+An API hijacking attack involves intercepting the method calls made by an application to an external library. This attack can be used to screen or modify parameter values or execute malicious code with elevated privileges. The interception of methods usually involves tricking the application into loading a Trojan external library. This can be accomplished by replacing the external library with a malicious counterpart on the file system, or by tricking the application into loading a malicious library from an alternate location on the file system.
+
+=Impact
+
+    *Disclosure of sensitive information by screening parameter values.
+    *Encryption key theft.
+    *Modification of application behavior by changing parameter values.
+    *Execution of code by the malicious library, possibly with elevated privileges.
+
+=Vulnerabilities
+
+    *Loading external libraries without explicitly specifying the full path to the library.
+    *Loading external libraries without verifying their integrity.
+    *Passing clear-text sensitive information as parameters to method calls in external libraries.
+    *Improper file permissions on external libraries which make them prone to deletion or replacement.
+
+=Countermeasures
+
+*Use explicit paths: Do not depend on environment path variables to locate the library for you. Be explicit in specifying the full path to the library you intend to load.
+*File permissions: Use proper directory and file permissions on external libraries so that they cannot be modified or replaced by an attacker.
+*Binary verification: All non-system external libraries should be verified for authenticity before being loaded. This can be accomplished by digitally signing the libraries and verifying the signature before loading the library.
+*Encryption: If none of the above countermeasures can be employed, then the application must encrypt all sensitive information before passing them as parameter values to external libraries. This will not prevent an attacker from executing malicious code, but will prevent the leakage of sensitive information.
+
+=Example
+
+For a real-world example, consider a vulnerability of the popular web browser, Internet Explorer 7. When released, it was vulnerable to a DLL-load hijacking attack. It failed to provide the full path to a DLL that was loaded at runtime. Although Internet Explorer does not run with elevated privileges, this has become a serious issue as malware authors have abused this vulnerability to attack and steal information from the browser while a user surfs the web.
+
+=Additional Resources
+
+*For more information on Keyjacking: The Surprising Insecurity of Client-side SS, see: http://www.ists.dartmouth.edu/library/ksi0204.pdf
+
+=Related Items
+
+  *[[8698cde2-0fdf-4676-a043-ae90e62f55b8|Attack: Command Injection Attack]]
+  *[[4b7d247d-f6a9-493e-a19a-665ff54b757f|Attack: Local Machine Credential Sniffing Attack]]
+  *[[0089dded-bd3d-4513-b479-624629634b4a|Attack: Reflection Injection Attack]]
+  *[[88892358-450e-4bbc-afd9-ede9393e53a8|Attack: Sniff Memory for Secrets Attack]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

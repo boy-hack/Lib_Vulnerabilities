@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>0010a1e4-6d8f-41a4-8eaf-d047398a34bc</Id>
+    <Id_History>0010a1e4-6d8f-41a4-8eaf-d047398a34bc,88250892-8e2f-4c8f-a980-5ac98469ec4e,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Weak Cryptographic Hash</Title>
+    <Category>Cryptographic Storage</Category>
+    <Phase>Implementation</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Weak Cryptographic Hash</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+A weak cryptographic hash vulnerability occurs when the application uses a hashing algorithm that is considered to be less resistant to attack than the currently recommended algorithms, and/or the chosen hashing algorithm is not used appropriately. To use cryptographic hashing properly, a strong algorithm has to be used iteratively and with a salt. 
+
+Note that cryptographic hashes are commonly used to protect stored passwords. 
+
+This vulnerability type affects all applications that use cryptographic hashes. 
+
+=Impact=
+The impact of using weak cryptographic hashing is that the attacker might be able to recover the hashed data. Cryptographic hashes are usually used to protect stored passwords as the last line of defense. If the attacker has compromised the application and downloaded the password hashes, he still won't be able to use them if the hashes are strong. If weak hashes are used, then the attacker will be able to easily crack them using brute-force attacks. In a brute-force attack, the attacker iteratively tries hashing all possible values and compares the hashes to the stored hashes. If weak hashing is used, even strong passwords can be easily compromised by brute-force attacks.
+
+In practice, even when strong hashing is used, hashed passwords might be vulnerable to dictionary attacks. In a dictionary attack, the attacker hashes a list (dictionary) of possible passwords and compares them to the stored hashes. To protect against dictionary attacks, passwords must be strong in addition to strong hashing being used. 
+
+After downloading the password hashes, the attacker will usually try to recover the passwords of the administrative users. The attacker must have already compromised the application to be able to get the hashes in the first place, but he may not have full access yet. By compromising the passwords of the administrative users, the attacker might gain access to other resources where the same password is used, or gain additional control of the application. 
+
+One possible scenario is that the hashes are recovered using a SQL injection attack, then cracked, and then used by the attacker to take over the application completely. Another possible scenario is for the attacker to compromise the application, download and crack the hashes, hold on to the administrator password, and come back at a later time to take control of the application after the administrators thought they had regained control of the application. Lastly, a common occurrence has been that web sites have been hacked and the stored account details of their users have been published on the Internet. This is usually bad for the reputation of the affected web site, especially if the stored passwords are not adequately protected.
+
+=Countermeasures=
+To prevent weak cryptographic hashing vulnerabilities, use a strong hashing algorithm iteratively or use a key derivation algorithm, and use a unique salt for each hashed value.
+
+* [[6e0918c1-90db-46d5-9f0e-8a98ddbcd7d5|Store Passwords Securely]]
+
+=Application Check=
+To verify that cryptographic hashing is used properly, verify that strong hashing algorithms are used iteratively or key derivation algorithms are used, and that a unique salt is used for each hashed value.
+
+* [[d74fe6bf-387f-4ff1-9edb-d0275eedffc0|Passwords Are Stored Securely]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training courses for more background information about this type of vulnerabilities.
+
+==Creating Secure J2EE Code==
+
+This course introduces and explains the precautionary measures you can use to avoid Web software security vulnerabilities, such as data leakage attacks, client/server protocol manipulation, injection attacks, and exploiting authentication.  At the end of this course, you will have learned about time-tested defensive coding principles and how to use them to increase the security of your application, and prevent common security vulnerabilities.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127619|COD 313 Creating Secure J2EE Code]]
+
+==Creating Secure Code - JRE Foundations==
+
+In this course, you will learn to recognize and remediate common Java Web software security vulnerabilities.  This course has three modules, which introduce you to these vulnerabilities and help you to identify and remediate them.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127615|COD 211 Creating Secure Code - JRE Foundations]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//]]></Data>
+  </Content>
+</TeamMentor_Article>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>4c234bf5-4b58-48ae-9777-9ea23a2fc1ad</Id>
+    <Id_History>4c234bf5-4b58-48ae-9777-9ea23a2fc1ad,effba535-a4c8-446b-942b-be9f8e6d96bc,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Insecure Direct Object References</Title>
+    <Category>Other</Category>
+    <Phase>Implementation</Phase>
+    <Technology>C++</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Insecure Direct Object References</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Insecure direct object reference vulnerabilities occur when an application exposes the system names of system resources that it uses and allows an attacker to manipulate these names. If an attacker can change the name of a system resource that is accessed by the application, he can access arbitrary system resources, such as files. 
+
+All applications are potentially affected by insecure direct object reference vulnerabilities.
+
+==Impact==
+
+The impact of insecure direct object reference vulnerabilities is that the attacker may be able to access arbitrary system resources of the same type as those exposed by the insecure reference. For example, if the attacker can manipulate the name and path of a file displayed by the application, he will be able to abuse the application to display arbitrary files on the system. 
+
+Insecure direct object reference vulnerabilities apply almost exclusively to exposed file system references, but in theory can also describe exposed database element references or any other named system resource, such as a pipe or a network socket. The type of access that the attacker is able to perform depends on the type of operation performed by the vulnerable code – if the vulnerable code reads from an exposed reference, the attacker will be able to read; if the vulnerable code writes to an exposed reference, the attacker will be able to write.
+
+==Countermeasures==
+
+To prevent insecure direct object reference vulnerabilities, use mapping values to access objects and perform access control checks when using system resources.
+
+* [[983726cb-b3a5-4e23-af5f-04d64e95a59f|Perform Access Control Checks for Any Filesystem Access]]
+* [[da2ef63c-2068-41a2-a096-564da21ead6a|Use Reference Maps to Access Objects]]
+
+==Application Check==
+
+To make sure that insecure direct object reference vulnerabilities are prevented, verify that mapping values are used to access objects and that access control checks are performed when using system resources.
+
+* [[70a45962-ca20-4795-bd0c-032178332ece|Access Control Checks Are Performed for All Filesystem Access]]
+* [[b86589e0-1cba-4b09-8746-84d6db219e24|Reference Maps Are Used to Access Objects]]]]></Data>
+  </Content>
+</TeamMentor_Article>

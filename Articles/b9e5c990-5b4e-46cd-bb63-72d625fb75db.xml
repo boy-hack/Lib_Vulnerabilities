@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>b9e5c990-5b4e-46cd-bb63-72d625fb75db</Id>
+    <Id_History>b9e5c990-5b4e-46cd-bb63-72d625fb75db,3c703cb3-c111-456e-91ad-724564b1b0ab,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>XSLT Injection</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>XSLT Injection</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+XSLT injection occurs when the application concatenates untrusted data into an XSL stylesheet. This allows the attacker to manipulate the document that is produced when the XSL stylesheet is rendered by the user's browser. If the application server interprets the rendered document as code, XSLT injection will result in arbitrary code injection, but this is rare. Usually, documents produced using XSL stylesheets are not interpreted as code by the server, but can still contain scripts that will by interpreted by the user's browser, thus enabling cross-site scripting attacks. 
+
+This issue affects all applications that use non-static XSL stylesheets.
+
+=Impact=
+The most likely impacts of XSLT injection attacks are that the attacker will be able to manipulate the contents of the document produced by applying the stylesheet, and will be able to perform cross-site scripting attacks. 
+
+If the document produced by applying the stylesheet is interpreted as code by the application, XSLT injection will result in a code injection vulnerability, but such cases are rare, because most XSLT processors don't treat produced documents as code by default. 
+
+A real attacker would almost certainly choose cross-site scripting as the method to exploit XSLT injection. If XSLT injection is present in authentication code, which is impractical and therefore highly unlikely, the attacker might abuse this vulnerability to bypass authentication. Otherwise, there are few real scenarios where the attacker would want to manipulate the output of the XSLT parser for purposes other than cross-site scripting. The cross-site scripting exploit can be used to steal user's session identifiers, redirect them to other sites, and perform actions on the user's behalf in applications where the user is authenticated.
+
+=Countermeasures=
+To prevent XSLT injection vulnerabilities, validate all data and don't concatenate user data into XSL stylesheets.
+
+=Application Check=
+To check for adequate protection against XSLT injection vulnerabilities, verify that all data is validated and that user data is not concatenated into XSL stylesheets.
+
+=Specific Technology=
+
+* [[0c03c774-eb34-4c5e-bbbb-c231fff51eb5|PHP XSLT Injection]]]]></Data>
+  </Content>
+</TeamMentor_Article>

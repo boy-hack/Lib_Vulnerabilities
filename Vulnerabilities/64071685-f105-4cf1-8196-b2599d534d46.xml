@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>64071685-f105-4cf1-8196-b2599d534d46</Id>
+    <Id_History>00000000-0000-0000-0000-000000559673,64071685-f105-4cf1-8196-b2599d534d46,72458d51-e0a8-4736-9049-2dd95e97948a,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Parameter Tampering</Title>
+    <Category>Session Management</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Parameter Tampering</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+A parameter tampering vulnerability occurs when an attacker can modify parameters used by a web application that have security implications. For example, a vulnerable application may allow an attacker to change his user id by changing request parameters. The vulnerability stems from relying on user-accessible parameters to store security sensitive information. Common vulnerable areas are data stored in cookies, hidden form fields, and HTTP request parameters. This vulnerability type applies to web applications. 
+
+=Impact
+
+The exact impact of parameter tampering depends on the parameters that are available for tampering. This vulnerability usually allows the attacker to change his status from regular user to admin. In that case, the attacker is able to take full control of the application and its data. Another common impact is that the attacker is able to change his user id to that of another user. In that case the attacker can access and modify the user's data and impersonate that user. Parameter tampering usually allows the attacker to impersonate any user of his choosing. 
+
+=Countermeasures
+
+To prevent this problem, use platform provided session management, don't store sensitive data in user accessible parameters, and use strong session identifiers. 
+
+Use platform-provided session management:
+* [[96059535-1543-458e-afb7-e40360b9dcd2|Use ASP.NET Session Management]]
+
+Don't store sensitive data in user accessible parameters:
+* [[00000000-0000-0000-0000-00000034aafa|Do Not Store Sensitive Data in User Accessible Parameters]]
+
+Use strong session identifiers:
+* [[00000000-0000-0000-0000-000000345bc8|Use Strong Session Identifiers]]
+
+=Application Check
+
+To check for adequate protection against this vulnerability, ensure that platform provided session management is used, sensitive data is not stored in user accessible parameters, and strong session identifiers are used. Identify all user-mutable parameters and verify that tampering with them does not result in elevated privileges.
+
+Platform-provided session management is used:
+* [[505042f3-ae71-4a3a-bf71-03fa1dbe34a7|ASP.NET Session Management Is Used]]
+
+Sensitive data is not stored in user accessible parameters:
+* [[00000000-0000-0000-0000-000000350ebf|Sensitive Data Is Not Stored in User Accessible Parameters]]
+
+Strong session identifiers are used:
+* [[00000000-0000-0000-0000-0000002ca360|Strong Session Identifiers Are Used]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
+
+==Software Security Awareness==
+
+This course is ideal for anyone that is involved in the Software Development process or information security personnel that need to better understand software security. Upon course completion, you will be familiar with the key attributes of a secure software development lifecycle and specific activities that need to be performed to develop secure software.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127651|AWA 102 Software Security Awareness]] 
+
+==Creating Secure ASP.NET Code==
+
+This in-depth course examines the development of secure Web applications in ASP.Net. It provides developers and testers with an overview of common Web application vulnerabilities and a set of nine best practices and techniques to follow in order to avoid them. Throughout the course, students are provided with interactive games and simulations designed to reinforce the secure design and coding concepts that were introduced.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127607|COD 311 Creating Secure ASP.NET Code]]
+
+==Fundamentals of Web 2.0 Security==
+
+This course introduces you to the fundamentals of secure Web 2.0 development. The course begins with a discussion about Web 2.0, its evolution, and the technologies behind it. The course describes common Web 2.0 attacks that can cause significant loss to organizations. It reviews the best practices that you should incorporate to mitigate the risks from Web 2.0 attacks, as well as practices to avoid. The course concludes with a walk-through of a software system scenario that can help you better understand Web 2.0 attacks and apply the best practices discussed in the course.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127634|COD 151 Fundamentals of Web 2.0 Security]]
+
+==Creating Secure Code – Oracle Foundations==
+
+This course consists of three modules. The first module introduces you to database security and the challenges faced in developing secure database-driven applications. The second module covers important application development security basics as well as best practices. The third module covers common security attacks that impact Oracle database developers and the recommended countermeasures to mitigate risks from those attacks.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127616|COD 241 Creating Secure Code – Oracle Foundations]]
+
+==Creating Secure Code – SQL Server==
+
+In this course, you will learn about securely developing applications using Microsoft SQL Server database versions 2008 and 2012. This course consists of three modules. The first module introduces you to database security and the challenges faced in developing secure database-driven applications. The second module covers important application development security basics as well as best practices. The third module covers common security attacks that impact SQL server database developers and the recommended mitigation to reduce risks from those attacks.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127617|COD 242 Creating Secure Code – SQL Server]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources
+
+* For more information about parameter tampering, see https://www.owasp.org/index.php/Web_Parameter_Tampering]]></Data>
+  </Content>
+</TeamMentor_Article>

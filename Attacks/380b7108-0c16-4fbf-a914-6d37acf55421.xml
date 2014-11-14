@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="131802615" Content_Hash="1158831306">
+  <Metadata>
+    <Id>380b7108-0c16-4fbf-a914-6d37acf55421</Id>
+    <Id_History>39ffe3fe-b835-44f1-93e3-451685784650,380b7108-0c16-4fbf-a914-6d37acf55421,1c8e39b2-3ade-4e0e-b9ca-09a36357cda2,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>DNS Cache Poisoning Attack</Title>
+    <Category>Communication Security</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>DNS Cache Poisoning Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Any network application.
+
+=Description
+
+Due to the large number of requests that must be handled by domain name servers, they must be able to cache entries for a specified amount of time. This time is set by the owner of the domain and sometimes overridden by the administrator of the server, and is usually in a range of somewhere between eight hours and two weeks. Once the time to live threshold has been reached, the DNS server will recurse back to the root DNS servers the next time a request for that host or that domain is made.
+
+In a DNS cache poisoning attack, the goal is to force the DNS server into updating its cache with false information, which would direct a user to the attacker's server instead of its intended destination. If the attack is successful, the cache will be poisoned until the time to live expires. There are several versions of this attack. The two most common involve using a name server under the attacker's control, in addition to the victim name server. The attacker makes a request to the victim name server for an unrelated domain under their control, and then provides a malicious response when the victim name server contacts the attacker's name server. This response contains additional records to the ones requested which either provide a new address for the domain being attacked, or even an entirely different name server to use for requests to that domain. Another version of this attack involves predicting the nonce value embedded in the request made by the victim server and responding more quickly than the legitimate server can. This version can be aided by making multiple requests at the same time to the victim server, to aid in the prediction of the nonce, and by performing a denial of service attack against the legitimate name server, to increase the size of the window of opportunity.
+
+=Impact
+
+    *Bypass of authentication.
+    *Substitution of server side services.
+
+=Vulnerabilities
+
+    *Using name servers which do not appropriately filter extraneous data before caching results.
+
+=Countermeasures
+
+    *Use current and patched DNS Servers: Many DNS servers have patches out to fix at least some cases of this issue. However, without cryptographic integrity in the DNS system, the issue is impossible to prevent entirely.
+    *Use SSL/HTTPS: SSL uses digital certificates which have been issued by a Certificate Authority to verify the legitimacy of the host. If a user can obtain an SSL certificate pair signed by a trusted CA for the victim domain, DNS caching will allow them to use that certificate with impunity.
+    *Filter access to DNS servers: If DNS servers can only receive requests from trusted machines inside your network, it will be much harder for an attacker to poison their caches. This is only a possibility on intranets, but it is a very important countermeasure.
+
+=Additional Resources
+
+    For more information on DNS Sppofing, see: http://en.wikipedia.org/wiki/DNS_cache_poisoning
+    For more information on DNS Threats and DNS Weaknesses, see: http://www.dnssec.net/dns-threats.php
+
+=Related Items
+
+    *[[0d3f3bbd-6442-4fd2-bb54-2ac10b64695c|Attack: ARP Spoofing Attack]]
+    *[[41ff6525-2cae-40a5-91e9-365d2d26feb9|Attack: Man in the Middle Attack]]
+    *[[4d3185fd-1e48-40af-bc07-71206c40806b|Attack: Trust Relationship Attack]]
+    *[[aa707b5c-7a44-4081-bb80-e795da26b57d|Attack: VLAN Spoofing Attack]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

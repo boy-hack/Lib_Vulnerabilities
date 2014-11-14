@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="1134918211" Content_Hash="-720422532">
+  <Metadata>
+    <Id>61f0d74e-d9b6-4e27-9e12-da65baff83fd</Id>
+    <Id_History>4eb11739-a13f-4dbb-9f28-68ebf96110d0,61f0d74e-d9b6-4e27-9e12-da65baff83fd,9f0d7802-8541-41c7-b6b1-9268fe37d0e4,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>LDAP Injection Attack</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>LDAP Injection Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Applications using LDAP.
+
+=Description
+
+Lightweight Directory Access Protocol (LDAP) is a widely used protocol for accessing directory services. Directories provide a set of attributes about people that are organized in a hierarchical manner, for example the phone directory.
+
+LDAP injection is a technique for exploiting applications that use input from users to query an LDAP directory. In principle this is exactly the same attack as SQL or XML injection. The only difference is the query language used and the database accessed. Because directories are primarily used to maintain information about people, LDAP injection gives an attacker the potential to view, modify, or remove personal information about anyone in the directory. The most common mistake that leads to an LDAP injection vulnerability is creating filter statements dynamically without validating user input.
+
+=Impact
+
+    *Unintentional information disclosure,
+    *Elevation of privilege through manipulation of query results,
+    *Corruption of LDAP data store through manipulation of updates,
+
+=Vulnerabilities
+
+    *Building dynamic LDAP queries using untrusted input.
+
+=Countermeasures
+
+    *Validate untrusted input against an inclusion list before use (e.g., RegEx pattern, primitive type casting, domain constraint, etc.).
+
+=Example
+
+Vulnerable code:  The following PHP code connects to an LDAP server on localhost and searches for records where the surname equals the value supplied by the user.
+
+{{{
+<?php$ds=ldap_connect("localhost");
+ if ($ds)
+ {
+    $ok=ldap_bind($ds);
+ // anonymously bind for read-only access
+    $surname=$_GET['surname'];
+    $filter = "(sn=" . $surname . ")";
+    $sr=ldap_search($ds, "o=My Company, c=US", $filter);
+    $info = ldap_get_entries($ds, $sr);
+    echo "<p>There are " . $info["count"] . " entries for that search:<p>";
+
+    for ($i=0; $i<$info["count"]; $i++) 
+{
+        echo "common name: " . $info[$i]["cn"][0] . "<br />";
+        echo "telephone: " . $info[$i]["telephoneNumber"][0] . "<br />";
+        echo "email: " . $info[$i]["mail"][0] . "<br /><hr />";
+}
+
+    ldap_close($ds);
+
+}
+ else 
+{
+    echo "<h4>connection error</h4>";
+}
+?>
+}}}
+
+If this code is in {{{index.php at teammentorexample.com}}} then the following URL would return all records where surname is Smith.
+
+{{{http://teammentorexample.com/index.php?surname=Smith}}}
+
+//
+//
+Attack example:  Now suppose an attacker entered:
+
+{{{
+    x)(|(cn=*
+}}}
+  
+
+instead of Smith. That is, the attacker could do the following:
+
+{{{http://teammentorexample.com/index.php?surname=x)(|(cn=*}}}
+
+Examining a few lines of the above code reveals that this would return a list of everyone in the directory.
+
+{{{
+    $sirname=$_GET['surname'];
+    // $surname = x)(|(cn=*)
+    $filter = "(sn=" . $surname . ")";
+    // $filter = (sn=x)(|cn=*)
+     $sr=ldap_search($ds, "o=My Company, c=US", $filter);
+    // this reads: search My Companies directory for people
+    //      having surname equal to x or anything
+}}}
+
+=Additional Resources
+
+    *For more information on LDAP Injection, see: https://www.owasp.org/index.php/Interpreter_Injection#LDAP_Injection
+    *For more information on LDAP, see: http://en.wikipedia.org/wiki/Ldap
+    *For more information on IETF's RFC 2251 on LDAP, see: http://www.ietf.org/rfc/rfc2251.txt
+
+=Related Items
+
+    *[[b1757bda-0a0d-48e7-b101-3c4088e41878|Attack: SQL Injection Attack]]
+    *[[e4a899ec-9301-4751-ae07-69a265336d8b|Attack: AJAX Injection Attack]]
+    *[[9d60faca-687b-4c69-91ba-f5712af0fd02|Attack: Server-Side Code Injection Attack]]
+    *[[ae392dbb-fdb4-443f-9d17-78240b4acc95|Attack: XML Injection Attack]]
+    *[[1508d763-03f1-4b43-bf8e-ad7cf8edebd7|Attack: Xpath-XQuery Attack]]
+    *[[1408d3c3-7fc1-4ff0-910e-cdf0e191b669|Attack: Client-side Validation Attack]]]]></Data>
+  </Content>
+</TeamMentor_Article>

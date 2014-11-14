@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>61b481cf-3b56-466b-b96e-f7ed6c4c1948</Id>
+    <Id_History>61b481cf-3b56-466b-b96e-f7ed6c4c1948,8f815779-9e0b-43b8-953b-5997286371b2,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Predictable Resource Location</Title>
+    <Category>Other</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Predictable Resource Location</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Predictable resource location vulnerabilities occur when the application places code or data in easy to guess locations. The result is that an attacker can guess where a specific portion of the application or data is located, and this makes it easier to carry out attacks that exploit other vulnerabilities. 
+
+Predictable resource location vulnerabilities don't give attackers any dangerous capabilities by themselves, but they might make other vulnerabilities exploitable or easier to exploit. Predictable resource location also makes it easier to write exploits that can rapidly attack multiple servers.
+
+All applications are potentially affected by predictable resource location vulnerabilities.
+
+==Impact==
+
+The impact of predictable resource location vulnerabilities is that they make it easier for an attacker to exploit additional vulnerabilities that might be present in the application. If an application with other vulnerabilities is deployed on a large amount of servers, predictable resource location will make it easier to write a script that will attack a lot of servers rapidly, because the attacker will be able to hard-code the location of the vulnerability into the exploit. (If the attacker does not know the location of the vulnerability, they will have to scan each server individually to find the vulnerable script, but if the location is easy to predict, the attacker doesn't have to scan.) 
+
+One of the most common examples of a predictable resource location vulnerability is placing an administrative page in an easy to guess location, such as a directory called admin. If the admin page has vulnerabilities in it, the attacker can write an exploit that will be able to attack multiple vulnerable servers very rapidly. Such attacks are frequently used to build web application based botnets. 
+
+==Countermeasures==
+
+To mitigate predictable resource location vulnerabilities, use access controls to protect sensitive functionality. This does not "fix" predictable resource location, but makes it much less useful to attackers. 
+
+* [[ae289022-d611-4fe4-b177-45066a398da8|Force Re-authentication When Executing Critical Functionality]]
+* [[b0a206b5-61c4-4d9f-8c06-057783ebf249|Use Role-based Authorization]]
+
+==Application Check==
+
+To make sure that predictable resource location vulnerabilities are mitigated, make sure that sensitive functionality is protected using access controls.
+
+* [[4e186cf4-06df-4cf1-aeb9-731e218612d1|Re-authentication Is Enforced When Executing Critical Functionality]]
+* [[e38cab08-316c-4257-8001-e490827fed6e|Role-based Authorization Is Used]]
+
+==Additional Resources==
+
+* For more information about predictable resource location, see http://projects.webappsec.org/w/page/13246953/Predictable%20Resource%20Location
+]]></Data>
+  </Content>
+</TeamMentor_Article>

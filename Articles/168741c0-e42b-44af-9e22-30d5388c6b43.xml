@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>168741c0-e42b-44af-9e22-30d5388c6b43</Id>
+    <Id_History>168741c0-e42b-44af-9e22-30d5388c6b43,9cd2c0ee-370d-4181-bfff-3b0b3ffc233e,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Uninitialized Variable</Title>
+    <Category>Other</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Uninitialized Variable</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+
+An uninitialized variable is technically not a vulnerability in itself, but might result in unintended program behavior. The danger of uninitialized variables is that they might be used by code as if they are intended to hold their default value. The most likely outcome is that the application won't work correctly and, in some cases, it might crash. 
+
+The uninitialized variable issue affects all applications.
+
+=Impact=
+
+The impact of uninitialized variables is that the application won't work properly. The bugs introduced by not initializing variables usually are obvious in terms of user experience but have no security implications. In some extremely rare circumstances uninitialized variables might lead to other types of vulnerabilities. In practice, uninitialized variables are not something that attackers look for and are not in themselves exploitable. It is, however, considered good programming practice to always initialize variables before using them.
+
+=Countermeasures=
+
+To prevent uninitialized variable vulnerabilities, initialize variables before using them.
+
+=Application Check=
+
+To check for adequate protection against this vulnerability, ensure that variables are initialized before being used.
+
+=Specific Technologies=
+
+* [[d87dc143-4a28-43ac-a439-93226c7fb514|C++ Uninitialized Variable]]]]></Data>
+  </Content>
+</TeamMentor_Article>

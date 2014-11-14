@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>9a44e0a4-823a-4d99-90fb-7de648a094c8</Id>
+    <Id_History>00000000-0000-0000-0000-000000417cfc,9a44e0a4-823a-4d99-90fb-7de648a094c8,3483d248-05a0-4c38-ab4b-5f3bf9aa1c62,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Insufficiently Protected Credentials</Title>
+    <Category>Authentication</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Insufficiently Protected Credentials</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+
+An insufficiently protected credential weakness occurs when the application doesn't store or transmit the authentication credentials securely. If the passwords are not hashed and salted, an attacker may be able to recover stored passwords after compromising the application. If the passwords or hashes are not encrypted during transmission, an attacker may be able to intercept passwords or hashes vis a man-in-the-middle attack. All applications that use authentication are affected by this vulnerability type. 
+
+=Impact=
+
+An insufficiently protected credential vulnerability makes it easier for an attacker to gain access to the authentication credentials. Usually, some other vulnerability has to be present for the attacker to recover the credentials. Once the attacker has the credentials, he can impersonate the user whose credentials have been compromised. Malicious hackers usually target privileged accounts to take over the application. After taking over the application, an attacker may leverage other vulnerabilities to take over the application platform and use it to pivot for other attacks. Compromising the application also gives the attacker access to user data, thus enabling him to impersonate the user. 
+
+=Countermeasures=
+
+To prevent this vulnerability type, use PBKDF2 to secure passwords and send authentication credentials over encrypted tunnels. 
+
+Use PBKDF2 to secure passwords:
+* [[00000000-0000-0000-0000-0000006adfa3|Store Passwords Securely]]
+
+Send authentication credentials only over SSL:
+* [[00000000-0000-0000-0000-000000960e37|Use SSL to Communicate Authentication Credentials]]
+
+=Application Check=
+
+To check for adequate protection against this vulnerability type, verify that PBKDF2 is used to secure passwords and that authentication credentials are never sent in plain-text. 
+
+PBKDF2 is used to secure passwords:
+* [[00000000-0000-0000-0000-00000077a50c|Passwords Are Stored Securely]]
+
+Authentication credentials are only sent over SSL:
+* [[00000000-0000-0000-0000-0000008f91de|SSL Is Used to Communicate Authentication Credentials]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
+
+==Fundamentals of Application Security==
+
+This two-part course is ideal for security and development practitioners that want to understand software security risk and seek specific implementation guidance on how to build and deploy more secure software applications.  It starts off describing why software security is critical and the risk that software vulnerabilities represent, and proceeds to lay the foundation for secure software development by presenting specific security controls and principles that development teams can implement immediately to reduce software risk. 
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127105|AWA 101 Fundamentals of Application Security]]
+
+==Creating Secure Code – .NET 4.0 Foundations==
+
+This course describes .NET security features, including concepts such as Code Access Security (CAS) and .NET cryptographic technologies. It also provides secure coding best practices that will enable you to build more secure applications in .NET. 
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127611|COD 215 Creating Secure Code – .NET 4.0 Foundations]]
+
+==Creating Secure C# Code==
+
+This course will provide a deep understanding of application security risks and secure coding standards for C# applications. The main lesson guides students through the concepts underlying the coding principles and illustrates real-world best practices and techniques, and the labs allow students to test what they have learned
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127608|COD 314 Creating Secure C# Code]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources=
+
+* For the CWE page about insufficiently protected credentials, see http://cwe.mitre.org/data/definitions/522.html
+]]></Data>
+  </Content>
+</TeamMentor_Article>

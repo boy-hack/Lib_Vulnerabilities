@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="-1919054167" Content_Hash="-1628684384">
+  <Metadata>
+    <Id>e3ffdced-ef7e-45c7-bbbb-a7e71052053c</Id>
+    <Id_History>d72d0706-99df-4a65-a19d-6a83ec868a7b,e3ffdced-ef7e-45c7-bbbb-a7e71052053c,1693379c-5cb1-40cb-9f3c-67a52e9b9c8d,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Credentials Brute Force Attack</Title>
+    <Category>Sensitive Data</Category>
+    <Phase>Design</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Credentials Brute Force Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Any application that uses credentials.
+
+=Description
+
+In a credentials brute force attack, the attacker tries to try to log in to the application using every username and password. There are a number of tools and techniques the attacker can use to speed up or automate the process.
+
+Brute force attacks are divided into two categories: online and offline brute force attacks. In online attacks, the attacker actively submits each attempted credential to the application under attack. Online attacks are generally very easy to detect, because a large number of attempts are needed. They can be largely prevented by throttling the rate at which new authentication requests can be made. Offline attacks are much more difficult to prevent. If an attacker can gain access to a resource, such as a piece of encrypted data, there is little that the system can do to prevent them from attempting to decrypt it. That said, many offline attacks require significantly more computation on the part of the attacker.
+
+The first line of defense, and the first place attackers start, is the strength of the credential in question. There has been a large amount of research into the kinds of weak passwords that users tend to choose. Consequently, attackers have access to large lists of potential passwords, sorted in rough probability order. This makes brute force attacks much easier, allowing the attacker to try the most likely entries before they begin an exhaustive search. When the attack is against a key, not a pass-phrase, cryptographically strong randomness is critical to ensuring key strength, as is understanding what, if any, properties about a key can significantly weaken it for the algorithm in question.
+
+The next avenue of attack involves statistical analysis. Many authentication systems are much weaker than they initially appear to be, especially systems involving cryptography. Depending on the protocol, many things can leak information about the nature of the encrypted traffic, even the timing of keystrokes in interactive protocols. Analysis of these components can dramatically reduce the amount of effort needed to brute force the system credentials. A good example of this is the WEP system initially used to secure 802.11 networks: An attacker can break this protocol by collecting only a few thousand encrypted packets and doing a relatively trivial set of computations on them. This system has dropped by many orders of magnitude from the initial estimates of its security.
+
+Finally, rainbow tables can be used against systems that improperly protect passwords with a one-way hashing function.
+
+=Impact
+
+    *Credential compromise.
+    *Credential disclosure.
+    *Information disclosure.
+
+=Vulnerabilities
+
+    *Weak encryption or hashing algorithm: Encryption and hashing algorithm design is very subtle and complicated. Even for algorithms that pass peer review, security standards change over time. New attacks and improvements on existing attacks are found regularly, and available processing power is steadily increasing.
+    *Poorly designed security protocol: Security protocol design is just as complicated and error-prone as encryption protocol design. Protocols that appear safe may in fact be trivially broken by attackers. For example, the Wired Equivalent Privacy protocol (WEP), designed for and used in early wireless Ethernet implementations, was later found to have serious design flaws. These flaws now allow WEP to be cracked in near real-time, despite the use of relatively strong cryptographic algorithms. In addition to the ongoing cost of intrusions, two new protocols, WPA and WPA2, have been required to attempt to fix the problem.
+    *Weak key or password: Even the best algorithm in the world cannot protect a user who selects a very weak password or key. Many passwords will be easily guessed, unless controls against weak passwords are put into place.
+    *Lack of salt: If hashed values are stored without being rendered unique first, an attacker who gains access to the values will be able to perform a rainbow table attack.
+    *Failure to throttle credential checks: If an attacker can submit passwords to the system as frequently as they want, without the account being locked, an online attack becomes trivial, modulo the strength of the credentials being used.
+    *Unnecessary disclosure of encrypted data: Ideally, encryption algorithms need to be implemented so that the system is still safe if an attacker does gain access to the data. Still, allowing an attacker access to encrypted or hashed data makes it far easier for them to perform offline attacks.
+
+=Countermeasures
+
+    *Use strong encryption and hashing algorithms: Research the current best practice for hashing algorithms--it does change. Currently, AES or AES256 are good choices for symmetric encryption, 2048 bit RSA is a good choice for public key encryption, and SHA or SHA256 are good choices for a hashing algorithm. The strength of the algorithm required should be matched to the security profile of the application. Under no circumstances should you attempt to design your own algorithm. Use only standard implementations of well known, tested, and appropriately chosen modern algorithms.
+    *Use well known security protocols: Use only known and tested protocols, like SSL, IPSec, and Kerberos, when securing authentication data. Do not design your own protocol, as it is likely to have flaws you're not aware of.
+    *Hash plaintext credentials with salt: Salting a hash adds a value which is different for each password, thus forcing the attacker to attack each instance directly. If possible, keep the salt from the attacker, as this will greatly increase the amount of work required, even if they have access to the hashed data. A credential can either be hashed with a unique stored value every time it is set, or a combination of known values can be used, like the username, a unique identifier for the system or application, and the time the password was set. While a unique value is somewhat more secure, the primary issue is ensuring that the same credential will have different hash values if used by multiple users or by the same user repeatedly or across systems.
+    *Throttle login attempts: When protecting against online brute force attacks, do not allow the attacker to repeatedly attempt to log in.
+    *Do not unnecessarily disclose encrypted or hashed data: Ensure that only users who absolutely must have access to it can obtain encrypted or hashed authentication data.
+
+=Additional Resources
+
+    *For more information on Brute Force Attacks, see: http://en.wikipedia.org/wiki/Brute_force_attack
+
+=Related Items
+
+    *[[577e90c9-8e44-4240-b00f-768316d63901|Attack: Account Lockout Attack]]
+    *[[47103484-487b-4493-a1dd-cf65a947c714|Attack: Weak Password Attack]]
+    *[[0e1b09a6-ec13-4eb6-b8e6-0a2d5d92d4b4|Attack: Key Bruteforce Attack]]
+    *[[e001f908-8905-40bd-8457-3ca2047537ea|Attack: Session Prediction Attack]]
+    *[[16fbf122-43cf-4201-9b33-cf2c728de202|Attack: Chosen Plaintext Attack]]
+    *[[331bfa1d-94c7-485b-8d8f-b8bab3e679e4|Attack: Statistical Analysis Attack]]
+    *[[2c13c857-5ef0-4fcd-9283-9632374106a3|Attack: Chosen Ciphertext Attack]]
+    *[[d00e43b2-f820-4668-8174-07045c4874be|Attack: Credentials Dictionary Attack]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

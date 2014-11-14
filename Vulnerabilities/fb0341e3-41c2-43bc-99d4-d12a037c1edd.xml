@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>fb0341e3-41c2-43bc-99d4-d12a037c1edd</Id>
+    <Id_History>00000000-0000-0000-0000-000000373cc0,fb0341e3-41c2-43bc-99d4-d12a037c1edd,747af6d7-a591-4483-a00c-bbb0217bb7b3,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Unchecked Error Condition</Title>
+    <Category>Error Handling</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Unchecked Error Condition</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+
+Unchecked error conditions may allow attacks to go unnoticed. Checking error conditions helps the application to determine if something out of the ordinary is happening and to log that information. Log information helps administrators determine when an attack is taking place and provides information about the attack. Unchecked error condition flaws may occur in any type of application. 
+
+=Impact=
+
+Unchecked error conditions may result in other, more serious vulnerabilities. An unchecked error condition may not actually give any advantage to the attacker. However, if the application contains a lot of code that may produce unchecked errors, that creates a fertile field for the attacker to look for vulnerabilities. 
+
+=Countermeasures
+
+To prevent unchecked error conditions, use structured exception handling, use a global exception handler for unhandled exceptions, and log error information. 
+
+Use structured exception handling:
+* [[afb7610c-53ab-49dd-a425-f3e3272f7749|Use Structured Exception Handling]]
+
+Use a global exception handler:
+* [[461370b3-66e7-4ac3-900f-7e2f757c54a8|Use a Global Exception Handler for Unhandled Exceptions]]
+
+Log error information:
+* [[00000000-0000-0000-0000-00000035b501|Log Error Information]]
+
+=Application Check
+
+To check for adequate protection against this vulnerability, verify that structured exception handling is used, a global exception handler is used, and error information is logged. 
+
+Structured exception handling is used:
+* [[bf298d0e-9433-44c1-b9af-66ba69662d18|Structured Exception Handling Is Used]]
+
+A global exception handler is used:
+* [[f0c2bed2-b530-46bc-9e64-8041e0def190|Global Error Handlers Are Used to Catch Unhandled Exceptions]]
+
+Error information is logged:
+* [[00000000-0000-0000-0000-00000023f8a3|Error Information Is Logged]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
+
+==Creating Secure Code – .NET 4.0 Foundations==
+
+This course describes .NET security features, including concepts such as Code Access Security (CAS) and .NET cryptographic technologies. It also provides secure coding best practices that will enable you to build more secure applications in .NET. 
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127611|COD 215 Creating Secure Code – .NET 4.0 Foundations]]
+
+==Creating Secure ASP.NET Code==
+
+This in-depth course examines the development of secure Web applications in ASP.Net. It provides developers and testers with an overview of common Web application vulnerabilities and a set of nine best practices and techniques to follow in order to avoid them. Throughout the course, students are provided with interactive games and simulations designed to reinforce the secure design and coding concepts that were introduced.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127607|COD 311 Creating Secure ASP.NET Code]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources
+
+* For the CWE page about unchecked error conditions, see http://www.cvedetails.com/cwe-details/391/Unchecked-Error-Condition.html]]></Data>
+  </Content>
+</TeamMentor_Article>

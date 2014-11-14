@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>adb3a363-0742-4172-b87a-984050299980</Id>
+    <Id_History>adb3a363-0742-4172-b87a-984050299980,ec7e00df-f6a2-4959-92ee-900229cbf0b3,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Directory Indexing</Title>
+    <Category>Deployment Considerations</Category>
+    <Phase>Deployment</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Directory Indexing</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Directory indexing vulnerabilities occur when a web application server is configured to return a listing of files in a web accessible directory in response to an HTTP request for that directory. Directory indexing is typically enabled by default in most major web server software. An attacker can abuse directory indexing to download sensitive or otherwise valuable data from the server, bypassing application access controls. An attacker can also abuse directory indexing to gain insight into the structure of the web application, but this is usually less useful than being able to download the data that is stored by the web application.
+
+All web applications are affected by directory indexing, however this vulnerability class affects web server software, not specific web applications. 
+
+Preventing directory indexing vulnerabilities is typically the responsibility of the users/administrators/customers rather than the developers.
+
+==Impact==
+
+The impact of directory indexing is that an attacker is able to download files that are stored in the exposed directories, bypassing access controls implemented by the application. The typical attack scenario is that the attacker will retrieve the listings of all the exposed directories, determine which files might be valuable and then download them. For example, if a site sells access to exclusive content, like music or movies, but the files are exposed by directory indexing, an attacker will be able to download those files without paying.
+
+In some cases, the attacker might be able to download stored authentication credentials, for example, if a database backup file is exposed by directory indexing. Once an attacker downloads the authentication store of the application, they will mount a hash cracking attack if necessary, and then use the compromised credentials to gain additional access to the application. The attacker will typically attempt to gain administrative access to the application and then use this access to inject malicious code into the application code or data. If malicious code can be successfully injected, the attacker will be able to execute arbitrary code with the privileges of the web application.
+
+==Countermeasures==
+
+To prevent directory indexing vulnerabilities, disable directory indexing on the server.
+
+* [[fd675679-e8ad-40fc-bac4-d56fc440bc00|Disable Directory Browsing]]
+
+==Application Check==
+
+To verify that directory indexing vulnerabilities are prevented, verify that directory indexing is disabled on the servers.
+
+* [[65e70f79-645d-415c-9e71-9cff045cc1c4|Directory Browsing Is Disabled]]
+
+==Additional Resources==
+
+* For more information about directory indexing, see http://projects.webappsec.org/w/page/13246922/Directory%20Indexing
+]]></Data>
+  </Content>
+</TeamMentor_Article>

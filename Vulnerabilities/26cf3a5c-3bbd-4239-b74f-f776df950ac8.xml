@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>26cf3a5c-3bbd-4239-b74f-f776df950ac8</Id>
+    <Id_History>00000000-0000-0000-0000-0000005635d7,26cf3a5c-3bbd-4239-b74f-f776df950ac8,45ab8c07-8115-436c-a559-1142ef57936b,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>LDAP Injection</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>LDAP Injection</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Lightweight Directory Access Protocol (LDAP) is a widely used protocol for accessing directory services. Directories provide a set of attributes about people that are organized in a hierarchical manner.  LDAP Injection is a technique to exploit applications that use input from users to query an LDAP directory. LDAP injection has the potential to view, modify, or remove personal information about anyone in the directory. LDAP Injection applies to all applications that use LDAP. 
+
+=Impact
+
+LDAP injection allows an attacker to access and/or modify restricted data in the LDAP database. The attacker may leverage this vulnerability to view personal information of users in the database. The attacker may also leverage this vulnerability to give himself administrative privileges or to take over another account. Once the attacker has administrative privileges, he usually has full control of the application. 
+
+=Countermeasures
+
+To prevent LDAP injection, validate all input and use parameterized APIs if they are available. 
+
+Validate all input:
+* [[3de41277-0cc1-4ebc-8dd7-e96d161aa0ef|Validate All Input]]
+* [[e59923e7-c2fb-4a75-8db7-a9a91e869f74|Validate Input for Length, Range, Format, And Type]]
+
+=Application Check
+
+To check for adequate protection against this vulnerability, find all code that queries directories and verify that data included in the queries is sufficiently validated. 
+
+All input is validated:
+* [[a210fcb7-f142-4c2e-844a-c43e0859f90d|All Input Is Validated]]
+* [[0e71dd64-87d1-4cf5-9569-ea320f209977|Input Is Validated for Length, Range, Format, And Type]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
+
+==PCI Best Practices for Developers==
+
+Payment Card Industry Data Security Standards (PCI-DSS) provide minimum requirements for addressing the security of software systems handling credit card information. Addressing the requirements during the design and build stages of the development life cycle improves application security and simplifies compliance. This course will provide software developers with an in-depth understanding of application security issues within the PCI-DSS and best practices for addressing each requirement.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127647|COD 222 PCI Best Practices for Developers]]
+
+==OWASP Top Threats & Mitigations==
+
+This course examines in depth the vulnerabilities, threats, and mitigations described in the OWASP Top 10 2013. Upon completion of this class, participants will be able to identify and mitigate the greatest threats that web application developers face, including: Injection, Broken Authentication and Session Management, Cross-Site Scripting (XSS), Insecure Direct Object References, Security Misconfiguration, Sensitive Data Exposure, Missing Function Level Access Control, Cross-Site Request Forgery (CSRF), Using Components with Known Vulnerabilities, and Unvalidated Redirects and Forwards.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/139631|DES 221 OWASP Top Threats & Mitigations]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources=
+
+* For more information about LDAP Injection, see https://www.owasp.org/index.php/LDAP_injection]]></Data>
+  </Content>
+</TeamMentor_Article>

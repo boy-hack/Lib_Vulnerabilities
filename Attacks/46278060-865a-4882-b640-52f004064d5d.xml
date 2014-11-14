@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="1416557092" Content_Hash="-895121066">
+  <Metadata>
+    <Id>46278060-865a-4882-b640-52f004064d5d</Id>
+    <Id_History>a6728fa5-9162-4ba1-98e8-088bb9c16549,46278060-865a-4882-b640-52f004064d5d,a55b8715-0893-41d2-a0dc-6fd9f2c59b85,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Integer Overflow Attack</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Integer Overflow Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Applications written in any language that does not perform automatic bounds checking.
+
+=Description
+
+An integer overflow occurs when an integer is incremented over the maximum value that the data type can hold. The resulting value depends on the compiler in use. ISO-C99 defines the result of an integer overflow to be the assigned value modulo one more than the maximum integer size. This is also known as wrapping around zero.
+
+Unlike buffer overflows, when an integer overflow occurs, no memory other than that used by the integer is affected. However, it is easy for a programmer to assume that increasing the value of an integer will result in a larger integer. When the opposite happens unexpectedly, the program logic is altered. It is important to note that unless a check is added, the program has no way of knowing that the integer overflow happened and hence will continue with the assumption that the integer has the correct value. This is particularly a problem when a program is deciding how much memory to allocate for another variable. Common side effects are heap corruption causing the program to crash, or a buffer overflow allowing arbitrary code execution.
+
+=Impact
+
+    *Denial of service: Erroneous and unexpected integer values from an overflow can cause the application to crash.
+    *Data corruption: If the result is used in a file read or write operation, the application may read or write from the wrong place in disk or memory, resulting in corruption.
+    *Remote code execution: Often, remote code may be executed if the overflowed integer is used for memory management or indexing into a buffer.
+
+=Vulnerabilities
+
+    *Improper arithmetic.
+    *Failure to validate integer input.
+    *Integer calculations or assignments used to determine the size of a buffer.
+    *Insufficient bounds checking and failure to consider sign.
+    *Program logic that makes assumptions about the value of integers.
+
+=Countermeasures
+
+    *Arithmetic checking: Always check that the value of adding two positive integers is greater than either operand. Take extra care when performing arithmetic operations with values near the maximum of the data type.
+    *Using a language or framework that does integer checking: Frameworks like .NET and Java can be set to automatically check for integer overflows and underflows (e.g., CheckForOverflowUnderflow in C#, RemoveIntegerChecks in VB.NET).
+    *Validate input: Validate the untrusted input for upper and lower limits
+    *Verify logic: Ensure that all integer logic will operate appropriately for the accepted limits, in all cases.
+
+=Example
+
+The code segment below shows how a small increment can cause an integer overflow:
+
+{{{
+unsigned int x = 0xFFFFFFFF;unsigned int y = x + 1; // now y == 0x = 0xFFFFFFFF;y = x+2;// now y == 1
+}}}
+
+Adding 2 to the maximum value that the unsigned integer can hold will cause the {{{y}}} to wrap around to 1.
+
+=Additional Resources
+
+    *For more information on Integer Overflows, see: https://www.owasp.org/index.php/Buffer_Overflows#Integer_Overflow
+    *For more information on How to Defend Against Deadly Integer Overflow Attacks, see: http://www.eweek.com/c/a/Application-Development/How-to-Defend-Against-Deadly-Integer-Overflow-Attacks/
+    *For more information on Another Look at the SafeInt Class, see: http://msdn.microsoft.com/en-us/library/ms972819.aspx
+
+=Related Items
+
+    *[[ff04b61b-734c-4298-8c75-777bf5419cbf|Attack: Integer Underflow Attack]]
+    *[[1408d3c3-7fc1-4ff0-910e-cdf0e191b669|Attack: Client-side Validation Attack]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

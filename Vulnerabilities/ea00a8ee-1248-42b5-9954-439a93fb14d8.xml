@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>ea00a8ee-1248-42b5-9954-439a93fb14d8</Id>
+    <Id_History>00000000-0000-0000-0000-0000007a1206,ea00a8ee-1248-42b5-9954-439a93fb14d8,98024a09-9d93-4459-8b73-e9def23ee14f,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Command Injection</Title>
+    <Category>Dangerous APIs</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Command Injection</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Applications often execute external commands as a part of their functionality. If the attacker is able to manipulate the choice of external commands or their parameters, the attacker may be able to use this functionality to execute arbitrary commands. If an attacker is able to execute arbitrary commands, he is typically able to take over the application and possibly take over the entire system. All applications that use external applications are affected by command injection vulnerabilities. Web applications are especially at risk, because they are exposed to the Internet. 
+
+=Impact
+
+Command injection allows an attacker to execute arbitrary commands. Using this vulnerability, an attacker can take full control of the application. If the attacker is able to leverage additional vulnerabilities or the server is not configured properly, this vulnerability may allow the attacker to take full control of the server. A command injection vulnerability acts as a virtual backdoor for an attacker to use the application and the server for his purposes. Any data that may be stored by or accessed by the application can also be compromised as a result of command injection.
+
+=Countermeasures
+
+To prevent command injection vulnerabilities, validate all input, use parameterized APIs to execute external commands if such APIs are available, and avoid using external commands if possible. 
+
+Validate all input:
+* [[3de41277-0cc1-4ebc-8dd7-e96d161aa0ef|Validate All Input]]
+* [[e59923e7-c2fb-4a75-8db7-a9a91e869f74|Validate Input for Length, Range, Format, And Type]]
+
+Use parameterized APIs:
+* [[00000000-0000-0000-0000-00000077e119|Use Parameterized APIs to Launch External Processes]]
+* [[784d6ed5-5c29-4634-a3dd-8f42f33dba6e|Securely Execute a New Process]]
+
+Avoid using external commands:
+* [[00000000-0000-0000-0000-000000187386|Avoid Using External Commands]]
+
+=Application Check
+
+To check for adequate protection against this vulnerability, ensure that all input is validated, parameterized APIs are used, and external commands are avoided.
+
+All input is validated:
+* [[a210fcb7-f142-4c2e-844a-c43e0859f90d|All Input Is Validated]]
+* [[0e71dd64-87d1-4cf5-9569-ea320f209977|Input Is Validated for Length, Range, Format, And Type]]
+
+Parameterized APIs are used:
+* [[00000000-0000-0000-0000-0000005ad6ba|Parameterized APIs Are Used to Launch External Processes]]
+
+External commands are avoided:
+* [[00000000-0000-0000-0000-0000003f9f92|External Commands Are Avoided]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
+
+==OWASP Top Threats & Mitigations==
+
+This course examines in depth the vulnerabilities, threats, and mitigations described in the OWASP Top 10 2013. Upon completion of this class, participants will be able to identify and mitigate the greatest threats that web application developers face, including: Injection, Broken Authentication and Session Management, Cross-Site Scripting (XSS), Insecure Direct Object References, Security Misconfiguration, Sensitive Data Exposure, Missing Function Level Access Control, Cross-Site Request Forgery (CSRF), Using Components with Known Vulnerabilities, and Unvalidated Redirects and Forwards.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/139631|DES 221 OWASP Top Threats & Mitigations]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources
+
+* For more information about command injection, please see https://www.owasp.org/index.php/Command_Injection 
+]]></Data>
+  </Content>
+</TeamMentor_Article>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>cd449772-e12e-4553-a400-d0bcdb70468b</Id>
+    <Id_History>cd449772-e12e-4553-a400-d0bcdb70468b,96b838f7-2e6e-4339-91c0-1424d5b88c47,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Insufficient Password Recovery</Title>
+    <Category>Authentication</Category>
+    <Phase>Implementation</Phase>
+    <Technology>PHP</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Insufficient Password Recovery</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Insufficient password recovery vulnerabilities occur when the application does not have an effective process to verify user identity when handling a "forgotten password" condition, and then either gives the password to the attacker or allows the attacker to change the password. The attacker is then able to impersonate the user and gain access to the user's account. 
+
+For example, the application might verify user identity by asking personal questions whose answers can be found on social networks. The attacker will be able to answer these questions and successfully impersonate the user to the application. 
+
+If the application does not sufficiently verify the user's identity, but sends the recovery information to the user over e-mail or using some other side-channel, the attacker will need to exploit additional vulnerabilities to complete the attack. 
+
+All applications that allow users to recover or change a forgotten password are potentially affected by insufficient password recovery vulnerabilities.
+
+==Impact==
+
+The impact of insufficient password recovery vulnerabilities is that attackers will be able to take over users' accounts. Once an attacker has compromised a user's account, the attacker will be able to do anything that the user is able to do. 
+
+If the attacker compromises an administrative account, they might be able to inject malicious code into the application or its data and take over the application. Upon taking over the application, the attacker will have access to all application functionality and all application data, will be able to use the application to attack its users with malicious scripts, and will be able to use the server as a part of a botnet.
+
+==Countermeasures==
+
+To prevent insufficient password recovery vulnerabilities, verify user identity when resetting passwords and send the reset token on a side-channel.
+
+* [[b426664b-e894-4aae-89ec-578348b096f9|Verify User Identity when Resetting Passwords]]
+* [[ea3ab295-f67d-4d05-ae47-1e59c0b87b12|Send Password Reset Tokens over a Side Channel]]
+
+==Application Check==
+
+To verify that insufficient password recovery vulnerabilities are prevented, make sure that user identity is verified when resetting passwords and the reset tokens are sent on a side-channel.
+
+* [[8a759459-ef51-4bcf-93be-2a1d48d1cac8|User Identity Is Verified when Resetting Passwords]]
+* [[d7e08f55-1ce7-41d4-aba6-c667e49b5950|Password Reset Tokens Are Sent over a Side Channel]]
+
+==Additional Resources==
+
+* For more information about insufficient password recovery, see http://projects.webappsec.org/w/page/13246942/Insufficient%20Password%20Recovery
+* For more guidance for preventing insufficient password recovery, see https://www.owasp.org/index.php/Forgot_Password_Cheat_Sheet
+]]></Data>
+  </Content>
+</TeamMentor_Article>

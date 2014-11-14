@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>17ecc589-9be2-4429-8dc4-9f61556f63b1</Id>
+    <Id_History>17ecc589-9be2-4429-8dc4-9f61556f63b1,a66f4885-e165-4035-b52e-5e406b71b286,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Insecure Transport</Title>
+    <Category>Communication Security</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Insecure Transport</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+
+SSL/TLS should be used to protect any sensitive data in transit. Some applications don't use SSL even during authentication or when transmitting sensitive data, and an attacker may be able to intercept such data that is sent over the network unencrypted. 
+
+This vulnerability applies to all applications that send sensitive data over the network. 
+
+=Impact=
+
+Transmitting data without using SSL allows attackers to intercept sensitive information using man-in-the-middle attacks. There are many different attack scenarios that are enabled by not using SSL. One common attack vector is exposed by the Firesheep tool. The Firesheep tool monitors open wireless networks for information about user sessions for some social networking web sites. Once that information has been sniffed from the network, the attacker is able to take over the user's session. Taking over the user's session allows the attacker to view the victim user's data and to impersonate him. This attack would not be possible if the target sites used SSL. 
+
+=Countermeasures=
+
+To prevent insecure transport vulnerabilities, use SSL for all sensitive communications, configure SSL to use strong cipher suites, and use valid certificates. 
+
+=Application Check=
+
+To check for adequate protection against this vulnerability, verify that SSL is used for all sensitive communications, SSL is configured to use strong cipher suites, and valid certificates are used. 
+
+=Specific Technologies=
+
+* [[c6852bd5-91b9-4daa-a472-7a1035d299fc|PHP Insecure Transport]]
+* [[879e6b77-2f11-4105-9c79-e0b35897359b|ASP.NET Insecure Transport]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

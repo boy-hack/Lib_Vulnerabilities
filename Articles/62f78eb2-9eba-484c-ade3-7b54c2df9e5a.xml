@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>62f78eb2-9eba-484c-ade3-7b54c2df9e5a</Id>
+    <Id_History>62f78eb2-9eba-484c-ade3-7b54c2df9e5a,8dffaf7e-1027-4221-b3d5-5595d9362bea,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Cross-Site Request Forgery</Title>
+    <Category>Session Management</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Cross-Site Request Forgery</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+A cross site request forgery (CSRF) attack occurs when an attacker tricks a victim into loading a page that contains a malicious request. This request may be able to change the state of the web application, and is possible because the request is sent in the context of the logged in victim. For many sites, each request automatically sends the victim's credentials, such as the session cookie or authentication credentials. Due to this fact, there is no way to distinguish the false request from a legitimate request. CSRF vulnerabilities affect web applications that allow authenticated users to perform operations that are not available to guest users. 
+
+Cross site request forgery attacks are known by other names including XSRF, session riding, one-click and zero-click attacks. A one-click attack refers to a link that causes a malicious action to be performed when a victim clicks on it. A zero-click attack is automatically executed upon page load. A common way to perform a zero-click attack is to embed the request in the source of an image. 
+
+=Impact
+
+CSRF allows the attacker to carry out actions on behalf of an authenticated user by tricking the user into visiting a malicious page or link. The exact impact depends on the functionality that is vulnerable to CSRF. The attacker will usually try to add a privileged user account for himself or to inject arbitrary code into the application. If either of those scenarios succeeds, the attacker gains full control of the application. 
+
+=Countermeasures
+
+To prevent CSRF, include unique tokens in pages that invoke security sensitive operations, and require users to re-authenticate before performing sensitive operations. 
+
+=Application Check
+
+To check for adequate protection against CSRF, ensure that unique tokens are used in pages that carry out sensitive operations, and that users are required to re-authenticate before performing sensitive operations.
+
+=Specific Technologies
+
+* [[36d0c6a6-8a5c-4586-b0d5-917a9aff9557|ASP.NET Cross-Site Request Forgery]]
+* [[f4f6aab8-f22e-4189-98bd-0a879cdedc40|Java Cross-Site Request Forgery]]
+* [[11baa288-69b3-4bbd-9133-e9675228e75d|PHP Cross-Site Request Forgery]]]]></Data>
+  </Content>
+</TeamMentor_Article>

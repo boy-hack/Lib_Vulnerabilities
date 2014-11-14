@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="-532793930" Content_Hash="985290407">
+  <Metadata>
+    <Id>e4a899ec-9301-4751-ae07-69a265336d8b</Id>
+    <Id_History>14def5f6-6ddf-450f-9a7e-36a8550b22f5,e4a899ec-9301-4751-ae07-69a265336d8b,455680cf-3722-4c49-9c9e-adc09797ca5b,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>AJAX Injection Attack</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>AJAX Injection Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>1</Priority>
+    <Status />
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Web applications that use an AJAX implementation.
+
+=Description
+
+AJAX (Asynchronous Javascript and XML) technology allows web pages to dynamically update specific content behind the scenes without the need to refresh the whole page. The ability to continually update the content of an AJAX page is done by calling an XmlHttpRequest (XHR) object with JavaScript to send HTTP requests to web servers. These requests typically send data in the form of XML or JSON (JavaScript Object Notation).
+
+AJAX injection is a type of cross site scripting (XSS) that leverages the XML or JSON format of the input to the client browser. JSON is particularly popular because it is easy to parse JSON objects by simply passing them to the eval() function. Unfortunately, the use of eval() makes the application equivalently easy to exploit. An attacker may store cleverly formatted strings containing malicious JavaScript as content on servers with weak validation, or may send them directly to the client browser using a spoofing or man in the middle attack. This JavaScript is then parsed and execute by the client browser without the user's knowledge. Ultimately, this attack may be used to steal session cookies, send email on behalf of the victim, or perform any other action available to the XSS attack.
+
+=Impact
+
+    *Confidentiality: Since the malicious AJAX code runs in the same domain as the trusted site, it can read any cookies or other confidential site data.
+    *JavaScript code injection: By using the XMLHttpRequest object, attackers can download and install JavaScript code modules to be dynamically run on the local browser, and can send information from the computer without the victim's knowledge.
+
+=Vulnerabilities
+
+    *Failure to validate user input for script tags when that input can be echoed back into a web page.
+    *Failure to encode user supplied input upon display of the data.
+    *Trusting data retrieved from a shared data store.
+
+=Countermeasures
+
+*Constrain input: Use vigorous white-list style checking on any user input that may be reflected to a user's browser.
+*HTMLEncode all user input on display: Use white-list style HTMLEncoding libraries to ensure that all possibly malicious characters are encoded before being echoed back to the user, regardless of whether they're loaded as part of the original page load or through later XMLHttpRequests.
+
+=Example
+
+*Suppose you use an AJAX based web mail client. Your mail client displays a list of your favorite contacts and lets you know their status. By default this status is set to "Online" or "Away," but a custom status message may also be set by each contact that is reflected in your client. In order for this to work, the web page periodically updates this status list by requesting the list of contacts from the server. The server returns this information to the client as the following JSON object:
+
+{{{
+{
+   "numberOnline": "3",
+   "nameAndStatus": [
+   "Alice, Online",
+   "Bob, Online",
+   "Mallory, Away" ]
+}
+}}}
+
+*The following code shows the client JavaScript code which is called periodically to request the above object and update the DOM.
+
+{{{
+var contactStatusList;
+var http_request = new XMLHttpRequest();
+
+http_request.open("GET", url, true);
+
+http_request.onreadystatechange = function () 
+{
+  if (http_request.readyState == 4) 
+{
+    if (http_request.status == 200) 
+{
+      contactStatusList = eval("(" + http_request.responseText + ")");
+}
+    http_request = null;
+}
+};
+
+http_request.send(null);
+
+}}}
+
+*Now suppose that Mallory's status is set to a custom value. This may have been changed by Mallory herself or by a third party attacker. Either way, because the server providing the data to the mail client has poor validation, this status value is changed to include cleverly formatted malicious JavaScript. Suppose that instead of "Away" the value is changed to the following: 
+
+{{{
+Away"});alert("Gotcha!"); 
+}}}
+
+*The first thing to notice is that the JSON object, which represents the contact status list, is valid JavaScript. Because of this, the eval() can be used to evaluate it. The above code completes the status object, inserts additional JavaScript, and comments out the rest of the line. When the code is passed to the eval() function, the additional JavaScript is run. Note that "alert("Gotcha!")" can be replaced with any malicious JavaScript and it will be run in the client's browser. In the above code example, an alert message window will be displayed. In general, however, JavaScript could be downloaded and executed without the user's knowledge.
+
+=Additional Resources
+
+    *For more information on AJAX, including common vulnerabilities that are associated with the technology, see "Ajax Security Basics": http://www.securityfocus.com/infocus/1868
+    *For information on AJAX attacks and JavaScript Hijacking, see "JavaScript Hijacking": http://www.net-security.org/dl/articles/JavaScript_Hijacking.pdf
+
+=Related Items
+
+    *[[36ce61ac-adcc-45a9-9910-95d477142c8b|Attack: Cross Site Scripting Attack]]
+    *[[8698cde2-0fdf-4676-a043-ae90e62f55b8|Attack: Command Injection Attack]]
+    *[[189a3684-3289-4097-8906-5361f7ef3aab|Attack: Double Encoding Attack]]
+    *[[8756794f-3bb1-4e08-9bad-5297c8130a52|Attack: HTTP Session Hijacking Attack]]
+    *[[ae392dbb-fdb4-443f-9d17-78240b4acc95|Attack: XML Injection Attack]]]]></Data>
+  </Content>
+</TeamMentor_Article>

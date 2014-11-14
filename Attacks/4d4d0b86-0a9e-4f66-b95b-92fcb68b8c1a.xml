@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="-1262571942" Content_Hash="705857390">
+  <Metadata>
+    <Id>4d4d0b86-0a9e-4f66-b95b-92fcb68b8c1a</Id>
+    <Id_History>4e938b66-254d-42ce-b714-a5de348b37e7,4d4d0b86-0a9e-4f66-b95b-92fcb68b8c1a,58fceb9c-affa-425f-9645-016498645e71,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Traffic Analysis Attack</Title>
+    <Category>Communication Security</Category>
+    <Phase>Design</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Traffic Analysis Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Systems that communicate over a hostile network (such as the Internet) and do not want to reveal any information about the content of those communications.
+
+=Description
+
+Traffic analysis is the process of intercepting and examining network traffic in order to deduce information from patterns in communication. It can be performed even when the traffic is encrypted and cannot be decrypted by the party performing the analysis. The usefulness of this type of attack increases when a large amount of traffic can be observed, periodic traffic can be observed over time, or encrypted traffic can be correlated with plaintext traffic. The attacker then attempts to find patterns from the small segments of information that she has intercepted. Along with more general analysis of statistical information about message length, headers, repeated patterns of communication, etc., careful analysis of the timing of transmissions is an important component of traffic analysis. Similar to other brute force attacks on cryptographic systems, timing information can leak information about the exact nature of computations being performed by one or both parties to the communication, which can greatly aid analysis.
+
+A relatively high degree of sophistication is required to conduct traffic analysis attacks and to protect against them. For most applications, simply being aware of the possibility of this attack is sufficient.
+
+=Impact
+
+    *Disclosure about the identity of the communicating parties.
+    *Disclosure about the frequency of communication between two parties.
+    *Disclosure about the volume of communication between two parties.
+    *Disclosure about (some) content of the communication.
+    *Disclosure about the protocols in use, which allows an attacker to determine possible attack vectors.
+
+=Vulnerabilities
+
+    *Unencrypted information in message headers.
+    *Static encrypted values which are persisted between message instances or which otherwise identify a participant.
+    *Direct communication between message endpoints.
+    *Statistically non-random correlation between message reception and transmission times or sizes on an otherwise protected endpoint.
+    *Processing times and transmission delays while a message is handled on a given node in the network.
+
+=Countermeasures
+
+*Protocol design for protection against traffic analysis is a very complicated process, equivalent to designing cryptographic algorithms, and possibly more difficult. Applications that require this level of secure communication should use an existing traffic-analysis resistant transport, like Tor, and take care to use it in ways which preserve its security properties.
+
+=Example
+
+*An attacker can gain important information by monitoring the frequency and timing of network packets. For example, a timing attack on the SSH protocol used timing information to deduce information about passwords. For interactive sessions, SSH transmits a message after each key stroke. The timings between messages can be studied using hidden Markov models, and can be used to recover the password fifty times faster than a brute force attack.
+
+//Example from: Dawn Xiaodong Song, David Wagner and Xuqing Tian, Timing Analysis of Keystrokes and Timing Attacks on SSH, 10th USENIX Security Symposium, 2001.
+
+=Additional Resources
+
+    *For more information on Tor, see: http://tor.eff.org
+
+=Related Items
+
+    *[[00030b2d-5b8e-44c7-a643-afcee6e1157d|Attack: Timing Analysis Attack]]
+    *[[6a32e2d5-dba5-4f6d-9fe0-a51605fd0557|Attack: Network Eavesdropping Attack]]
+    *[[8482159c-5ec2-4b89-9c65-9af765030ff5|Attack: Information Disclosure Attack]]
+    *[[ad7b18e3-a8a0-4e87-b1a8-908e11449481|Attack: Network Credential Sniffing Attack]]
+    *[[41ff6525-2cae-40a5-91e9-365d2d26feb9|Attack: Man in the Middle Attack]]
+    *[[331bfa1d-94c7-485b-8d8f-b8bab3e679e4|Attack: Statistical Analysis Attack]]
+    *[[e001f908-8905-40bd-8457-3ca2047537ea|Attack: Session Prediction Attack]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="-2074554972" Content_Hash="-690686031">
+  <Metadata>
+    <Id>054ee066-d6c5-48b2-98d6-7043a30fc0a5</Id>
+    <Id_History>32c35abe-a470-4a9c-8bb6-54c1461d3295,054ee066-d6c5-48b2-98d6-7043a30fc0a5,7626a7c7-6129-437d-b479-b093c0ec413b,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>URL Redirection Attack</Title>
+    <Category>Session Management</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>URL Redirection Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+All web applications.
+
+=Description
+
+Many web applications use URL redirection to direct a user to another site or page on the same site. In a URL redirection attack, an attacker tricks users into entering sensitive information into a malicious website while seemingly navigating within a trusted website.
+
+=Impact
+
+    *Website forgery: If an attacker can redirect a user from one trusted site to another site, the victim may not notice the redirection and may extend their trust to a malicious site.
+
+=Vulnerabilities
+
+    *Improper use of redirection.
+    *Failure to properly alert the user when a redirection is about to occur.
+
+=Countermeasures
+
+    *Never allow silent redirects to a user-specified URL, even if the hostname is fixed.
+
+=Example
+
+The login page for a web application has a feature that redirects the user, with a full query string, to a specified page within the site after the user logs in. This is used to allow pages to force the user to login before they are accessed, without losing track of the page the user was attempting to load. Unfortunately, this application also has pages that alter the application state with a single get request. This combination allows an attacker to craft a single URL which will ask the user for their credentials on the legitimate login page, and subsequently perform some action as that user, without the user's knowledge. 
+
+In order to fix this, the redirect links should be signed by the application in some way and protected against replay, thus guaranteeing that only legitimate uses of the redirect feature will occur. Additionally, redirect strings should be passed as POST variables, thus preventing attackers from crafting links that look like they are part of the legitimate site.
+
+In another example, a page has a utility function that allows developers to construct transparent redirects to other sites. This allows a phishing group to construct a seemingly legitimate URL on the application site which redirects silently to a malicious site. They can then pass this URL out to unsuspecting users, who can be tricked into visiting the malicious site while believing they're using the legitimate one.
+
+=Additional Resources
+
+    *For more information on PayPal Phishing Site Exploits Google XSS Vulnerability, see: http://seclists.org/webappsec/2006/q1/0066.html
+    *For more information on How to Obscure Any URL, see: http://www.pc-help.org/obscure.htm
+
+=Related Items
+
+    *[[49f1d246-0c79-48dd-90d0-39e52a17d8cc|Attack: Phishing Attack]]
+    *[[914b6a65-2729-47c6-87d9-03f34c2fc700|Attack: Request Smuggling Attack]]
+    *[[99056587-780a-4f07-83c7-183e36b394e5|Attack: Response Splitting Attack]]
+    *[[8ea9bdd9-de4f-46d7-9fd2-b5be2a50a6eb|Attack: Cross Site Request Forgery]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

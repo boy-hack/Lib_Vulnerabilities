@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>96d8cd55-3e74-4e26-a1b7-62189556df0c</Id>
+    <Id_History>00000000-0000-0000-0000-0000000b0d98,96d8cd55-3e74-4e26-a1b7-62189556df0c,9e554360-e0f4-4810-8272-14267b574fb8,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Code Injection</Title>
+    <Category>Dangerous APIs</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Code Injection</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Scripting languages often have functions, such as eval(), that allow interpreting a string or a file as a part of the application. The danger of using these functions is that under certain conditions an attacker may be able to supply malicious code and it will be executed as a part of the application. This gives the attacker full control of the application. Code injection vulnerabilities affect all scripting languages, but typically occur in web applications written in PHP. 
+
+=Impact
+
+An attacker gains full control of the application and the ability to use any operating system functions that are available to the scripting environment. Code injection is one of the most dangerous vulnerability types, if not the most dangerous. On top of being extremely powerful, code injection vulnerabilities are typically easy to exploit, especially in web applications. 
+
+=Countermeasures
+
+To prevent code injection vulnerabilities, validate all input and avoid using dangerous APIs.
+
+Validate all input:
+* [[3de41277-0cc1-4ebc-8dd7-e96d161aa0ef|Validate All Input]]
+* [[e59923e7-c2fb-4a75-8db7-a9a91e869f74|Validate Input for Length, Range, Format, And Type]]
+
+Avoid using dangerous APIs:
+* [[00000000-0000-0000-0000-000000302a8f|Avoid Using Reflection]]
+
+=Application Check
+
+To check for adequate protection against code injection, find all the calls to dangerous functions and verify that data passed to them is sufficiently validated, and ensure that dangerous APIs are avoided.
+
+All input is validated:
+* [[a210fcb7-f142-4c2e-844a-c43e0859f90d|All Input Is Validated]]
+* [[0e71dd64-87d1-4cf5-9569-ea320f209977|Input Is Validated for Length, Range, Format, And Type]]
+
+Dangerous APIs are avoided:
+* [[00000000-0000-0000-0000-00000012cfad|Reflection Is Avoided]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
+
+==OWASP Top Threats & Mitigations==
+
+This course examines in depth the vulnerabilities, threats, and mitigations described in the OWASP Top 10 2013. Upon completion of this class, participants will be able to identify and mitigate the greatest threats that web application developers face, including: Injection, Broken Authentication and Session Management, Cross-Site Scripting (XSS), Insecure Direct Object References, Security Misconfiguration, Sensitive Data Exposure, Missing Function Level Access Control, Cross-Site Request Forgery (CSRF), Using Components with Known Vulnerabilities, and Unvalidated Redirects and Forwards.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/139631|DES 221 OWASP Top Threats & Mitigations]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources
+
+* For more information about Code Injection, see http://en.wikipedia.org/wiki/Code_injection
+* For more information about Code Injection, see https://www.owasp.org/index.php/Code_Injection]]></Data>
+  </Content>
+</TeamMentor_Article>

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>b88255fa-86f1-4d3b-9f7f-66bc144e985c</Id>
+    <Id_History>00000000-0000-0000-0000-0000003bcfab,b88255fa-86f1-4d3b-9f7f-66bc144e985c,3a33c992-dad5-4597-af8e-8dc9d37f80d8,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Path Traversal</Title>
+    <Category>Authorization</Category>
+    <Phase>Implementation</Phase>
+    <Technology>PHP</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Path Traversal</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Some applications allow the user to choose what files to access. Some of these applications don't validate the selected file path sufficiently. This path traversal vulnerability allows an attacker to access files outside of the locations authorized by the application. Path traversal vulnerabilities typically affect web applications.  
+
+=Impact
+
+Using path traversal, an attacker is able to access files outside of the scope allowed by the application. The attacker may then access sensitive operating system files, and application configuration files that include connection strings, application source code, and other sensitive data. The attacker will usually attempt to leverage information gathered using path traversal to take full control of the application or the application server.
+
+=Countermeasures
+
+To prevent this problem, canonicalize all file path and name input, validate all input, perform access control checks for any filesystem access, use reference maps to access objects, and disable directory browsing.
+
+Canonicalize all file path and name input:
+* [[00000000-0000-0000-0000-0000003b5c16|Canonicalize All File Path and Name Input]]
+
+Validate all input:
+* [[c0a4f56c-1e8c-4d3a-97e2-fc9e969d5d52|Use Positive Input Validation]]
+
+Perform access control checks for any filesystem access:
+* [[3f546271-6ecc-499e-bbf1-c221fdecc222|Check Access Control Permissions When Referencing Objects]]
+
+Use reference maps to access objects:
+* [[62aa729a-fafa-4327-a3b7-dc5747aed610|Use Indirect Object References]]
+
+Disable directory browsing:
+* [[aaf96d58-0037-4ea7-a8c7-0f98db813a2d|Disable Directory Browsing]]
+
+=Application Check
+
+To check for adequate protection against this vulnerability, ensure that all file path and name input is canonicalized, all input is validated, access control checks are performed for all filesystem access, and directory browsing is disabled.
+
+All file path and name input is canonicalized:
+* [[00000000-0000-0000-0000-000000026eca|All File Path and Name Input Is Canonicalized]]
+
+All input is validated:
+* [[d4129497-3a66-44d1-881e-e6f004af2e0d|Positive Input Validation Is Used]]
+
+Access control checks are performed for all filesystem access:
+* [[9a2923bd-0501-4a2c-867f-09fbc054c840|Access Control Permissions Are Checked When Referencing Objects]]
+
+Reference maps are used to access objects:
+* [[bb14e1b4-65d9-4d65-9c46-fd4941a9827b|Indirect Object References Are Used]]
+
+Directory browsing is disabled:
+* [[6a97132c-6047-4619-bc13-fea1797a9278|Directory Browsing Is Disabled]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training courses to learn more about Path Traversal including techniques for remediation and prevention.
+
+==Creating Secure PHP Code==
+
+This course introduces best practices for developing secure PHP code. The course also identifies common PHP vulnerabilities that attackers can exploit to gain access to critical information. In addition, the course explains mitigation techniques that you can use to avoid common PHP vulnerabilities and write secure code. After completing this course, you will be able to describe the best practices for developing secure PHP code, explain common PHP vulnerabilities and learn mitigation techniques to avoid common PHP vulnerabilities and write secure code. 
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127620|COD 315 Creating Secure PHP Code]].
+
+==Fundamentals of Application Security==
+
+This two-part course is ideal for security and development practitioners that want to understand software security risk and seek specific implementation guidance on how to build and deploy more secure software applications.  It starts off describing why software security is critical and the risk that software vulnerabilities represent, and proceeds to lay the foundation for secure software development by presenting specific security controls and principles that development teams can implement immediately to reduce software risk. 
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127105|AWA 101 Fundamentals of Application Security]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources
+* For more information about path traversal, please see https://www.owasp.org/index.php/Path_Traversal]]></Data>
+  </Content>
+</TeamMentor_Article>

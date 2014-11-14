@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>64ef29be-8402-4ee2-9cfe-78254c8c8a1b</Id>
+    <Id_History>64ef29be-8402-4ee2-9cfe-78254c8c8a1b,825a9124-9ee3-43bc-b7c2-e67f45e75136,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Poor Error Handling</Title>
+    <Category>Error Handling</Category>
+    <Phase>Implementation</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Poor Error Handling</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+Poorly handled error conditions may allow attacks to go unnoticed. Checking error conditions helps the application to determine if something out of the ordinary is happening and to log that information. Log information helps administrators determine when an attack is taking place and provides information about the attack. 
+
+Poorly handled error condition flaws may occur in any type of application. 
+
+=Impact=
+Poorly handled error conditions may result in other, more serious vulnerabilities. A poorly handled error condition may not actually give any advantage to the attacker. However, if the application contains a lot of code that may produce poorly handled errors, it creates a fertile field for the attacker to look for vulnerabilities. 
+
+=Countermeasures=
+To prevent unchecked error conditions, use structured exception handling, use a global exception handler for unhandled exceptions, and log error information. 
+
+* [[fceefe0c-900a-4c29-9c2e-ee662aa9e1f1|Use Structured Exception Handling]]
+* [[3e815c74-4d57-4c1b-8446-750b319ea046|Use a Global Exception Handler for Unhandled Exceptions]]
+* [[00000000-0000-0000-0000-000000340de3|Log Error Information]]
+
+=Application Check=
+To check for adequate protection against this vulnerability, verify that structured exception handling is used, a global exception handler is used for unhandled exceptions, and error information is logged. 
+
+* [[2739df30-b3da-417e-8856-2201a2b2a17a|Structured Exception Handling Is Used]]
+* [[c88e1b49-357d-4202-aafc-86ce0de485bd|A Global Exception Handler Is Used for Unhandled Exceptions]]
+* [[00000000-0000-0000-0000-00000078ce47|Error Information Is Logged]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training courses for more background information about this type of vulnerabilities.
+
+==Creating Secure J2EE Code==
+
+This course introduces and explains the precautionary measures you can use to avoid Web software security vulnerabilities, such as data leakage attacks, client/server protocol manipulation, injection attacks, and exploiting authentication.  At the end of this course, you will have learned about time-tested defensive coding principles and how to use them to increase the security of your application, and prevent common security vulnerabilities.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127619|COD 313 Creating Secure J2EE Code]]
+
+==Creating Secure Code - JRE Foundations==
+
+In this course, you will learn to recognize and remediate common Java Web software security vulnerabilities.  This course has three modules, which introduce you to these vulnerabilities and help you to identify and remediate them.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127615|COD 211 Creating Secure Code - JRE Foundations]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

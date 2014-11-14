@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="-1910095507" Content_Hash="-806901187">
+  <Metadata>
+    <Id>16fbf122-43cf-4201-9b33-cf2c728de202</Id>
+    <Id_History>29e3d723-354f-4d82-ac7b-b004dc759c2f,16fbf122-43cf-4201-9b33-cf2c728de202,45a12c21-5c42-453f-9d7f-7467015c2428,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Chosen Plaintext Attack</Title>
+    <Category>Cryptography</Category>
+    <Phase>Design</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Chosen Plaintext Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Applications that use encryption.
+
+=Description
+
+A chosen plaintext attack (CPA) is a form of cryptanalysis where it is assumed that the attacker has access to a device that provides the capability to choose arbitrary plaintext to be encrypted and obtain the corresponding ciphertext.
+
+An attacker with such capabilities will encrypt selected plaintext, and then analyze the resulting ciphertext to gain further information that reduces the security of the encryption scheme. In the worst case, a chosen plaintext attack could reveal the scheme's secret key.
+
+=Impact
+
+    *Disclosure of sensitive data.
+
+=Vulnerabilities
+
+    *Custom implementation of algorithm.
+    *Use of weak keys (e.g., a short key length).
+    *Exposing cipher text unnecessarily.
+    *Allowing an attacker to submit arbitrary data for encryption.
+
+=Countermeasures
+
+    *Use well-known implementations of well-known cryptographic algorithms.
+    *Use cryptographically generated random keys.
+    *Use large keys (128-bit symmetric or 1024-bit asymmetric keys).
+    *Utilize platform supplied features to store secret keys.
+    *Follow principle of least privilege to provide limited access to the secret key.
+    *Maintain the key outside of the application domain (e.g., for a Web server, keep the key outside of the webroot).
+    *If using a symmetric cipher, utilize a unique random IV to hide the underlying character pattern of the plain text, and use a chaining mode to prevent the replacement of individual blocks of the ciphertext.
+    *If using a cryptographic hash algorithm, salt the hash value with a unique random bit stream.
+
+=Additional Resources
+
+    *For more information on chosen plaintext attacks, see: http://en.wikipedia.org/wiki/Chosen_plaintext_attack
+
+=Related Items
+
+    *[[2c13c857-5ef0-4fcd-9283-9632374106a3|Attack: Chosen Ciphertext Attack]]
+    *[[0e1b09a6-ec13-4eb6-b8e6-0a2d5d92d4b4|Attack: Key Bruteforce Attack]]
+    *[[4d4d0b86-0a9e-4f66-b95b-92fcb68b8c1a|Attack: Traffic Analysis Attack]]
+    *[[8482159c-5ec2-4b89-9c65-9af765030ff5|Attack: Information Disclosure Attack]]
+    *[[331bfa1d-94c7-485b-8d8f-b8bab3e679e4|Attack: Statistical Analysis Attack]]
+    *[[00030b2d-5b8e-44c7-a643-afcee6e1157d|Attack: Timing Analysis Attack]]
+    *[[88892358-450e-4bbc-afd9-ede9393e53a8|Attack: Sniff Memory for Secrets Attack]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

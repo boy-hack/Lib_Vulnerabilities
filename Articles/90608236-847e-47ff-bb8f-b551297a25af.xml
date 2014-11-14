@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>90608236-847e-47ff-bb8f-b551297a25af</Id>
+    <Id_History>90608236-847e-47ff-bb8f-b551297a25af,c49fe1de-b0e0-4de3-807a-afe4facfd17f,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Open Redirect</Title>
+    <Category>Redirects and Forwards</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Open Redirect</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Many web applications use URL redirection to direct a user to another site or page on the same site. Some web sites make it possible to manipulate the destination of the URL redirection. An attacker may be able to abuse this functionality to trick users into entering sensitive information into a malicious website while seemingly navigating within a trusted website. This vulnerability applies to all applications that use URL redirection. 
+
+=Impact
+
+Open redirects allow an attacker to send users to a malicious site via a legitimate-looking URL. Many users are tricked by the legitimate-looking URL into thinking that they are browsing a trusted site. The malicious site may have an authentic looking login page, which tempts unsuspecting users into entering their usernames and passwords. When personal information is entered into the malicious login page, it is recorded for the attacker's use. Once the attacker has valid user credentials, he can access or modify users' data in the application. If the attacker is able to take over an administrative account, he may gain full control of the application. 
+
+=Countermeasures
+
+To prevent this problem, avoid using redirects altogether, if possible.  If redirects are necessary, avoid redirection based on user input if possible. If user input is necessary for redirects, use reference maps to limit permissible redirect destinations, and always validate destinations of redirects. 
+
+=Application Check
+
+To check for adequate protection against this problem, choose the application check that fits the above Countermeasures strategy that you have chosen:  Ensure that redirects are not used.  OR  Ensure that redirection is not based on user input.  OR  If user input is needed, ensure that reference maps are used to limit permissible redirect destinations, and always validate the destinations of redirects.
+
+=Specific Technologies
+
+* [[fdd2fa70-27b7-4399-ba3c-3b0b1bc7360b|ASP.NET Open Redirect]]
+* [[79aaa6c6-54bd-4a98-9649-77f81312085e|Java Open Redirect]]
+* [[279ad567-2b34-44ce-8e56-8d96770ba500|PHP Open Redirect]]]]></Data>
+  </Content>
+</TeamMentor_Article>

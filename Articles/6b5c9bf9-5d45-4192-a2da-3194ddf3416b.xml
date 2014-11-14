@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>6b5c9bf9-5d45-4192-a2da-3194ddf3416b</Id>
+    <Id_History>6b5c9bf9-5d45-4192-a2da-3194ddf3416b,7a2937a5-b4ac-4fb2-9749-0cebb4bf139e,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Information Leak Through Cookies</Title>
+    <Category>Session Management</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Information Leak Through Cookies</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Cookies are used by web applications to store data in the browser. Cookies may be marked as persistent and stored for an extended period of time. An attacker may gain access to the drive that stores the cookies and recover sensitive data from them. The exact impact depends on the nature of the sensitive data in the cookies. This vulnerability applies to web applications that use cookies. 
+
+=Impact
+
+The exact impact of this vulnerability depends on the sensitive data stored in the cookies that the attacker has gained access to. Usually this is session data that keeps a user authenticated to an application. In that case, the attacker is able to impersonate the authenticated user. The ability to impersonate an authenticated user allows the attacker to carry out any actions that are available to that user within the application. That might be enough for the attacker, or he may use that access to leverage additional vulnerabilities for additional privileges. 
+
+=Countermeasures
+
+To prevent this vulnerability, don't store sensitive data in persistent cookies. 
+
+=Application Check
+
+To check for adequate protection against this vulnerability, find all code that stores cookies and ensure that sensitive data is not stored in persistent cookies. 
+
+=Specific Technologies
+
+* [[baf9e37f-ae0c-4f38-99d4-1942aaefef44|ASP.NET Information Leak Through Cookies]]
+* [[6cbabed6-4bd2-4f16-a955-e585182b06b3|PHP Information Leak Through Cookies]]]]></Data>
+  </Content>
+</TeamMentor_Article>

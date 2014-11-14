@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>907797a3-3e9c-4cd8-ac5d-261209092414</Id>
+    <Id_History>907797a3-3e9c-4cd8-ac5d-261209092414,2ac3d0e4-b304-41ea-862b-0f2ec7b97c21,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Missing XML Validation</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Missing XML Validation</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Missing XML validation means that an attacker may cause the application to parse invalid XML data. This vulnerability type refers specifically to not validating XML against a schema. In itself, this might not cause any harm, but it may enable other vulnerabilities, such as XML Entity Injection. This vulnerability type affects all applications that parse XML data. 
+
+=Impact
+
+Missing XML validation may enable other attacks that exploit other vulnerabilities. The exact impact depends on the kind of other vulnerabilities that are enabled. The most likely and dangerous scenario is some form of XML injection attack, where the attack manipulates application data by sending malformed XML data. For example, if the application uses XML to store authentication credentials, the attacker may be able to send XML data that authenticates him as an administrative user, and he may then take over the application. For that to be possible, a number of other vulnerabilities in addition to missing XML validation would need to be present. 
+
+=Countermeasures
+
+To prevent this vulnerability type, validate untrusted XML data.  XML validation helps prevent attacks that exploit other vulnerabilities, and should always be used when untrusted XML data is processed.
+
+=Application Check
+
+To check for adequate protection against this vulnerability type, verify that untrusted XML data is validated.
+
+=Specific Technologies
+
+* [[099d9a5b-3ac2-4acb-9192-5b6d7fafda34|ASP.NET Missing XML Validation]]
+* [[fa554526-0e27-470f-ba6c-464c2250cfbd|Java Missing XML Validation]]]]></Data>
+  </Content>
+</TeamMentor_Article>

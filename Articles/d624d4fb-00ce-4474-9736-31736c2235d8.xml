@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>d624d4fb-00ce-4474-9736-31736c2235d8</Id>
+    <Id_History>d624d4fb-00ce-4474-9736-31736c2235d8,1b765657-80b3-4cd4-ab5a-0533c1a97089,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>HTTP Request Smuggling</Title>
+    <Category>Deployment Considerations</Category>
+    <Phase>Deployment</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>HTTP Request Smuggling</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+HTTP request smuggling vulnerabilities occur when a proxy or a firewall handles invalid requests in a manner that causes it to issue malicious requests to the web application that it is supposed to be serving or protecting. 
+
+For example, sending a request that contains exploit code to a vulnerable HTTP firewall will cause that firewall to forward that exploit code to the web application. This is undesired behavior because the HTTP firewall should have blocked the exploit code. In this case, the application is actually being attacked, but an HTTP request smuggling vulnerability in the HTTP firewall is exploited to make the attack possible.
+
+HTTP proxies and firewalls are potentially affected by HTTP request smuggling vulnerabilities.
+
+==Impact==
+
+The impact of HTTP request smuggling vulnerabilities in HTTP firewalls is that the attacker will be able to bypass the HTTP firewall when attacking the application that the firewall is supposed to be protecting.
+
+The impact of HTTP request smuggling vulnerabilities in HTTP proxies is that the attacker can manipulate the content cached by the proxy. The attacker can modify the cached content to display a defaced page, making it look like the application has been compromised, when in reality it is only the proxy that has been compromised. The attacker can also modify the cached content to include malicious script and thus carry out cross-site scripting attacks on the application's users. 
+
+In the event of successful compromise of a user's system, the attacker will gain a foothold in the application. If an administrative user account is compromised, the attacker might attempt to inject malicious code into the application or application data. In the event of successful code injection, the attacker will be able to take over the application.
+
+==Countermeasures==
+
+There are no application security measures that can mitigate HTTP request smuggling vulnerabilities, because these vulnerabilities are in the network devices that developers usually cannot reprogram themselves. To mitigate HTTP request smuggling vulnerabilities, update network hardware.
+
+* [[0179b95b-f2eb-44f0-8048-3696ea9c4be8|Update Network Hardware]]
+
+==Application Check==
+
+To verify that HTTP request smuggling vulnerabilities are mitigated, verify that network hardware is updated.
+
+* [[de92378e-1d64-4567-88b1-2e40fe037a01|Network Hardware Is Updated]]
+
+
+==Additional Resources==
+
+* For more information about HTTP request smuggling, see http://projects.webappsec.org/w/page/13246928/HTTP%20Request%20Smuggling
+]]></Data>
+  </Content>
+</TeamMentor_Article>

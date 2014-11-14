@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>5cdbc019-536d-4c36-ad03-de11031a0f04</Id>
+    <Id_History>5cdbc019-536d-4c36-ad03-de11031a0f04,66f1edc6-b178-4172-8cbe-94c3b282e2db,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Insecure Randomness</Title>
+    <Category>Cryptography</Category>
+    <Phase>Implementation</Phase>
+    <Technology>PHP</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Insecure Randomness</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+Insecure randomness vulnerabilities occur when a pseudo-random number generator with poor entropy is used for cryptography. With poor entropy, the results of the cryptographic algorithm being used become easier to predict, thus weakening the cryptography overall. 
+
+It is important to distinguish between encryption and cryptography in general: Encryption is a subset of cryptography, and refers to scrambling stored data in a manner that can be reversed, whereas cryptography is a more general term that refers to using a certain type of  algorithm for a practical application. 
+
+Insecure randomness issues affect all applications that use cryptographic algorithms that require random numbers for proper operation (which is virtually all of them). 
+
+=Impact=
+If a pseudo-random number generator with poor entropy is used, the cryptographic scheme can be broken in a short time. The exact impact depends on the cryptographic scheme being used and its purpose. One possible scenario is when a poor source of randomness is used to generate authentication keys - in this case an attacker will be able to generate unauthorized authentication keys. Another possible scenario is when a poor source of randomness is used as a part of an encryption scheme - in that case an attacker will be able to recover encrypted data.
+
+=Countermeasures=
+To prevent insecure randomness vulnerabilities, use a cryptographically strong pseudo-random number generator.
+
+* [[c38d8837-682c-4b0b-bde3-3530053fb1c0|Use a Strong PRNG]]
+
+=Application Check=
+To check for adequate protection against insecure randomness vulnerabilities, make sure that a cryptographically strong pseudo-random number generator is used.
+
+* [[46e1b223-0aa6-4007-a3da-eb767ea3b62c|A Strong PRNG Is Used]]]]></Data>
+  </Content>
+</TeamMentor_Article>

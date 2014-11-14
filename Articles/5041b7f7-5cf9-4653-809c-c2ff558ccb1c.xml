@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>5041b7f7-5cf9-4653-809c-c2ff558ccb1c</Id>
+    <Id_History>5041b7f7-5cf9-4653-809c-c2ff558ccb1c,516abc98-1f80-49ea-9303-4a9ee4265944,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Improper Filesystem Permissions</Title>
+    <Category>Deployment Considerations</Category>
+    <Phase>Deployment</Phase>
+    <Technology>PHP</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Improper Filesystem Permissions</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Improper filesystem permissions vulnerabilities occur when the filesystem permissions are not sufficiently restricted, either as a result of the application not setting strict enough permissions or the user/administrator/customer not securing the system sufficiently.
+
+All applications are affected by improper filesystem permissions vulnerabilities.
+
+==Impact==
+
+The impact of improper filesystem permissions depends heavily on the specific files that are exposed and the specific application that is vulnerable. 
+
+Native code privileged system applications are the most seriously affected by improper filesystem permissions. For example, if working files of a privileged system application are exposed, an attacker might be able to replace them with malicious data and cause the vulnerable application to execute arbitrary code with superuser privileges.
+
+Web applications are usually only affected by improper filesystem permissions if there are additional vulnerabilities in the application. A vulnerability that allows the attacker to upload malicious code might be mitigated by strong filesystem permissions, but if the application has write permissions to web accessible directories, the attacker will be able to upload the malicious code and take over the application.
+
+Improper filesystem permissions also greatly simplify the task of backdooring a compromised system by creating locations where backdoors might be hidden. For example, if application files are not write-protected, the attacker will be able to replace them with backdoored versions.
+
+Lastly, improper filesystem permissions affect the systems themselves, especially user data. For example, if the system is configured to allow unprivileged users to read the superuser's files, an attacker that has gained access to the system might find authentication credentials, like SSH or RDP keys, stored by the administrator.
+
+==Countermeasures==
+
+To prevent improper filesystem permissions, harden the server.
+
+* [[99297f49-528b-4a25-bc35-3b82ef14404a|Harden the Server]]
+
+==Application Check==
+
+To make sure that improper filesystem permissions are prevented, verify that the server is hardened.
+
+* [[408f56bf-9ca6-482d-bff2-a2495ff80917|The Server Is Hardened]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

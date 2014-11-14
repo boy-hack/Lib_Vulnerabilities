@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>a86e3035-578c-4dfe-a147-2776af6de6e1</Id>
+    <Id_History>00000000-0000-0000-0000-00000044a269,a86e3035-578c-4dfe-a147-2776af6de6e1,52fe2727-bdc6-489b-84e0-ccf849289e41,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Connection String Injection</Title>
+    <Category>Database Security</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Connection String Injection</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Applications use connection strings to specify credentials used to access databases. If the application includes unvalidated user input in connection strings, an attacker may be able to change what databases the application connects to. Connection string injection vulnerabilities apply to applications that connect to databases. 
+
+=Impact
+
+By manipulating the connection string, an attacker is able to cause the application to connect to an unintended data source. The attacker may be able to bypass authentication by re-routing the application to use his own database. The attacker may also get data from another database by re-routing the application to use it. The exact impact of a connection string injection vulnerability is difficult to predict because it is heavily dependent on application logic. Overall, the connection string vulnerability is difficult for an attacker to use, but it is still a serious vulnerability.
+
+=Countermeasures
+
+To prevent connection string injection vulnerabilities, validate all input, store connection strings securely, and don't use user input in connection strings. 
+
+Validate all input:
+* [[3de41277-0cc1-4ebc-8dd7-e96d161aa0ef|Validate All Input]]
+* [[e59923e7-c2fb-4a75-8db7-a9a91e869f74|Validate Input for Length, Range, Format, And Type]]
+
+Store connection strings securely:
+* [[612e1d5c-8b41-43ef-a203-daa6f814c57b|Encrypt SQL Connection Strings with DPAPI]]
+* [[b42bbac5-7441-436a-92a5-a0d05593c62c|Encrypt SQL Connection Strings with RSA on Web Farms]]
+
+Don't use user input in connection strings:
+* [[00000000-0000-0000-0000-00000061594a|Do Not Use User Input in Connection Strings]]
+
+=Application Check
+
+To check for adequate protection against connection string injection vulnerabilities, find all connection strings used by the application and verify that all input is validated, connection strings are stored securely, and user input is not used in connection strings. 
+
+All input is validated:
+* [[a210fcb7-f142-4c2e-844a-c43e0859f90d|All Input Is Validated]]
+* [[0e71dd64-87d1-4cf5-9569-ea320f209977|Input Is Validated for Length, Range, Format, And Type]]
+
+Connection strings are stored securely:
+* [[eb8d54d3-1d59-4d33-ba54-b69df5d2eb74|Connection Strings Are Encrypted]]
+
+User input is not used in connection strings:
+* [[00000000-0000-0000-0000-00000040c40b|User Input Is Not Used in Connection Strings]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
+
+==Creating Secure Code – .NET 4.0 Foundations==
+
+This course describes .NET security features, including concepts such as Code Access Security (CAS) and .NET cryptographic technologies. It also provides secure coding best practices that will enable you to build more secure applications in .NET. 
+
+[[http://teamprofessor.absorbtraining.com/ninja/#/courses/course/127611|COD 215 Creating Secure Code – .NET 4.0 Foundations]]
+
+==Fundamentals of Secure Database Development==
+
+This course introduces developers to the fundamentals of secure database development. The course begins with a discussion on the role of databases and how they are used in today's software systems. It also discusses the common database attacks that could be used to cause significant loss to organizations. Next, it reviews the best practices that developers should incorporate to mitigate the risks from database attacks, including practices that developers should avoid. Finally, the course concludes with a walk-through of a software system scenario that allows you to apply the database attacks and developer best practices discussed throughout the course.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127628|COD 141 Fundamentals of Secure Database Development]]
+
+==Creating Secure Code – Oracle Foundations==
+
+This course consists of three modules. The first module introduces you to database security and the challenges faced in developing secure database-driven applications. The second module covers important application development security basics as well as best practices. The third module covers common security attacks that impact Oracle database developers and the recommended countermeasures to mitigate risks from those attacks.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127616|COD 241 Creating Secure Code – Oracle Foundations]]
+
+==Creating Secure Code – SQL Server==
+
+In this course, you will learn about securely developing applications using Microsoft SQL Server database versions 2008 and 2012. This course consists of three modules. The first module introduces you to database security and the challenges faced in developing secure database-driven applications. The second module covers important application development security basics as well as best practices. The third module covers common security attacks that impact SQL server database developers and the recommended mitigation to reduce risks from those attacks.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127617|COD 242 Creating Secure Code – SQL Server]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+]]></Data>
+  </Content>
+</TeamMentor_Article>

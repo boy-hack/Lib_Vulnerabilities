@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>ec38fb55-80b0-45ab-aa08-e0f681744234</Id>
+    <Id_History>ec38fb55-80b0-45ab-aa08-e0f681744234,76d2e54c-feca-4bac-beaf-4f93c1860569,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Missing Check Against Null</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Missing Check Against Null</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+
+Missing check against null is not necessarily a vulnerability in itself, but is likely to result in null pointer dereference vulnerabilities. Null pointer dereference vulnerabilities occur when the application attempts to use a pointer/object reference that has a null value as if it has a valid value. If application code checks pointers/object references for null before using them, null pointer dereference vulnerabilities won't occur. 
+
+Automated code scanners can easily detect whether pointers/object references are checked for null before being used and can point out potential trouble areas to the developers. 
+
+Missing check against null issues affect all applications.
+
+=Impact=
+
+If a pointer is not checked for null before being used, the application will crash. Sometimes, null pointer dereference results in execution of arbitrary code. Execution of arbitrary code requires the attacker to hijack the exception handler that is called when a null pointer dereference occurs; the exact mechanism for doing so depends on different platforms, and is only possible on some platforms. 
+
+Both managed and unmanaged languages are subject to null pointer dereferences, but arbitrary code execution as a result of it affects only unmanaged languages. Applications written in managed languages will either crash or throw an error message as a result of null pointer dereference.
+
+=Countermeasures=
+
+To prevent missing check against null issues, check pointers/object references for null before using them. Usually, a pointer/object reference is passed as an argument to a function - in such situations, it is best to check these pointers/object references for null right in the very beginning of the function and throw an exception or return an error code if a null value is detected. 
+
+=Application Check=
+
+To check for adequate protection against these issues, make sure that pointers/object references are checked for null in the beginning of function definitions.
+
+=Specific Technologies=
+
+* [[8cdac89d-5f52-49fd-aea3-1d14d460a8c3|C++ Missing Check against Null]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

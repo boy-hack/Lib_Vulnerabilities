@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>ad57c433-709e-4958-985c-4fd6e69e81b8</Id>
+    <Id_History>ad57c433-709e-4958-985c-4fd6e69e81b8,edd88809-99e1-43c0-bab0-7760bb2d8e6a,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Cookieless Authentication</Title>
+    <Category>Authentication</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Cookieless Authentication</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Most web applications use cookies to keep track of session state. Some applications use other mechanisms to keep track of authenticated sessions. These custom authentication schemes are usually vulnerable to session hijacking. An attacker exploiting cookieless authentication schemes may gain elevated privileges by tampering with user-mutable parameters, or may hijack an authenticated session by intercepting it using some form of a man-in-the-middle attack. 
+
+==Impact==
+
+Using cookieless authentication often allows an attacker to hijack user sessions. Once the attacker has hijacked a user's session, he can do anything that the user is allowed to do by the application. This usually allows the attacker to access and modify the user's data. If the attacker hijacks an administrator's session, he may be able to take full control of the application. 
+
+=Countermeasures
+
+To prevent this problem, use platform-provided session management, use SSL to protect authentication, set HTTP-Only and Secure flags on session cookies, and send session cookies only over SSL.
+
+=Application Check
+
+To check for adequate protection against this vulnerability, examine the authentication mechanism and determine whether the application uses session cookies to keep track of authenticated users.
+
+==Specific Technologies==
+
+* [[ed436f22-7c9f-4f44-a17c-49cb425c4d65|ASP.NET Cookieless Authentication]]]]></Data>
+  </Content>
+</TeamMentor_Article>

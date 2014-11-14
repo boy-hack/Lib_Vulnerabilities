@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>cad337fe-3564-4f00-9894-a23ab01abfe3</Id>
+    <Id_History>cad337fe-3564-4f00-9894-a23ab01abfe3,a3e5c376-9408-4078-bcd8-42eb02a33f61,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Password Management</Title>
+    <Category>Authentication</Category>
+    <Phase>Implementation</Phase>
+    <Technology>PHP</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Password Management</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+An insufficiently protected credential weakness occurs when the application doesn't store or transmit the authentication credentials securely. 
+* If the passwords are not hashed and salted, an attacker may be able to recover stored passwords after compromising the application. 
+* If the passwords or hashes are not encrypted during transmission, an attacker may be able to intercept passwords or hashes via a man-in-the-middle attack. 
+* If passwords are hard-coded, then the attacker will be able to recover them by reverse engineering application code. The attacker has to get the copy of the code for that to be possible, but that is usually a minor obstacle and does not provide sufficient protection. 
+* If the password is blank or null, the purpose of authentication is largely defeated, as the attacker can login without supplying a password at all. 
+
+All applications that use authentication are potentially affected by insufficiently protected credential weakness vulnerabilities. 
+
+=Impact=
+An insufficiently protected credential vulnerability makes it easier for an attacker to gain access to the authentication credentials. Usually, some other vulnerability has to be present for the attacker to recover the credentials. Once the attacker has the credentials, he can impersonate the user whose credentials have been compromised. 
+
+Malicious hackers usually target privileged accounts to take over the application. After taking over the application, an attacker may leverage other vulnerabilities to take over the application platform and use it to pivot for other attacks. Compromising the application also gives the attacker access to user data, thus enabling him to impersonate the user. 
+
+=Countermeasures=
+To prevent this vulnerability type, use PBKDF2 to secure passwords. 
+
+* [[62593693-31c2-441a-b6f8-4fc47acac06d|Store Passwords Securely]]
+
+=Application Check=
+To check for adequate protection against this vulnerability type, verify that PBKDF2 is used to secure passwords.
+
+* [[3daed10e-b47a-40fe-b75d-3c68532c1f0d|Passwords Are Stored Securely]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training courses for more background information about this type of vulnerabilities.
+
+==Creating Secure PHP Code==
+
+This course introduces best practices for developing secure PHP code. The course also identifies common PHP vulnerabilities that attackers can exploit to gain access to critical information. In addition, the course explains mitigation techniques that you can use to avoid common PHP vulnerabilities and write secure code. After completing this course, you will be able to describe the best practices for developing secure PHP code, explain common PHP vulnerabilities and learn mitigation techniques to avoid common PHP vulnerabilities and write secure code.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127620|COD 315P Creating Secure PHP Code]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//]]></Data>
+  </Content>
+</TeamMentor_Article>

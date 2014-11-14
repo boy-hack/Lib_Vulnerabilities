@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="1662420581" Content_Hash="484013154">
+  <Metadata>
+    <Id>4b7d247d-f6a9-493e-a19a-665ff54b757f</Id>
+    <Id_History>2a28f8b4-6907-4fa2-b8db-0c96ef4912ec,4b7d247d-f6a9-493e-a19a-665ff54b757f,6256e08e-b0a2-4e8f-81a0-19f9e4e768fa,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Local Machine Credential Sniffing Attack</Title>
+    <Category>Authentication</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Local Machine Credential Sniffing Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+All software applications.
+
+=Description
+
+Many applications assume that malicious software will never be executed on the local machine. However, in today's world of ubiquitous spyware, viruses, and Trojans, relying on this assumption can lead to the loss of sensitive information like credentials. If an attacker can somehow trick a user into installing malicious software, it may be possible to perform a local machine credential sniffing attack, in which the attacker recovers sensitive information from the file system or other local machine resources. An attacker may look through temporary files, registry keys, swap files, config files, and so on, to discover sensitive data such as username/password pairs, database connection strings, or other data that should be protected.
+
+=Impact
+
+    *Information disclosure.
+
+=Vulnerabilities
+
+    *Failure to use proper encryption techniques.
+    *Using default or insecure permission sets.
+    *Writing sensitive data to locations discoverable by attackers.
+
+=Countermeasures
+
+    *Do not write any sensitive information out to the file system or registry in plaintext.
+    *Encrypt any sensitive data that must be stored.
+    *Explicitly set permissions on temporary files.
+    *Keep sensitive information in memory for as little time as possible.
+    *Overwrite sensitive data files on disk using a secure delete function.
+
+=Example
+
+**Sensitive Data in Temporary Files:** To free up space in memory, an application writes an encryption key to the disk as a temporary file while it's not in use. When the encryption key is no longer used, the developer calls the File.Delete operation which deletes the file from disk.
+
+In this case it is trivial for an attacker to open an application that allows her to read the contents of the file from disk, even after the delete function had been called.
+
+To ensure the contents of this file is unrecoverable, it must be securely deleted by overwriting the bits on disk. The file should always be protected with encryption or with explicitly set permissions to make sure that the file is not discoverable before it is deleted.
+
+=Additional Resources
+
+    *For more information on SDelete, see: http://technet.microsoft.com/en-us/sysinternals/bb897443.aspx
+    *For more information on Wipe: Secure File Deletion, see: http://wipe.sourceforge.net/
+    *For more information on Insecure Temporary Files, see: http://www.owasp.org/index.php/Insecure_Temporary_File
+
+=Related Items
+
+    *[[8482159c-5ec2-4b89-9c65-9af765030ff5|Attack: Information Disclosure Attack]]
+    *[[ad7b18e3-a8a0-4e87-b1a8-908e11449481|Attack: Network Credential Sniffing Attack]]
+    *[[88892358-450e-4bbc-afd9-ede9393e53a8|Attack: Sniff Memory for Secrets Attack]]
+    *[[da5df934-30f1-453b-9d5b-9a9288ef78c1|Attack: API Hijacking Attack]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

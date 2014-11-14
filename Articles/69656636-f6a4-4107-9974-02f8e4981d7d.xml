@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>69656636-f6a4-4107-9974-02f8e4981d7d</Id>
+    <Id_History>69656636-f6a4-4107-9974-02f8e4981d7d,4faead7d-f9d7-4e5d-8cf8-c77f15762702,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>HTTP Request Splitting</Title>
+    <Category>Deployment Considerations</Category>
+    <Phase>Deployment</Phase>
+    <Technology>PHP</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>HTTP Request Splitting</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+HTTP request splitting is an exotic and rare vulnerability type that requires a combination of a vulnerable browser, vulnerable proxy or firewall and the user visiting a malicious site. If all the requirements are met, the attacker will be able to use the malicious page that the user visits to cause the vulnerable browser to send malformed requests that will cause the vulnerable HTTP proxy or firewall to send multiple malicious requests. The responses received by the vulnerable proxy or firewall get passed to the vulnerable browser and appear to come from legitimate sites, but they have to be received when the browser is expecting them. If the browser is expecting these responses, the attacker will be able to manipulate the content that the user can see, for example to change pictures on user requested sites or to execute cross-site scripting attacks that appear to come from these legitimate sites.  
+
+The key requirement for HTTP request splitting is the use of a vulnerable HTTP proxy or firewall. HTTP proxies and firewalls are potentially affected by the HTTP request splitting vulnerability.
+
+==Impact==
+
+The impact of HTTP response splitting is the ability to perform cross-site scripting attacks that appear to come from legitimate sites or to change how legitimate sites appear to the vulnerable users in a manner that suggests that the legitimate sites have been compromised. The impact of cross-site scripting attacks is the same as from regular cross-site scripting attacks. The only difference is that the attacks appear to come from a site that doesn't actually have cross-site scripting vulnerabilities in it, but this makes no difference in terms of impact. The ability to manipulate the contents of the sites that are visited by the user can be used to deceive the user, for example to make it look like his bank account has been compromised. These capabilities require a very specific and rare combination of requirements to be met, which implies that the attacker has to have a lot of information about the target to carry it out specifically. Because of the high difficulty relative to the potential advantage gained, this vulnerability is unlikely to be exploited in the wild.
+
+==Countermeasures==
+
+HTTP request splitting is not a vulnerability in the application, so there are no application security measures to defend against it. To prevent HTTP request splitting, update network hardware.
+
+* [[af3c9f89-0145-4970-bd13-dd30bf7ab387|Update Network Hardware]]
+
+==Application Check==
+
+To make sure that HTTP request splitting is prevented, verify that network hardware is updated.
+
+* [[57ef23a2-5371-4d52-9ec8-53fda4542b95|Network Hardware Is Updated]]
+
+==Additional Resources==
+
+* For more information about HTTP request splitting, see http://projects.webappsec.org/w/page/13246929/HTTP%20Request%20Splitting
+]]></Data>
+  </Content>
+</TeamMentor_Article>

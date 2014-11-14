@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>2b2dd9c7-05c5-43f1-92c6-d2da4f76d0e3</Id>
+    <Id_History>2b2dd9c7-05c5-43f1-92c6-d2da4f76d0e3,d60557d6-6a53-4f74-94ff-a8f360cfbd32,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>XML Entity Expansion</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>XML Entity Expansion</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+XML Entity Expansion vulnerabilities occur when the application processes user input as XML data, specifically as XML entities, and these vulnerabilities can be exploited to cause Denial of Service conditions. 
+
+XML entities are a feature of XML documents that allow assigning names to data. If the attacker can define XML entities that refer to each other, the XML parser might cause the application to crash by getting stuck in an infinite loop. 
+
+Some parsers might have built-in defenses against Entity Expansion vulnerabilities, where the parser realizes that it is using up excessive resources and crashes alone. Some parsers might cause the application to use up all the computational resources of the server. Overall, the result of XML Entity Expansion vulnerabilities is Denial of Service.
+
+XML Entity Expansion vulnerabilities affect all applications that use XML.
+
+==Impact==
+
+The impact of XML Entity Expansion vulnerabilities is a Denial of Service condition. If the attacker is able to inject XML entities into the application that the application will then attempt to parse, the attacker can cause the application server to crash or hang. When the application server crashes or hangs, legitimate users and administrators cannot access the vulnerable application or any other application on the server. It will probably be impossible to restart the server remotely, so somebody will have to go and physically power-cycle the server. The attacker is likely to keep crashing the server until the vulnerability is fixed.
+
+==Countermeasures==
+
+To prevent XML Entity Expansion vulnerabilities, validate the length of XML data.
+
+* [[b191104f-e2c6-4e90-9cf9-6a3e495e1ec7|Validate the Length of XML Data]]
+
+==Application Check==
+
+To make sure that XML Entity Expansion vulnerabilities are prevented, verify that the length of XML data is validated.
+
+* [[9cacd9c7-9d91-4448-ad63-dad44ae7b18e|The Length of XML Data Is Validated]]]]></Data>
+  </Content>
+</TeamMentor_Article>

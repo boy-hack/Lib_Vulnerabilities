@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>edd65ef2-30f0-45bb-b51c-7cf5a08b6bc1</Id>
+    <Id_History>edd65ef2-30f0-45bb-b51c-7cf5a08b6bc1,2338c81b-f21a-47c3-8030-1b8cedc79c76,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Double Free</Title>
+    <Category>Memory Management</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Double Free</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+
+A double-free vulnerability occurs when application code attempts to release memory that used to be allocated but has already been released. Attempting to release memory that has already been released corrupts the data structures used by the application. This might result in a condition that allows the attacker to write arbitrary data into the application's memory space, essentially resulting in a buffer overflow, which may in turn lead to execution of arbitrary code. 
+
+For a buffer overflow to occur as a result of a double-free vulnerability, the same memory has to be allocated for two different objects afterwards, and the attacker has to be able to write to one of these objects. If the attacker is able to write more data than is allocated for the smaller of the objects, a buffer overflow occurs. Exploitation attempts that don't result in arbitrary code execution will result in the application crashing, producing a denial of service condition. 
+
+Double-free issues affect applications written in native code.
+
+=Impact=
+
+A double-free vulnerability results in either a denial of service condition or execution of arbitrary code. Execution of arbitrary code is clearly a lot more dangerous and desirable for attackers. 
+
+Multiple exploitation vectors are possible for double-free vulnerabilities, depending on the attack surface of the affected application. One common scenario is client-side web-browser attacks, where exploit code is uploaded to a web page as a part of the content. When the victim visits the malicious web page, the browser loads the exploit code and processes it either directly or via one of the installed plug-ins or applications. The vulnerable application or plug-in then executes the attacker's shell-code. (Shell-code refers to a small amount of highly optimized malicious code. The term stems from the fact that such code would usually spawn system command line shells for the attacker's use. This term now means any malicious payload that is included as a part of an exploit.) Browser vector shell-code usually downloads malicious software from the Internet and installs it, typically adding the compromised system to the attacker's botnet. 
+
+Another attack vector is remote server-side exploitation, where the exploit is executed against a vulnerable remote network service with the goal of gaining access to the server. In this scenario, the shell-code will usually actually spawn a shell and bind it on a port for the attacker to connect to. (Binding a shell on a port means opening a network port and sending data from it directly to a command-line shell. This makes it easy for the attacker to send commands to execute on the compromised system.) The output from the shell is piped back to the port, so the attacker gets interactive command-line access to the compromised system. The privileges of the spawned shell are those of the compromised application.
+
+=Countermeasures=
+
+To prevent double-free vulnerabilities, write code in such a way that provides a guarantee that allocated memory is freed only once.
+
+=Application Check=
+
+To check for adequate protection against double-free vulnerabilities, verify that code is written in such a way that provides a guarantee that allocated memory is freed only once.
+
+=Specific Technologies=
+
+* [[a749782c-1f6b-4020-aea3-77046fabf428|C++ Double Free]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

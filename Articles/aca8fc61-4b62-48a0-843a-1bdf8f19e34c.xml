@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>aca8fc61-4b62-48a0-843a-1bdf8f19e34c</Id>
+    <Id_History>aca8fc61-4b62-48a0-843a-1bdf8f19e34c,e34baa01-8b1c-493a-962b-c8b5bd4bb609,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Use After Free</Title>
+    <Category>Memory Management</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Use After Free</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+
+Use after free vulnerabilities occur when code attempts to use memory that has already been freed. Use after free vulnerabilities can be exploited to crash the application or to execute arbitrary code under certain circumstances. Different methods are available to the attacker for arbitrary code execution based on application specific conditions, such as whether the attacker can manipulate VFTable entries or reallocate freed memory. 
+
+Use after free vulnerabilities affect applications written in native code.
+
+=Impact=
+
+The impact of use after free vulnerabilities is usually Denial of Service as a result of the application crashing, and sometimes arbitrary code execution as well. One common double-free code execution attack vector targets web browsers or plug-ins. In this scenario, the attacker places exploit code on a web page. When the victim user visits the web page, the exploit is processed by the browser or by one of the installed plug-ins. The exploit code uses the vulnerability to download and execute malicious software, adding the victim user's system to the attacker's botnet. 
+
+Another attack vector is remote server-side exploitation, where the exploit is executed against a remote vulnerable network service with the goal of gaining access to the server. In the remote server-side scenario, the shell-code will usually actually spawn a shell and bind it on a port for the attacker to connect to. Binding a shell on a port means opening a network port and sending data from it directly to a command-line shell, making it easy for the attacker to send commands to execute on the compromised system. The output from the shell is piped back to the port, so the attacker gets interactive command-line access to the compromised system. The privileges of the spawned shell are those of the compromised application.
+
+=Countermeasures=
+
+To prevent use after free vulnerabilities, write code in a way that guarantees that pointers are not used after the memory that they point to has been deallocated.
+
+=Application Check=
+
+To check for adequate protection against use after free vulnerabilities, verify that code is written in a way that guarantees that pointers are not used after the memory that they point to has been deallocated.
+
+=Specific Technologies=
+
+* [[2ee01615-0ed3-46ad-9a22-f1520a55cc1d|C++ Use After Free]]]]></Data>
+  </Content>
+</TeamMentor_Article>

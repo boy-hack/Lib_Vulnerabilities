@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>6c6f2433-222d-4568-8de6-9cbdd198dbc0</Id>
+    <Id_History>6c6f2433-222d-4568-8de6-9cbdd198dbc0,a6122e3c-4317-49fe-8294-aec4899dfa4c,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Use of Hard-coded Password</Title>
+    <Category>Authentication</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Use of Hard-coded Password</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Applications that use authentication need a method for storing passwords. One of the simplest ways to store passwords is to hard-code them into the application. This approach is not secure, because anyone with access to the application code is able to recover these passwords. Once an attacker has recovered the passwords, he can use them to authenticate with the application. 
+
+=Impact
+
+Once the attacker has obtained the hard-coded password, he can use it to access the application. Usually, administrative passwords are the ones that are hard-coded. In that case, the attacker gains full access to the application. The attacker may be able to leverage this access to take full control of the application server. 
+
+=Countermeasures
+
+To prevent this vulnerability, provide a secure admin interface that allows changing passwords, and store passwords securely. 
+
+=Application Check
+
+To check for adequate protection against this vulnerability, examine all code that uses authentication and find where it stores the passwords. 
+
+=Specific Technologies
+
+* [[0cc358fe-0396-4142-bab5-ad327920b340|ASP.NET Use of Hard-coded Password]]
+* [[d18c00d5-2365-45c8-bde7-0e189f812ff6|Java Use of Hard-coded Password]]]]></Data>
+  </Content>
+</TeamMentor_Article>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>11baa288-69b3-4bbd-9133-e9675228e75d</Id>
+    <Id_History>00000000-0000-0000-0000-0000000a973e,11baa288-69b3-4bbd-9133-e9675228e75d,ed212d17-640f-4136-9131-489bdc6770b4,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Cross-Site Request Forgery</Title>
+    <Category>Session Management</Category>
+    <Phase>Implementation</Phase>
+    <Technology>PHP</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Cross-Site Request Forgery</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+A cross site request forgery (CSRF) attack occurs when an attacker tricks a victim into loading a page that contains a malicious request. This request may be able to change the state of the web application, and is possible because the request is sent in the context of the logged in victim. For many sites, each request automatically sends the victim's credentials, such as the session cookie or authentication credentials. Due to this fact, there is no way to distinguish the false request from a legitimate request. CSRF vulnerabilities affect web applications that allow authenticated users to perform operations that are not available to guest users. 
+
+Cross site request forgery attacks are known by other names including XSRF, session riding, one-click and zero-click attacks. A one-click attack refers to a link that causes a malicious action to be performed when a victim clicks on it. A zero-click attack is automatically executed upon page load. A common way to perform a zero-click attack is to embed the request in the source of an image. 
+
+=Impact
+
+CSRF allows the attacker to carry out actions on behalf of an authenticated user by tricking the user into visiting a malicious page or link. The exact impact depends on the functionality that is vulnerable to CSRF. The attacker will usually try to add a privileged user account for himself or to inject arbitrary code into the application. If either of those scenarios succeeds, the attacker gains full control of the application. 
+
+=Countermeasures
+
+To prevent CSRF, include unique tokens in pages that invoke security sensitive operations, and require users to re-authenticate before performing sensitive operations. 
+
+Use unique tokens in sensitive requests:
+* [[4236cf87-7f64-4f77-91b3-04dc1507c366|Include Unique Tokens in HTTP Requests]]
+
+Require the user to re-authenticate for sensitive operations:
+* [[8eba2142-4a6e-4f2c-9648-3ba1cadf9621|Force Reauthentication for Sensitive Operations]]
+
+=Application Check
+
+To check for adequate protection against CSRF, ensure that unique tokens are used in pages that carry out sensitive operations, and that users are required to re-authenticate before performing sensitive operations.
+
+Unique tokens are used in sensitive requests:
+* [[bd341782-83db-4e9e-b604-e43b197ee256|Unique Tokens Are Included in HTTP Requests]]
+
+Users are required to re-authenticate for sensitive operations:
+* [[0c6a261a-14e8-4c36-838d-17b4a8b6532c|Reauthentication Is Required for Sensitive Operations]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training courses to learn more about Cross-Site Request Forgery including techniques for remediation and prevention.
+
+==Creating Secure PHP Code==
+
+This course introduces best practices for developing secure PHP code. The course also identifies common PHP vulnerabilities that attackers can exploit to gain access to critical information. In addition, the course explains mitigation techniques that you can use to avoid common PHP vulnerabilities and write secure code. After completing this course, you will be able to describe the best practices for developing secure PHP code, explain common PHP vulnerabilities and learn mitigation techniques to avoid common PHP vulnerabilities and write secure code. 
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127620|COD 315 Creating Secure PHP Code]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources
+
+* For more information about Cross-Site Request Forgery, see http://en.wikipedia.org/wiki/Cross-site_request_forgery]]></Data>
+  </Content>
+</TeamMentor_Article>

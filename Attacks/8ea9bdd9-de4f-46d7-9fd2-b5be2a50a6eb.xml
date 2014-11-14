@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="812634036" Content_Hash="-1312426593">
+  <Metadata>
+    <Id>8ea9bdd9-de4f-46d7-9fd2-b5be2a50a6eb</Id>
+    <Id_History>6ae71499-095c-49bd-bed0-4e08303a4324,8ea9bdd9-de4f-46d7-9fd2-b5be2a50a6eb,bc28a0b4-bc4e-4a95-b59b-f7a3df5c9d22,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Cross-Site Request Forgery Attack</Title>
+    <Category>Application State</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Cross-Site Request Forgery Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>1</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+All web applications.
+
+=Description
+
+A cross site request forgery attack occurs when an attacker tricks a victim into loading a page that contains a malicious request. The request is sent in the context of the logged in victim, and it may be able to change the state of the web application. On many sites, each request automatically sends the victim's credentials (such as the session cookie or authentication credentials). Thus, there is no way to distinguish the attacker's request from a legitimate request.
+
+Cross site request forgery attacks are known by other names, including XSRF, session riding, one-click and zero-click attacks. A one-click attack refers to a link that causes a malicious action to be performed when a victim clicks on it. A zero-click attack is automatically executed upon page load. A common way to perform a zero-click attack is to embed the request in the source of an image.
+
+=Impact
+
+*Elevation of privilege: The attacker can execute commands on the web application on behalf of the victim.
+
+=Vulnerabilities
+
+*Executing single requests that can change the state of the application, such as add users, change account balances or passwords, etc.
+
+=Countermeasures
+
+    *Add a session identifier or nonce value to each session and/or view-state to track each request.
+    *Use "double submit" cookies (for AJAX requests only).
+    *Minimize single request GET commands.
+    *Never allow a single request to change the state of the web application.
+
+=Example
+
+A CSRF attack is possible if the application allows a user to change the state of the application in a single request. In this example, the web application allows a logged in administrator to create a new user sending a single GET request. The GET request looks like this:
+
+{{{
+GET http://teammentorexample.com/adduser.aspx?username=joe&password=1234&usertype=userHTTP/1.1
+}}}
+
+The attacker discovers that this request will create a new user. He creates his own request, which he embeds in an e-mail with the following image tag:
+
+{{{
+<img src="http://teammentorexample.com/adduser.aspx?username=HACKER&password=TEST&usertype=admin" />
+}}}
+
+When the victim's e-mail client attempts to download the image located at the above source, the request is made without the knowledge of the victim.
+
+The application should require a two step authorization mechanism for any change to server state. In this example the server should send the client a nonce value to verify that the admin would indeed like to add this user. The admin would have to verify the action on a separate page and return the nonce value. Only after the server receives the action and verifies the nonce should the user be created.
+
+=Additional Resources
+
+    *For more information on Cross Site Request Forgery, see: http://www.owasp.org/index.php/Cross-Site_Request_Forgery
+    *For more information on the Cross Site Request Forgery FAQ, see: http://www.cgisecurity.com/csrf-faq.html
+    *For more information on Testing for Cross Site Request Forgery, see: http://www.owasp.org/index.php/Testing_for_CSRF
+
+=Related Items
+
+    *[[49f1d246-0c79-48dd-90d0-39e52a17d8cc|Attack: Phishing Attack]]
+    *[[36ce61ac-adcc-45a9-9910-95d477142c8b|Attack: Cross Site Scripting Attack]]
+    *[[103a4c8d-0664-491a-9d1d-10035b035e92|Attack: Reflection Attack]]
+    *[[054ee066-d6c5-48b2-98d6-7043a30fc0a5|Attack: URL Redirection Attack]]
+    *[[e4a899ec-9301-4751-ae07-69a265336d8b|Attack: AJAX Injection Attack]]
+    *[[8756794f-3bb1-4e08-9bad-5297c8130a52|Attack: HTTP Session Hijacking Attack]]
+    *[[41ff6525-2cae-40a5-91e9-365d2d26feb9|Attack: Man in the Middle Attack]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

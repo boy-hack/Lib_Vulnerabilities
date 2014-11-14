@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>bb7f7b3a-a3bc-498a-b4b4-88e7e8b02855</Id>
+    <Id_History>bb7f7b3a-a3bc-498a-b4b4-88e7e8b02855,503fed2c-e7f5-4e37-9de9-b0d9a04a360f,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Buffer Overflow</Title>
+    <Category>Memory Management</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Buffer Overflow</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+
+Buffer overflows occur when code can be manipulated to cause the application to write data beyond the limits of memory allocated for that data. In short, a buffer overflow happens when the application tries to write too much data into too little (memory) space. 
+
+There are two types of buffer overflows: stack buffer overflows and heap buffer overflows. Stack buffer overflows are much easier to exploit, because the stack stores instruction pointers in addition to data buffers. By overwriting the instruction pointers in the stack, the attacker can redirect the application’s execution flow to data that he has placed somewhere in memory, thus allowing him to execute arbitrary code. The amount of code that can be executed is limited to the amount of data that can be placed by the attacker in memory. The stack buffer overflow is the "classic" buffer overflow that people usually refer to when they talk about buffer overflows. 
+
+In contrast, heap buffer overflows are much harder to exploit, and they are thus less frequent and less well-known. The heap does not usually store instruction pointers, at least not in the same consistent manner that the stack does, which is why they are harder to exploit. To exploit a heap-based buffer overflow, the attacker tries to corrupt memory structures stored in the heap in an attempt to overwrite a function pointer to point to code that he has placed as data in memory. The idea is that when the application calls the function whose pointer has been overwritten, the attacker's code will be executed instead. The result of heap-based buffer overflows is also arbitrary code execution. 
+
+A failed attempt for either type of buffer overflow will usually result in the application crashing, thus producing a denial of service condition. 
+
+Buffer overflows affect applications using native code, especially applications written in C and C++.
+
+=Impact=
+
+Attackers usually seek to exploit buffer overflows in order to execute arbitrary code with the privileges of the exploited application. However, not all buffer overflow vulnerabilities allow execution of arbitrary code. Most buffer overflow vulnerabilities allow crashing the application, which results in a denial of service condition, but this usually presents little interest to attackers. 
+
+Buffer overflows became notorious because of vulnerabilities in network services that allowed attackers to execute code on the target systems remotely. Until Web 2.0, which opened new horizons for exploitation, the buffer overflow was the gold standard of malicious hacking. The usual attack scenario was that the attacker would run the exploit against a vulnerable target server and use the exploit to execute shell code, which would bind a shell to a port on the target server. Once a shell was bound to a port, the attacker would connect to the shell using a simple network tunnel, such as netcat or telnet, and execute commands on the target server with the privileges of the user account that was used by the compromised network service. 
+
+Another attack vector targeted user applications and was known as the "client-side" exploit. The client-side scenario usually involved the user unwittingly loading exploit code into a vulnerable application, at which point the exploit code would execute the shell code. The shell code would download malicious code from the web and execute the malicious code on the user's system with the privileges of the compromised application. 
+
+The impact of buffer overflow vulnerabilities might be mitigated by measures built into the operating system or added to the application by the compiler. Some exploits can bypass these measures, but if the exploit cannot bypass buffer overflow defenses, then arbitrary code execution will be reduced to denial of service. These defenses are not a replacement for writing code correctly - the proper defense against buffer overflows is to validate the size of copied data and the target buffer before copying.
+
+The notoriety of buffer overflows and their extreme potential danger resulted in defenses being placed against it into most common operating systems. Combined with other security measures, such as improved network periphery defenses and increased popularity of managed languages, buffer overflows have become significantly less common. Let's not make any new ones. Follow the instructions below to prevent buffer overflows.
+
+=Countermeasures=
+
+To prevent buffer overflows, validate all input, validate the sizes of data and the buffer before copying, and avoid dangerous APIs.
+
+=Application Check=
+
+To check for adequate protection against buffer overflows, verify that all input is validated, the sizes of data and target buffers are validated before copying, and dangerous APIs are not used.
+
+=Specific Technologies=
+
+* [[0530569f-b6bb-4a31-ae68-55dac9f4781a|C++ Buffer Overflow]]]]></Data>
+  </Content>
+</TeamMentor_Article>

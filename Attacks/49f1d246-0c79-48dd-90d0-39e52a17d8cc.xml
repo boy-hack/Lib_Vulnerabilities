@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="-878028235" Content_Hash="-576093726">
+  <Metadata>
+    <Id>49f1d246-0c79-48dd-90d0-39e52a17d8cc</Id>
+    <Id_History>c8ae222b-ed2e-4621-a46b-3671f82f5a03,49f1d246-0c79-48dd-90d0-39e52a17d8cc,a63173fd-ae60-4896-8efb-7fbb9a07d49f,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Phishing Attack</Title>
+    <Category>Sensitive Data</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Phishing Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>1</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Any web application that requires a user to login to use a service.
+
+=Description
+
+Phishing is an attempt by an attacker to trick a legitimate user into entering personal information into an attacker's website. The attacker typically constructs a website that appears identical to a legitimate site, but the data is posted to an illegitimate site.
+
+Most often, the attacker will send a mass e-mail to many users requesting them to update their information on the illegitimate website. The email may contain authentic-looking logos harvested off the original website, and even text from past legitimate correspondences. The attacker will then provide a link to their malicious site, which has been set up to emulate every aspect of the valid site. The attacker may use a number of techniques to hide the true nature of the URL, including URL redirection or exploiting known e-mail client or browser vulnerabilities. The malicious site may ask the victim for information such as username, password, social security number, phone number, mother's maiden name, address, and e-mail address. The information submitted by the victim to the malicious site is stored by the attacker, and the victim is then redirected to the legitimate site. 
+
+=Impact
+
+    *Confidentiality: This attack can be used by an attacker to obtain sensitive information about the victim.
+    *Authentication: The sensitive information obtained through this attack can be used to log in as another user and access more information, such as bank account details.
+
+=Vulnerabilities
+
+    *Web browsers failing to verify a website's security certificate.
+    *Lack of policy against request of such information.
+    *Failure to use modern anti-phishing techniques.
+    *Lack of security education for users.
+    *Using multiple domains to host content within the same site, effectively priming users to ignore which domain they're currently talking to.
+
+=Countermeasures
+
+    *Implement and use SSL: Get a certificate for use in SSL from a trusted Certificate Authority to help the user verify that the server is legitimate.
+    *Create a policy: Publicly announce that your company will never send a link in an e-mail to update information. Require your users to browse to your website manually.
+    *Use additional security measures: New anti-phishing mechanisms require a user to choose a personal image or theme. First, the user submits their username or a cookie (a form of loose identification). The server then responds by showing the user the image or theme they have chosen upon account creation. Finally, if the image or theme matches the theme that the user remembers selecting, the user logs in completely.
+    *Support only modern browsers: Most modern web browsers include basic anti-phishing mechanisms that will help your users verify the legitimacy of websites. Encourage your users to upgrade to the latest version of their browser software.
+    *Use a single domain for all parts of an application: This way, if an attacker attempts to create a fake site to harvest user information, users will be primed to expect all pages to come from the same URL.
+
+=Example
+
+Attackers may use variations on the legitimate website address, such as:
+
+    *Subdomains: {{{http://www.abcbank.com.attack.com/}}}\\
+    *Similar domains: {{{http://www.abcbank-security.com/}}}\\
+    *Off by one URLs: {{{http://www.abcbonk.com/}}}\\
+    *Different languages or encodings: {{{http://www.abcbànk.com}}}\\
+    *Obscure URL features: Some browsers allow the user to provide credentials in the address bar. This is done by preceding the real address with the credentials and the @ (at) symbol, such as: {{{http://www.abcbank.com@attacker.com.}}}\\
+
+    In this example the user would be directed to attacker.com with the credentials of {{{www.abcbank.com}}}, which can easily be disregarded by the attacker's website.
+
+=Additional Resources
+
+    *For more information on Phishing, see: http://en.wikipedia.org/wiki/Phishing
+    *For more information on All About Phishing, see: http://www.webopedia.com/DidYouKnow/Internet/2005/phishing.asp
+    *For more information on URL redirection, see: http://en.wikipedia.org/wiki/URL_redirection
+
+=Related Items
+
+    *[[054ee066-d6c5-48b2-98d6-7043a30fc0a5|Attack: URL Redirection Attack]]
+    *[[4c56f015-31b0-4570-a194-707d9cf6db26|Attack: Business Rule Attack]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

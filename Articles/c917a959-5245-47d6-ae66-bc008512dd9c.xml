@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>c917a959-5245-47d6-ae66-bc008512dd9c</Id>
+    <Id_History>c917a959-5245-47d6-ae66-bc008512dd9c,ffc4179d-f1fe-40f1-be39-1890e47b4fb6,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Improper Output Handling</Title>
+    <Category>Encoding</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Improper Output Handling</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Improper output handling vulnerabilities occur when the application does not encode untrusted data correctly for the context. If the application includes data provided by an attacker without properly encoding this data, the attacker will be able to manipulate the output of the web application. The most common result is a Cross-Site Scripting vulnerability, where the attacker is able to manipulate the web application into sending attacker-controlled malicious data (usually JavaScript) to legitimate users. Other vulnerabilities besides Cross-Site Scripting might be caused by improper output handling, for example HTTP response manipulation. The common principle is that if the application does not encode untrusted data in output properly, the attacker can manipulate the application to send malicious data to legitimate users.
+
+All web application vulnerabilities are affected by improper output handling vulnerabilities.
+
+==Impact==
+
+The result of improper output handling is that the web application can be used to attack its users, typically through Cross-Site Scripting vulnerabilities. In theory, improper output handling might also be used to cause the web application to attack a back-end service, but this requires additional vulnerabilities in the back-end service to work. In practice, Cross-Site Scripting are perhaps the most common type of vulnerabilities in web applications and back-end encoding attacks are a hypothetical possibility.
+
+Cross-Site Scripting vulnerabilities are usually used to steal users' cookies, to be able to impersonate them within the application, or to perform actions on the behalf of the users of the application. Cross-Site Scripting can also be used to 
+
+==Countermeasures==
+
+To prevent improper output handling vulnerabilities, encode all untrusted data that is included in output for the correct context and validate all input.
+
+* [[1e240c0b-5d16-4191-b842-579809433eff|Encode Echoed Input]]
+
+* [[3de41277-0cc1-4ebc-8dd7-e96d161aa0ef|Validate All Input]]
+
+==Application Check==
+
+To make sure that improper output handling vulnerabilities are prevented, verify that all untrusted data that is included in output is encoded for the correct context and that all input is validated. 
+
+* [[d02961a8-f8c9-48c7-99be-708ae5259910|Echoed Input Is Encoded]]
+
+* [[a210fcb7-f142-4c2e-844a-c43e0859f90d|All Input Is Validated]]
+
+==Additional Resources==
+
+* For more information about improper output handling vulnerabilities, see http://projects.webappsec.org/w/page/13246934/Improper%20Output%20Handling
+]]></Data>
+  </Content>
+</TeamMentor_Article>

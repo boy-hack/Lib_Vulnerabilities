@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="660857890" Content_Hash="-1450190782">
+  <Metadata>
+    <Id>36ce61ac-adcc-45a9-9910-95d477142c8b</Id>
+    <Id_History>61f8ac64-c4e1-4c31-9521-f20a1a64b6fd,36ce61ac-adcc-45a9-9910-95d477142c8b,c2b4f418-f9d6-40d2-b785-13d21bccd074,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Cross-Site Scripting Attack</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Cross-Site Scripting Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>1</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+All web applications.
+
+=Description
+
+A cross site scripting (XSS) attack can cause arbitrary code to run in a user's browser while the browser is connected to a trusted Web site. The attack targets an application's users and not the application itself, but it uses the application as the vehicle for the attack. Because the script code is downloaded by the browser from a trusted site, the browser has no way of knowing that the code is not legitimate.  As the attacker's code has access to the cookies associated with the trusted site and are stored on the user's local computer, a user's authentication cookies are typically the target of attack. Internet Explorer security zones provide no defense.
+
+There are two primary types of XSS: persistent and non-persistent. If the attacker is able to inject his malicious script to the web application's data store, then the script will be persistent and anyone who loads a page with that content will run the script and become a victim of the attack. Forums and other web services that have user-supplied HTML content are commonly subject to this attack. If the content is not validated and encoded, then anyone can leave a malicious script on the site. Non-persistent XSS uses some reflective aspect of the page to deliver the payload. Web applications often echo user input back to them without altering it. Search engines are a good example of this type of behavior. Attackers can create and distribute URLs that contain a malicious script that gets reflected back to the user. The most common example of this is the "page not found" error page which echoes the requested page back to the user.
+
+    *Confidentiality: The most common attack performed with cross-site scripting involves the disclosure of information stored in user cookies.
+    *Access control: In some circumstances when cross-site scripting is combined with other flaws, it may be possible to run arbitrary code on a victim's computer.
+    *Elevation of privilege: Even if an attacker cannot get at the authentication information of a user, they can act as that user.
+
+=Impact
+
+    *Credential compromise.
+    *Credential disclosure.
+    *Information disclosure.
+    *Execute code on client machine.
+    *Elevation of privilege.
+    *Repudiation.
+
+=Vulnerabilities
+
+    *Failure to validate user input for script tags when that input can be echoed back into a web page.
+    *Trusting data retrieved from a shared database.
+    *Failure to encode all remotely provided data, including reverse DNS lookup, cookie contents, uploaded files, etc.
+    *Improperly converting "safe" tags to HTML.
+    *Displaying user input directly, without encoding it appropriately for the context in which it is used.
+    *Checking user-submitted data against a blacklist instead of a whitelist.
+
+=Countermeasures
+
+    *Perform context-sensitive encoding of untrusted input before it is echoed back to a browser: Use an encoding library (e.g., the Microsoft Anti-Cross Site Scripting Library or OWASP Reform). The following language-specific functionality may be helpful, but is not sufficient to properly protect against cross-site scripting. Most of these libraries only convert the symbols ", &, <, and > to safe HTML equivalents. A whitelisting library should be used instead. 
+        **Python: cgi.escape (only escapes 3 characters by default, escaping " is optional)
+        **ASP: HttpUtility.HtmlEncode and HttpUtility.UrlEncode (only encodes 4 characters)
+        **Perl: HTML::Entities::encode (only escapes 4 characters by default, but it makes it easy to specify other unsafe characters)
+        **PHP: htmlentities and urlencode (only escapes 4 characters by default, and can optionally encode ' (single quote))
+    
+*Validate untrusted input against an inclusion list before use: For example, use regular expressions to define acceptable character sequences, and use it as a filter. If the input is meant to be a primitive type, it can be cast appropriately to assure that it is the expected type (a type constraint) and then checked to ensure it's in the appropriate range (a range constraint). In the case where there are only a limited number of acceptable inputs, then the input can be constrained to that set with simple if or switch control structures, or by matching against a fixed list of strings (a domain constraint).
+
+=Additional Resources
+
+    *For more information on the Microsoft Anti-Cross Site Scripting Library, see: http://www.microsoft.com/en-us/download/details.aspx?id=28589
+    *For more information on the OWASP Encoding Project, see: https://www.owasp.org/index.php/Category:OWASP_Encoding_Project
+    *For more information on Cross Site Scripting, see: https://www.owasp.org/index.php/Cross_site_scripting
+    *For more information on the Cross Site Scripting Filter Evasion Cheat Sheet, see: https://www.owasp.org/index.php/Cross_site_scripting
+    *For more information on How To Prevent XSS in ASP.NET, see: http://msdn.microsoft.com/en-us/library/ms998274.aspx
+
+=Related Items
+
+    *[[e4a899ec-9301-4751-ae07-69a265336d8b|Attack: AJAX Injection Attack]]
+    *[[189a3684-3289-4097-8906-5361f7ef3aab|Attack: Double Encoding Attack]]
+    *[[8698cde2-0fdf-4676-a043-ae90e62f55b8|Attack: Command Injection Attack]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

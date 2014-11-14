@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="1755240153" Content_Hash="237349837">
+  <Metadata>
+    <Id>0089dded-bd3d-4513-b479-624629634b4a</Id>
+    <Id_History>0e42f173-1bae-4c59-b1a5-b265642c95da,0089dded-bd3d-4513-b479-624629634b4a,004fbaa5-759e-4a15-8aab-b4e8fe552169,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Reflection Injection Attack</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Reflection Injection Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+.NET applications, Java applications, and applications written in any other language which supports reflection.
+
+=Description
+
+Reflection is a programming technique provided by an API that let's you treat class definitions themselves as objects. It gives the programmer a way to view and modify class members such as constructors, methods, interfaces, and fields at runtime. This is often used for the of development tools such as class browsers or GUI designers. However, if untrusted user input is used to manipulate objects at runtime, injection is possible. Attackers may be able to view or modify which classes are used or even run arbitrary code.
+
+=Impact
+
+    *Execution of arbitrary code.
+    *Bypass of security controls.
+
+=Vulnerabilities
+
+    *Failure to validate input.
+    *Validation of a library based solely on the name.
+    *Loading libraries based on external input.
+
+=Countermeasures
+
+    *Validate input: Use vigorous whitelist style input checking of any input received from the user.
+    *Use signed certificates: Use strongly signed assemblies only, only load a class if it passes this check.
+
+=Example
+
+A common example of a reflection injection attack occurs when an attacker can inject code to provide the name of a less secure class that implements the same interface as the one meant to be instantiated. The Java code below creates and uses an HTTP connection based on a user supplied string that defines the type.
+
+{{{
+import java.lang.reflect.*;
+import java.net.*;
+class ExampleReflection
+ {
+   public static void main(String[] args)
+ {
+        String mycon = "HttpsUrlConnection";
+         // HttpsUrlConnection is a string provided by the user in some manner
+        URLConnection c = (URLConnection)createConnection(mycon);
+        c.connect();
+   }
+   static Object createConnection(String name)
+ {
+        Object object = null;
+        try {
+                Class classdef = Class.forName(name);
+                object = classdef.newInstance();
+        }
+ catch (InstantiationException e)
+ {
+                System.out.println(e);
+        }
+ catch
+ (IllegalAccessException e)
+ {
+                System.out.println(e);
+        }
+ catch (ClassNotFoundException e)
+ {
+                System.out.println(e);
+        }
+      return object;   
+}
+}
+}}}
+
+Now suppose an attacker could inject {{{"HttpUrlConnection"}}} into the string {{{mycon}}} instead of {{{"HttpsUrlConnection"}}}. Then, instead of an SSL secured connection, an insecure connection will be created, leaving the data in transit unprotected. The application does not know any differently, because both {{{HttpUrlConnection}}} and {{{HttpsUrlConnection}}} implement {{{UrlConnection}}}.
+
+=Additional Resources
+
+    *For more information on Reflection Injection, see: https://www.owasp.org/index.php/Reflection_injection
+    *For more information on Trail: The Reflection API for Java, see the http://docs.oracle.com/javase/tutorial/reflect/index.html
+    *For more information on Reflections on Reflection, see: http://msdn.microsoft.com/en-us/magazine/cc163408.aspx
+
+=Related Items
+
+    *[[8698cde2-0fdf-4676-a043-ae90e62f55b8|Attack: Command Injection Attack]]
+    *[[1408d3c3-7fc1-4ff0-910e-cdf0e191b669|Attack: Client-side Validation Attack]]
+    *[[9d60faca-687b-4c69-91ba-f5712af0fd02|Attack: Server-Side Code Injection Attack]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

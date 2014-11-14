@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>8eba1b70-1b1a-4810-a819-1c212cf33099</Id>
+    <Id_History>8eba1b70-1b1a-4810-a819-1c212cf33099,da23210a-199b-42c0-a3da-c1f1f7b952ba,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>LDAP Injection</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>LDAP Injection</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Lightweight Directory Access Protocol (LDAP) is a widely used protocol for accessing directory services. Directories provide a set of attributes about people that are organized in a hierarchical manner.  LDAP Injection is a technique to exploit applications that use input from users to query an LDAP directory. LDAP injection has the potential to view, modify, or remove personal information about anyone in the directory. LDAP Injection applies to all applications that use LDAP. 
+
+=Impact
+
+LDAP injection allows an attacker to access and/or modify restricted data in the LDAP database. The attacker may leverage this vulnerability to view personal information of users in the database. The attacker may also leverage this vulnerability to give himself administrative privileges or to take over another account. Once the attacker has administrative privileges, he usually has full control of the application. 
+
+=Countermeasures
+
+To prevent LDAP injection, validate all input. Ideally, parameterized APIs should be used for LDAP queries, but such APIs are usually not available. 
+
+=Application Check
+
+To check for adequate protection against this vulnerability, find all code that queries directories and verify that data included in the queries is sufficiently validated. 
+
+=Specific Technologies
+
+* [[26cf3a5c-3bbd-4239-b74f-f776df950ac8|ASP.NET LDAP Injection]]
+* [[418cfb77-5d0a-4fd9-9825-1732cf40070d|Java LDAP Injection]]
+* [[7fc7f4f3-2b0b-4d48-a18a-1f189361b651|C++ LDAP Injection]]]]></Data>
+  </Content>
+</TeamMentor_Article>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>7cd2af83-de04-47ac-992c-945642fa579d</Id>
+    <Id_History>7cd2af83-de04-47ac-992c-945642fa579d,e58b118e-13ac-4198-a688-e33b478c4011,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Weak Cryptographic Hash</Title>
+    <Category>Cryptographic Storage</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Weak Cryptographic Hash</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+A weak cryptographic hash vulnerability occurs when the application uses a hashing algorithm that is considered to be less resistant to attack than the currently recommended algorithms, and/or the chosen hashing algorithm is not used appropriately. To use cryptographic hashing properly, a strong algorithm has to be used iteratively and with a salt. 
+
+Note that cryptographic hashes are commonly used to protect stored passwords. 
+
+This vulnerability type affects all applications that use cryptographic hashes. 
+
+=Impact=
+The impact of using weak cryptographic hashing is that the attacker might be able to recover the hashed data. Cryptographic hashes are usually used to protect stored passwords as the last line of defense. If the attacker has compromised the application and downloaded the password hashes, he still won't be able to use them if the hashes are strong. If weak hashes are used, then the attacker will be able to easily crack them using brute-force attacks. In a brute-force attack, the attacker iteratively tries hashing all possible values and compares the hashes to the stored hashes. If weak hashing is used, even strong passwords can be easily compromised by brute-force attacks.
+
+In practice, even when strong hashing is used, hashed passwords might be vulnerable to dictionary attacks. In a dictionary attack, the attacker hashes a list (dictionary) of possible passwords and compares them to the stored hashes. To protect against dictionary attacks, passwords must be strong in addition to strong hashing being used. 
+
+After downloading the password hashes, the attacker will usually try to recover the passwords of the administrative users. The attacker must have already compromised the application to be able to get the hashes in the first place, but he may not have full access yet. By compromising the passwords of the administrative users, the attacker might gain access to other resources where the same password is used, or gain additional control of the application. 
+
+One possible scenario is that the hashes are recovered using a SQL injection attack, then cracked, and then used by the attacker to take over the application completely. Another possible scenario is for the attacker to compromise the application, download and crack the hashes, hold on to the administrator password, and come back at a later time to take control of the application after the administrators thought they had regained control of the application. Lastly, a common occurrence has been that web sites have been hacked and the stored account details of their users have been published on the Internet. This is usually bad for the reputation of the affected web site, especially if the stored passwords are not adequately protected.
+
+=Countermeasures=
+To prevent weak cryptographic hashing vulnerabilities, use a strong hashing algorithm iteratively or use a key derivation algorithm, and use a unique salt for each hashed value.
+
+* [[00000000-0000-0000-0000-0000006adfa3|Store Passwords Securely]]
+
+=Application Check=
+To verify that cryptographic hashing is used properly, verify that strong hashing algorithms are used iteratively or key derivation algorithms are used, and that a unique salt is used for each hashed value.
+
+* [[00000000-0000-0000-0000-00000077a50c|Passwords Are Stored Securely]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training courses for more background information about this type of vulnerabilities.
+
+==Creating Secure ASP.NET Code==
+
+This in-depth course examines the development of secure Web applications in ASP.Net. It provides developers and testers with an overview of common Web application vulnerabilities and a set of nine best practices and techniques to follow in order to avoid them. Throughout the course, students are provided with interactive games and simulations designed to reinforce the secure design and coding concepts that were introduced.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127607|COD 311 Creating Secure ASP.NET Code]]
+
+==Creating Secure C# Code==
+
+This course will provide a deep understanding of application security risks and secure coding standards for C# applications. The main lesson guides students through the concepts underlying the coding principles and illustrates real-world best practices and techniques, and the labs allow students to test what they have learned
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127608|COD 314 Creating Secure C# Code]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

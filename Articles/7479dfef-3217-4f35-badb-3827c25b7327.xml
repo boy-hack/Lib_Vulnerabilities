@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>7479dfef-3217-4f35-badb-3827c25b7327</Id>
+    <Id_History>7479dfef-3217-4f35-badb-3827c25b7327,3f562300-a1c2-4ab1-b7b9-e5b72d916bb5,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Insecure Indexing</Title>
+    <Category>Deployment Considerations</Category>
+    <Phase>Deployment</Phase>
+    <Technology>PHP</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Insecure Indexing</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+Insecure indexing vulnerabilities occur when the application discloses the location of sensitive or otherwise valuable files. Insecure indexing typically occurs when a web search engine finds sensitive files while indexing the site, hence the name. Once a search engine has indexed sensitive data, an attacker can use search engine queries to retrieve the sensitive data either from the search engine cache or by following the URLs to the affected site. 
+
+All web applications are affected by insecure indexing vulnerabilities.
+
+==Impact==
+
+The impact of insecure indexing vulnerabilities is that the attacker will be able to download sensitive or otherwise valuable files without authorization. A typical scenario involves the attacker downloading sensitive documents, or downloading paid content, such as music or software, without paying.
+
+Less frequently, an attacker might be able to download database backups, authentication stores, or configuration files. The attacker will then have some authentication credentials to attempt to gain additional access to the application. An attacker who manages to gain administrative access to the application will try to inject malicious code to try to take over the application, and execute arbitrary code on the server with the privileges of the affected application. The attacker might attempt to leverage additional vulnerabilities on the server to elevate privileges and gain superuser access to the server. These scenarios are less likely, but realistic. 
+
+==Countermeasures==
+
+To prevent insecure indexing vulnerabilities, block search engines from sensitive areas.
+
+* [[6f15d4c2-1a0c-4ef5-a50c-44c639bd898d|Block Search Engines from Sensitive Areas]]
+
+==Application Check==
+
+To make sure that insecure indexing vulnerabilities are prevented, verify that search engines are blocked from sensitive areas.
+
+* [[c3ac0cdd-99e8-4ef4-b54a-3b17426f6967|Search Engines Are Blocked from Sensitive Areas]]
+
+==Additional Resources==
+
+* For more information about insecure indexing, see http://projects.webappsec.org/w/page/13246937/Insecure%20Indexing
+]]></Data>
+  </Content>
+</TeamMentor_Article>

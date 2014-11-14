@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>ba8a22a6-6b90-4cec-8826-7ad6258814b8</Id>
+    <Id_History>00000000-0000-0000-0000-0000007f6a6d,ba8a22a6-6b90-4cec-8826-7ad6258814b8,19a4b526-b543-4bc8-a937-2751566954cc,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>HTTP Response Splitting</Title>
+    <Category>Encoding</Category>
+    <Phase>Implementation</Phase>
+    <Technology>Java</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>HTTP Response Splitting</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+HTTP response splitting occurs when an attacker is able to inject arbitrary data into the headers of HTTP responses. This vulnerability allows the attacker to force HTTP responses that contain HTML of the attacker's choosing. HTTP response splitting applies to web applications that place user input in HTTP response headers. To prevent this vulnerability, validate all input and URL-encode data in HTTP response headers. To check for this vulnerability, find all code that outputs custom HTTP response headers and make sure that this code does not include unvalidated, unencoded user data in the headers.
+
+=Impact
+
+HTTP response splitting gives the attacker full control over the HTTP response. The attacker can use this control to conduct phishing and cross-site scripting attacks. The attacker may create a fake login page and make it appear to be a part of your application by using HTTP response splitting. That fake login page can be used by the attacker to collect the passwords of the users. The attacker may also inject arbitrary JavaScript into pages that are served by the application using HTTP response splitting. These scripts may redirect the application's users to a malicious site, steal their session cookies, or record users' keystrokes. Either through phishing or through cross-site scripting, the attacker may leverage HTTP response splitting to take over an administrator's account and gain full control of the application.
+
+=Countermeasures
+
+To prevent this vulnerability, validate all input and URL-encode data in HTTP response headers. 
+
+Validate all input:
+* [[b531d29c-86f7-4812-90ce-5f3f0f780aba|Validate Input from All Sources]]
+* [[c98695c5-cf02-44a1-96bf-1f8046b8ad9d|Validate Input for Length, Range, Format, And Type]]
+* [[0f49430b-2abe-408f-b046-89fa739f5d53|Input Validation Using JSF]]
+* [[18ac74df-602b-4a58-8998-52f638f3a045|Input Validation Using SpringMVC]]
+* [[d124abb1-e230-43ef-8762-1caa0dbb89ca|Input Validation Using Struts 1]]
+* [[2f917654-65a8-49c9-b000-c17f9765bf42|Input Validation Using Struts 2]]
+
+URL-encode data in HTTP response headers:
+
+* [[00000000-0000-0000-0000-0000001ab0c1|URL-encode Data in HTTP Response Headers]]
+
+=Application Check
+
+To check for adequate protection against this vulnerability, ensure that all input is validated, and ensure that all data in HTTP response headers is URL-encoded. 
+
+All input is validated:
+* [[b531d29c-86f7-4812-90ce-5f3f0f780aba|Input from All Sources Is Validated]]
+* [[61869793-2c10-40c0-b82a-babcc0312697|Input Is Validated for Length, Range, Format And Type]]
+
+Data in HTTP response headers is URL-encoded:
+* [[00000000-0000-0000-0000-00000043b1b9|Data in HTTP Response Headers Is URL-encoded]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) to learn more about HTTP Response Splitting including techniques for remediation and prevention.
+
+==Creating Secure Code – JRE Foundations==
+
+In this course, you will learn to recognize and remediate common Java Web software security vulnerabilities.  This course has three modules, which introduce you to these vulnerabilities and help you to identify and remediate them. 
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127615|COD 211 Creating Secure Code – JRE Foundations]].
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources
+
+* For more information about HTTP response splitting, see http://en.wikipedia.org/wiki/HTTP_response_splitting
+* For the CWE page about this vulnerability type, see http://cwe.mitre.org/data/definitions/113.html]]></Data>
+  </Content>
+</TeamMentor_Article>

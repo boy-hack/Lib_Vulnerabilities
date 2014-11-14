@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>e1b1aa95-34bb-4c07-8a08-8110bac3b48c</Id>
+    <Id_History>e1b1aa95-34bb-4c07-8a08-8110bac3b48c,81fd92a6-0476-4da6-af1e-e95caa6be94d,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>XML Attribute Blowup</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>XML Attribute Blowup</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[==Description==
+
+XML Attribute Blowup vulnerabilities occur when an application allows users to create XML documents with a large amount of attributes, and results in Denial of Service conditions. 
+
+An attacker can abuse this functionality to create an amount of XML attributes that will cause the application's XML parser to consume a large amount of CPU time and slow down the server. If the XML parser uses up all the available CPU time on the server, the application will become unresponsive to legitimate users. Other applications on the server are also liable to become unresponsive.
+
+All applications that use XML documents are affected by XML Attribute Blowup vulnerabilities.
+
+==Impact==
+
+The impact of XML Attribute Blowup vulnerabilities is a Denial of Service condition. If the attacker can abuse the application to create and parse an XML document with a very large amount of attributes, the XML parser will consume a large amount of CPU time, causing the server to lag. Depending on the power of the server and the amount of attributes, the server might become unresponsive and all the applications running on it will become unavailable to the users for the duration of the attack.
+
+==Countermeasures==
+
+To prevent XML Attribute Blowup vulnerabilities, validate the length of XML data.
+
+==Application Check==
+
+To verify that XML Attribute Blowup vulnerabilities are prevented, make sure that the length of XML data is validated.
+
+==Specific Technologies==
+
+* [[6fe949ef-75dd-4ee7-be7c-5fe41a2469b2|ASP.NET XML Attribute Blowup]]
+* [[d68a04bb-014a-4cf5-b73b-a5b812582819|Java XML Attribute Blowup]]
+* [[2d6e459a-96e1-499a-9663-ebd5c228d888|C++ XML Attribute Blowup]]
+* [[056802f9-1bda-4ff0-ae80-d6ebae75893b|PHP XML Attribute Blowup]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

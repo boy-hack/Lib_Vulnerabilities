@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>94e52aca-06b6-4747-9bc9-f0149208f18c</Id>
+    <Id_History>94e52aca-06b6-4747-9bc9-f0149208f18c,abce7ddd-b9ef-47ed-8f3d-6d3cdb8ebd43,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Command Injection</Title>
+    <Category>Dangerous APIs</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Command Injection</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Applications often execute external commands as a part of their functionality. If the attacker is able to manipulate the choice of external commands or their parameters, the attacker may be able to use this functionality to execute arbitrary commands. If an attacker is able to execute arbitrary commands, he is typically able to take over the application and possibly take over the entire system. All applications that use external applications are affected by command injection vulnerabilities. Web applications are especially at risk, because they are exposed to the Internet. 
+
+=Impact
+
+Command injection allows an attacker to execute arbitrary commands. Using this vulnerability, an attacker can take full control of the application. If the attacker is able to leverage additional vulnerabilities or the server is not configured properly, this vulnerability may allow the attacker to take full control of the server. A command injection vulnerability acts as a virtual backdoor for an attacker to use the application and the server for his purposes. Any data that may be stored by or accessed by the application can also be compromised as a result of command injection. 
+
+=Countermeasures
+
+To prevent command injection vulnerabilities, validate all input, use parameterized APIs to execute external commands if such APIs are available, and avoid using external commands if possible. 
+
+=Application Check
+
+To check for adequate protection against this vulnerability, find all code that executes external applications and make sure that it does not use unvalidated input. 
+
+=Specific Technologies
+
+* [[ea00a8ee-1248-42b5-9954-439a93fb14d8|ASP.NET Command Injection]]
+* [[2e03d087-3614-4927-8d20-d9efc3f7bbc4|Java Command Injection]]
+* [[db5bc41d-c414-497b-a7cf-2d63e7720fc6|C++ Command Injection]]
+* [[9178de03-1ccd-4987-b4e1-6db7a164fc4c|PHP Command Injection]]]]></Data>
+  </Content>
+</TeamMentor_Article>

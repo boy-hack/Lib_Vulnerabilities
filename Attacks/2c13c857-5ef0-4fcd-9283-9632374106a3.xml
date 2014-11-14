@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="2014723220" Content_Hash="21063690">
+  <Metadata>
+    <Id>2c13c857-5ef0-4fcd-9283-9632374106a3</Id>
+    <Id_History>340f0d7d-6226-4948-9934-84a07b3064bf,2c13c857-5ef0-4fcd-9283-9632374106a3,5586e7f9-0426-4246-98ac-6d49b9b02f90,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Chosen Ciphertext Attack</Title>
+    <Category>Cryptography</Category>
+    <Phase>Design</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Chosen Ciphertext Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Applications that apply cryptographic protection mechanisms.
+
+=Description
+
+The goal of a chosen ciphertext attack is to discover the key of a crypto system by controlling which ciphertext is decrypted. The attacker usually has access to a large number of encrypted messages and the equivalent of a tamper-proof box that can perform decryption. This type of attack is primarily applicable to asymmetric encryption algorithms, but can also be applied to symmetric encryption algorithms. Another variant of this attack is the adaptive chosen-ciphertext attack, in which the attacker sends a number of ciphertexts to be decrypted. Then, based on the plaintext that is returned, the attacker chooses different ciphertext to be decrypted in the next round.
+
+=Impact
+
+    *Discovery of the private key used in the system.
+
+=Vulnerabilities
+
+    *Allowing anonymous users to decrypt chosen ciphertext.
+    *Using an encryption algorithm that does not protect against this type of attack.
+
+=Countermeasures
+
+    *For RSA encryption, use Optimal Asymmetric Encryption Padding.
+    *Deny anonymous users the ability to decrypt arbitrary ciphertext.
+
+=Additional Resources
+
+    *For more information on chosen ciphertext attacks, see: http://en.wikipedia.org/wiki/Chosen_ciphertext_attack
+
+=Related Items
+
+    *[[16fbf122-43cf-4201-9b33-cf2c728de202|Attack: Chosen Plaintext Attack]]
+    *[[8482159c-5ec2-4b89-9c65-9af765030ff5|Attack: Information Disclosure Attack]]
+    *[[0e1b09a6-ec13-4eb6-b8e6-0a2d5d92d4b4|Attack: Key Bruteforce Attack]]
+    *[[4d4d0b86-0a9e-4f66-b95b-92fcb68b8c1a|Attack: Traffic Analysis Attack]]
+    *[[00030b2d-5b8e-44c7-a643-afcee6e1157d|Attack: Timing Analysis Attack]]
+    *[[331bfa1d-94c7-485b-8d8f-b8bab3e679e4|Attack: Statistical Analysis Attack]]
+    *[[88892358-450e-4bbc-afd9-ede9393e53a8|Attack: Sniff Memory for Secrets Attack]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

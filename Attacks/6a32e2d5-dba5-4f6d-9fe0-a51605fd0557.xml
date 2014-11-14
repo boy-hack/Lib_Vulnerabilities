@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="-1030239028" Content_Hash="-763494309">
+  <Metadata>
+    <Id>6a32e2d5-dba5-4f6d-9fe0-a51605fd0557</Id>
+    <Id_History>cf06603e-440e-4118-85d5-ad360817fabc,6a32e2d5-dba5-4f6d-9fe0-a51605fd0557,e7a65cd8-eaa5-4f43-bf35-02450fa7a8c4,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Network Eavesdropping Attack</Title>
+    <Category>Communication Security</Category>
+    <Phase>Design</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Network Eavesdropping Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>1</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Any network application.
+
+=Description
+
+An attacker can use packet sniffing tools to eavesdrop on a network conversation between two parties and view all the data that is transacted. This attack is possible regardless of the protocol in use, unless the data is encrypted. If the communication between two applications across the network is done in cleartext, then the attacker will be able to view and understand the communication and extract the data exchanged. In addition to sniffing sensitive information from the network, an attacker may also be able to sniff authentication credentials.
+
+=Impact
+
+    *Loss of confidentiality of potentially sensitive data.
+
+=Vulnerabilities
+
+    *Insecure communication channel: No guarantees of confidentiality or integrity.
+
+=Countermeasures
+
+*Establish a secure communication channel:
+**Utilize SSL/TLS for application-layer encryption: This will help secure communication between two applications on two networked machines. Always configure your application to accept the latest versions of these protocols only (SSL 3.0/TLS 1.0). Weak ciphers should never be used.
+**Utilize IPSec for IP-layer encryption: This will help secure all data flowing between two networked machines, but has a higher administrative overhead. It is not suitable for exchanging information with arbitrary Internet hosts.
+*Encrypt only the sensitive data:
+**Use encryption inside a plaintext protocol: Instead of encrypting all data communication between two applications, you could choose to encrypt only sensitive data segments and then transfer them over plaintext network protocols. This will secure only the data specifically encrypted, and properties like authentication, replay prevention, security against man in the middle attacks, and so on, must be provided by the application, along with key storage and distribution systems. If you choose to implement a system like this, make sure you understand which of these properties you need to provide and how to guarantee them, and use well known and currently considered secure implementations of standard cryptographic algorithms, with appropriately chosen key and hash sizes.
+
+=Additional Resources
+
+    *For more information on SSL/TLS Encryption, see: http://technet.microsoft.com/en-us/library/cc781476%28v=WS.10%29.aspx
+    *For more information on Packet Analyzers, see: http://en.wikipedia.org/wiki/Packet_sniffer
+    *For more information on Wireshark, see: http://www.wireshark.org/
+
+=Related Items
+
+    *[[ad7b18e3-a8a0-4e87-b1a8-908e11449481|Attack: Network Credential Sniffing Attack]]
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

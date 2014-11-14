@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>6d9c6ae8-f88a-408c-80d2-1c8a801cbc6b</Id>
+    <Id_History>6d9c6ae8-f88a-408c-80d2-1c8a801cbc6b,1b7baa7f-ca36-4367-92d0-d2b9cb40f281,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Hard-coded Credentials</Title>
+    <Category>Authentication</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Hard-coded Credentials</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Applications that use authentication need a method for storing credentials. Credentials may be stored for authenticating users to the application or for the application to authenticate to external services. One of the simplest ways to store the credentials is to hard-code them into the application. This approach is not secure, because anyone with access to the application code is able to recover these credentials. Once an attacker has recovered the credentials, he can use them to authenticate with the application or to access the external services. 
+
+=Impact
+
+If the attacker obtains the database access credentials, he may be able to connect to the database and execute arbitrary queries. The privileges granted to the attacker will be based on the access level of the credentials. Typically, the attacker is then able to retrieve, modify, and delete any data in the database, or modify the database structure. Having this level of control over the database usually allows the attacker to take full control of the application. If the attacker is able to leverage additional vulnerabilities, or if the servers are not configured securely, the attacker may also take full control of the application server and the database server. 
+
+=Countermeasures
+To prevent this vulnerability, provide a secure admin interface that allows changing credentials and store credentials securely. 
+
+=Application Check
+To check for this vulnerability, examine all code that uses authentication and find where it stores credentials. 
+
+=Specific Technologies
+
+* [[b28ef54d-40bd-41e9-b4b4-73d2bf2a355c|ASP.NET Hard-coded Credentials]]]]></Data>
+  </Content>
+</TeamMentor_Article>

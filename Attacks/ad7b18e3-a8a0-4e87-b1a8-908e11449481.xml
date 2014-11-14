@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="874269433" Content_Hash="-2067235972">
+  <Metadata>
+    <Id>ad7b18e3-a8a0-4e87-b1a8-908e11449481</Id>
+    <Id_History>74e70134-b639-4cdc-b3e7-fe2952256d98,ad7b18e3-a8a0-4e87-b1a8-908e11449481,55ebc604-2971-4ea1-a852-218097a48101,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Network Credential Sniffing Attack</Title>
+    <Category>Authentication</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Attack</Type>
+    <DirectLink>Network Credential Sniffing Attack</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>1</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="wikitext">
+    <Data><![CDATA[=Applies To
+
+Any network application that transmits credentials over a computer network.
+
+=Description
+
+Due to the open nature of computer network LANs, it is possible to view traffic transmitted on a network even if it is not directed at your machine. This is known as 'sniffing' and is easily enabled by freely available network sniffing software such as Cain and Wireshark. This software sets the attacker's network card to 'promiscuous mode' so that it listens to all traffic on the network. This attack is made even easier by the fact that no special hardware is needed and simple step-by-step guides are freely available on many security websites. Simple regular expressions can be used to filter out any uninteresting traffic to return only usernames and passwords.
+
+=Impact
+
+    *Information disclosure.
+    *Session hijacking and elevation of privilege.
+
+=Vulnerabilities
+
+    *Unencrypted communication channel when transmitting credentials.
+    *Using an insecure authentication mechanism — such as HTTP Basic or Digest authentication — which does not take steps to protect the password on the wire.
+
+=Countermeasures
+
+*Utilize SSL or IPSec: Both of these protocols automatically encrypt all information sent over the network in a way that is transparent to the sending or receiving applications. While an attacker will still be able to see the network traffic, the information received will be unintelligible and will therefore prevent credentials from being stolen.
+*Utilize secure password authentication schemes: Secure authentication schemes such as NTLM or Kerberos protect the password over the wire even without the use of a secure channel.
+
+=Additional Resources
+
+    *For more information about Ethereal, see: http://ethereal.brothersoft.com/
+    *For more information about Packet Analyzers, see: http://en.wikipedia.org/wiki/Packet_sniffer
+
+
+]]></Data>
+  </Content>
+</TeamMentor_Article>

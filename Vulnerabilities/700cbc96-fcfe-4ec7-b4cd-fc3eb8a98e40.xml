@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>700cbc96-fcfe-4ec7-b4cd-fc3eb8a98e40</Id>
+    <Id_History>00000000-0000-0000-0000-0000003a5a7d,700cbc96-fcfe-4ec7-b4cd-fc3eb8a98e40,ec1856ea-566c-4c7b-8f12-bcd0b18f0015,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Log Forging</Title>
+    <Category>Auditing and Logging</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET 4.0</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Log Forging</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+Log forging occurs when an attacker is able to modify log entries recorded by the application. This usually occurs when the application writes some part of user input to the log files verbatim, which allows an attacker to insert special characters into the log files. Special characters may be processed by the application to change the contents of the files or render them unusable. The threat of log forging is that it may allow an attacker to hide traces of the attacks. In extreme cases, an attacker may forge logs to implicate someone else in the attacks. This vulnerability type affects all applications.  
+
+=Impact
+
+Log forging allows an attacker to tamper with the logs. Usually, the attacker will try to insert special characters in an attempt to remove a part of the log or make it invisible from within the application. If the attacker can hide a part of the log, it allows him to hide some of the traces of his attack(s). This makes it harder to detect the attack when it is taking place and also makes it harder to investigate the attack afterwards. In a more extreme case that is rarely seen in practice, an attacker may insert data into the logs to implicate someone else in the attacks and send the investigators down the wrong path. These days, attackers usually rely on some form of proxy or tunnel technology to hide themselves, rather than modifying the logs, but this vulnerability type still exists.
+
+=Countermeasures
+
+To prevent this vulnerability, validate all input and validate logged user data.
+
+Validate all input:
+* [[3de41277-0cc1-4ebc-8dd7-e96d161aa0ef|Validate All Input]]
+* [[e59923e7-c2fb-4a75-8db7-a9a91e869f74|Validate Input for Length, Range, Format, And Type]]
+
+Validate logged user data:
+* [[00000000-0000-0000-0000-0000004307e6|Validate Logged User Data]]
+
+=Application Check
+
+To check for adequate protection against this vulnerability, make sure that all input is validated, and especially ensure that all logged user data is validated.
+
+All input is validated:
+* [[a210fcb7-f142-4c2e-844a-c43e0859f90d|All Input Is Validated]]
+* [[0e71dd64-87d1-4cf5-9569-ea320f209977|Input Is Validated for Length, Range, Format, And Type]]
+
+Logged user data is validated:
+* [[00000000-0000-0000-0000-000000413b08|Logged User Data Is Validated]]
+
+=Computer Based Training Links=
+
+Use the following Computer Based Training course(s) for more background information about this type of vulnerabilities.
+
+==Fundamentals of Application Security==
+
+This two-part course is ideal for security and development practitioners that want to understand software security risk and seek specific implementation guidance on how to build and deploy more secure software applications.  It starts off describing why software security is critical and the risk that software vulnerabilities represent, and proceeds to lay the foundation for secure software development by presenting specific security controls and principles that development teams can implement immediately to reduce software risk. 
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127105|AWA 101 Fundamentals of Application Security]]
+
+==PCI Best Practices for Developers==
+
+Payment Card Industry Data Security Standards (PCI-DSS) provide minimum requirements for addressing the security of software systems handling credit card information. Addressing the requirements during the design and build stages of the development life cycle improves application security and simplifies compliance. This course will provide software developers with an in-depth understanding of application security issues within the PCI-DSS and best practices for addressing each requirement.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127647|COD 222 PCI Best Practices for Developers]]
+
+==Creating Secure Application Architecture==
+
+Software development is about creating functionality, features, and performance that meet user requirements. Secure system development requires you to think about what users want to do, what users should not be able to do, and then creating a solution. Users should not be able to access or tamper with resources that are not allocated to them.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127607|DES 311 Creating Secure Application Architecture]]
+
+==Creating Secure ASP.NET Code==
+
+This in-depth course examines the development of secure Web applications in ASP.Net. It provides developers and testers with an overview of common Web application vulnerabilities and a set of nine best practices and techniques to follow in order to avoid them. Throughout the course, students are provided with interactive games and simulations designed to reinforce the secure design and coding concepts that were introduced.
+
+[[https://teamprofessor.absorbtraining.com/ninja/#/courses/course/127607|COD 311 Creating Secure ASP.NET Code]]
+
+//Valid login credentials and enrollment in the course itself are required to access Team Professor content. If you need login credentials, please contact support@securityinnovation.com for help.//
+
+=Additional Resources
+
+* For more information about log forging, see http://minsky.gsi.dit.upm.es/semanticwiki/index.php/Log_Forging
+* For more information about log forging, see https://www.owasp.org/index.php/Log_forging]]></Data>
+  </Content>
+</TeamMentor_Article>

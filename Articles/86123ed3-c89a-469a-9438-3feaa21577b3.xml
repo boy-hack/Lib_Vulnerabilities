@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>86123ed3-c89a-469a-9438-3feaa21577b3</Id>
+    <Id_History>86123ed3-c89a-469a-9438-3feaa21577b3,f7f01a27-aef9-41b2-98d0-85f8fdf9695f,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>String Termination Error</Title>
+    <Category>Input and Data Validation</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>String Termination Error</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description=
+String termination errors occur when code relies on strings to be terminated by null when copying data to memory, but data that does not end with null is passed to that code. The result of string termination errors is buffer overflow: Overwriting instruction pointers in the stack allows the attacker to redirect the execution flow of the application to the data that the attacker has placed somewhere in memory, thus allowing the attacker to execute arbitrary code. 
+
+String termination errors affect applications written in native code.
+
+=Impact=
+The impact of string termination error vulnerabilities is arbitrary code execution. The likely attack vector depends on the type of the application. A vulnerable network service would imply a remote server-side exploit. A vulnerable system application would lead to a local privilege escalation exploit. A vulnerable user application would lead to a client-side network exploit.
+
+A remote server-side exploit is when the attacker sends the exploit code as data to a remote server over the network. The exploit triggers the vulnerability and then executes malicious code, usually to spawn a shell on the server for the attacker to use over the network. This provides an interactive command line interface to the attacker, giving the attacker unauthorized access to the compromised server with the privileges of the compromised application.
+
+A local privilege escalation exploit requires that the vulnerable application has higher privileges than the attacker already has, and that the attacker has access to the target system, including access to the vulnerable application. The attacker passes the exploit code to the vulnerable application, which triggers the vulnerability and runs malicious code with the elevated privileges of the compromised application. Usually, the targeted application has superuser privileges and the attacker abuses it to take full control of the system. The way to take full control of the system is usually to install a backdoor that runs with the administrative privileges of the compromised application.
+
+A client-side network exploit involves the attacker placing exploit code as a trap somewhere on the Internet. Usually, exploit code is embedded into web pages, but it can also be delivered using e-mail, instant messages and other network applications. The important thing is that the target user downloads the exploit code and opens it with the vulnerable application. The exploit code then triggers the vulnerability, downloads malicious software from the Internet, and executes it. The malicious software gives control of the compromised system to the attacker.
+
+=Countermeasures=
+To prevent string termination errors, validate data length before copying.
+
+=Application Check=
+To check for adequate protection against string termination errors, verify that data length is validated before copying.
+
+=Specific Technology=
+
+* [[f770b2db-081d-4808-a314-4803beb54a01|C++ String Termination Error]]
+]]></Data>
+  </Content>
+</TeamMentor_Article>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
+  <Metadata>
+    <Id>42ec286a-d64e-421f-af0a-342d93b5a96d</Id>
+    <Id_History>42ec286a-d64e-421f-af0a-342d93b5a96d,cc566daa-e1a1-47e7-b3fc-470038f1432f,</Id_History>
+    <Library_Id>be5273b1-d682-4361-99d9-6204f2d47eb7</Library_Id>
+    <Title>Parameter Tampering</Title>
+    <Category>Session Management</Category>
+    <Phase>Implementation</Phase>
+    <Technology> Any</Technology>
+    <Type>Vulnerability</Type>
+    <DirectLink>Parameter Tampering</DirectLink>
+    <Author />
+    <Priority />
+    <Status />
+  </Metadata>
+  <Content Sanitized="false" DataType="wikitext">
+    <Data><![CDATA[=Description
+
+A parameter tampering vulnerability occurs when an attacker can modify parameters used by a web application that have security implications. For example, a vulnerable application may allow an attacker to change his user id by changing request parameters. The vulnerability stems from relying on user-accessible parameters to store security sensitive information. Common vulnerable areas are data stored in cookies, hidden form fields, and HTTP request parameters. This vulnerability type applies to web applications. 
+
+=Impact
+
+The exact impact of parameter tampering depends on the parameters that are available for tampering. This vulnerability usually allows the attacker to change his status from regular user to admin. In that case, the attacker is able to take full control of the application and its data. Another common impact is that the attacker is able to change his user id to that of another user. In that case the attacker can access and modify the user's data and impersonate that user. Parameter tampering usually allows the attacker to impersonate any user of his choosing. 
+
+=Countermeasures
+
+To prevent this problem, use platform provided session management, don't store sensitive data in user accessible parameters, and use strong session identifiers. 
+
+=Application Check
+
+To check for adequate protection against this vulnerability, identify all user-mutable parameters and verify that tampering with them does not result in elevated privileges. 
+
+=Specific Technologies
+
+* [[64071685-f105-4cf1-8196-b2599d534d46|ASP.NET Parameter Tampering]]
+* [[db479b30-f48e-4d2f-94f7-8fc050021021|Java Parameter Tampering]]
+* [[e7bb21cb-13d1-4ada-a64b-987b96b49baa|PHP Parameter Tampering]]]]></Data>
+  </Content>
+</TeamMentor_Article>
